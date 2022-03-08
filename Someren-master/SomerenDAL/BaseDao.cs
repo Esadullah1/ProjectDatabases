@@ -12,7 +12,7 @@ namespace SomerenDAL
 
         public BaseDao()
         {
-           
+
                 conn = new SqlConnection(ConfigurationManager.ConnectionStrings["2122_INF1b_db5"].ConnectionString);
                 adapter = new SqlDataAdapter();
              
@@ -46,6 +46,7 @@ namespace SomerenDAL
             SqlCommand command = new SqlCommand(query, conn, sqlTransaction);
             try
             {
+                
                 command.Parameters.AddRange(sqlParameters);
                 adapter.InsertCommand = command;
                 command.ExecuteNonQuery();
@@ -64,6 +65,7 @@ namespace SomerenDAL
 
             try
             {
+                
                 command.Connection = OpenConnection();
                 command.CommandText = query;
                 command.Parameters.AddRange(sqlParameters);
