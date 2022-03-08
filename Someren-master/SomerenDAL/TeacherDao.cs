@@ -7,36 +7,33 @@ using System.Data.SqlClient;
 using System.Data;
 using System.Collections.ObjectModel;
 using SomerenModel;
-
 namespace SomerenDAL
 {
-    public class StudentDao : BaseDao
-    {      
-        public List<Student> GetAllStudents()
+    public class TeacherDao : BaseDao
+    {
+        public List<Teacher> GetAllTeachers()
         {
- 
-            string query = "SELECT StudentID, FirstName FROM [Students]";
-
-            
-
+            string query = "SELECT TeacherID, Firstname FROM [Teachers]";
             SqlParameter[] sqlParameters = new SqlParameter[0];
             return ReadTables(ExecuteSelectQuery(query, sqlParameters));
         }
 
-        private List<Student> ReadTables(DataTable dataTable)
+        private List<Teacher> ReadTables(DataTable datatable)
         {
-            List<Student> students = new List<Student>();
-
-            foreach (DataRow dr in dataTable.Rows)
+            List<Teacher> teachers = new List<Teacher>();
+            foreach (DataRow dr in datatable.Rows)
             {
-                Student student = new Student()
+                Teacher teacher = new Teacher()
                 {
-                    Number = (int)dr["StudentID"],
+                    Number = (int)dr["TeacherID"],
                     Name = (string)(dr["FirstName"].ToString())
                 };
-                students.Add(student);
+                teachers.Add(teacher);
             }
-            return students;
+            return teachers;
+
         }
+
+
     }
 }
