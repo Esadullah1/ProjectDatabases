@@ -14,7 +14,11 @@ namespace SomerenDAL
     {      
         public List<Student> GetAllStudents()
         {
+<<<<<<< Updated upstream
             string query = "SELECT StudentID, FirstName FROM [Students]";
+=======
+            string query = "SELECT StudentID, FirstName FROM [Students]";
+>>>>>>> Stashed changes
             SqlParameter[] sqlParameters = new SqlParameter[0];
             return ReadTables(ExecuteSelectQuery(query, sqlParameters));
         }

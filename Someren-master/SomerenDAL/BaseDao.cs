@@ -12,8 +12,9 @@ namespace SomerenDAL
 
         public BaseDao()
         {
-           
-                conn = new SqlConnection(ConfigurationManager.ConnectionStrings["2122_INF1b_db5"].ConnectionString);
+            // DO NOT FORGET TO INSERT YOUR CONNECTION STRING NAMED 'SOMEREN DATABASE' IN YOUR APP.CONFIG!!
+            /*
+                conn = new SqlConnection(ConfigurationManager.ConnectionStrings["SomerenDatabase"].ConnectionString);
                 adapter = new SqlDataAdapter();
              
         }
