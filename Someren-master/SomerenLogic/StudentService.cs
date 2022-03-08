@@ -16,16 +16,11 @@ namespace SomerenLogic
         public StudentService()
         {
             studentdb = new StudentDao();
-            
         }
 
         public List<Student> GetStudents()
         {
             List<Student> students = studentdb.GetAllStudents();
-
-            
-
-            
             return students;
         }
     }
