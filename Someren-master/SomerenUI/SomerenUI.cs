@@ -25,9 +25,9 @@ namespace SomerenUI
                 // hide all other panels
                 pnlStudents.Hide();
 
-                panelTeachers.Hide();
+                panelTeacher.Hide();
 
-                pnlTeachers.Hide();
+                
 
                 // show dashboard
                 pnlDashboard.Show();
@@ -39,9 +39,9 @@ namespace SomerenUI
                 pnlDashboard.Hide();
                 imgDashboard.Hide();
 
-                panelTeachers.Hide();
+                panelTeacher.Hide();
 
-                pnlTeachers.Hide();
+                
 
                 // show students
                 pnlStudents.Show();
@@ -73,19 +73,14 @@ namespace SomerenUI
                 // hide all other panels
                 pnlDashboard.Hide();
                 imgDashboard.Hide();
-
-                pnlStudents.Show();
-                
-                panelTeachers.Show();
-
-               
-
                 pnlStudents.Hide();
 
 
-                pnlTeachers.Show();
+                panelTeacher.Show();  
+                        
 
-               
+
+                              
 
                 try
                 {
@@ -97,51 +92,25 @@ namespace SomerenUI
                    
                     
                     // clear the listview before filling it again
-                    listViewTeachers.Clear();
-
-                   
-                   
-                    
+                    //listViewTeachers.Clear();
 
                     foreach (Teacher t in teacherList)
                     {
-
-                        ListViewItem li = new ListViewItem(t.Number.ToString());
+                        string[] arr = new string[4];
+                        arr[0] = t.Number.ToString();
+                        arr[1] = t.TeacherFirstName;
+                        arr[2] = t.TeacherLastName;
+                        arr[3] = t.Supervisors.ToString();
+                        
+                        ListViewItem li = new ListViewItem(arr);
                         listViewTeach.Items.Add(li);
-                       
-
-
-                        //ListViewItem li = new ListViewItem(t.Name);
-                        //listViewTeachers.Items.Add(li);
-
-                       
-
                     }
 
-                    foreach(Teacher t in teacherList)
-                    {
-                        ListViewItem li2 = new ListViewItem(t.FirstName.ToString());
-                        listViewTeach.Items.Add(li2);
-                       
-                    }
-                   
-                   
 
-                    foreach (Teacher t in teacherList)
-                    {
-                       
-                        ListViewItem li3 = new ListViewItem(t.LastName.ToString());
-                        listViewTeach.Items.Add(li3);
-                    }
 
-                   
 
-                    foreach (Teacher t in teacherList)
-                    {
 
-                       ListViewItem li4 = new ListViewItem(t.Supervisor.ToString());
-                       listViewTeach.Items.Add(li4);
-                    }
+
 
                 }
                 catch (Exception e)
@@ -178,6 +147,9 @@ namespace SomerenUI
             showPanel("Lecturers");
         }
 
-
+        private void lecturersToolStripMenuItem_Click_1(object sender, EventArgs e)
+        {
+            showPanel("Lecturers");
+        }
     }
 }
