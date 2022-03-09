@@ -50,12 +50,19 @@
             this.lbl_Students = new System.Windows.Forms.Label();
             this.pnlTeachers = new System.Windows.Forms.Panel();
             this.listViewTeachers = new System.Windows.Forms.ListView();
+            this.labteacher = new System.Windows.Forms.Label();
+            this.pictureBox2 = new System.Windows.Forms.PictureBox();
+            this.TeacherID = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.FirstName = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.LastName = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.Supervisor = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             ((System.ComponentModel.ISupportInitialize)(this.imgDashboard)).BeginInit();
             this.menuStrip1.SuspendLayout();
             this.pnlDashboard.SuspendLayout();
             this.pnlStudents.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.pnlTeachers.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
             this.SuspendLayout();
             // 
             // imgDashboard
@@ -138,6 +145,7 @@
             this.roomsToolStripMenuItem.Name = "roomsToolStripMenuItem";
             this.roomsToolStripMenuItem.Size = new System.Drawing.Size(69, 24);
             this.roomsToolStripMenuItem.Text = "Rooms";
+            this.roomsToolStripMenuItem.Click += new System.EventHandler(this.roomsToolStripMenuItem_Click);
             // 
             // pnlDashboard
             // 
@@ -221,21 +229,71 @@
             // 
             // pnlTeachers
             // 
+            this.pnlTeachers.Controls.Add(this.pictureBox2);
+            this.pnlTeachers.Controls.Add(this.labteacher);
             this.pnlTeachers.Controls.Add(this.listViewTeachers);
-            this.pnlTeachers.Location = new System.Drawing.Point(12, 36);
+            this.pnlTeachers.Location = new System.Drawing.Point(9, 31);
             this.pnlTeachers.Name = "pnlTeachers";
             this.pnlTeachers.Size = new System.Drawing.Size(1255, 482);
             this.pnlTeachers.TabIndex = 6;
+            this.pnlTeachers.Tag = "TeacherID, FirstName, LastName";
             this.pnlTeachers.Paint += new System.Windows.Forms.PaintEventHandler(this.panel1_Paint);
             // 
             // listViewTeachers
             // 
+            this.listViewTeachers.Columns.AddRange(new System.Windows.Forms.ColumnHeader[] {
+            this.TeacherID,
+            this.FirstName,
+            this.LastName,
+            this.Supervisor});
+            this.listViewTeachers.GridLines = true;
             this.listViewTeachers.HideSelection = false;
-            this.listViewTeachers.Location = new System.Drawing.Point(55, 88);
+            this.listViewTeachers.Location = new System.Drawing.Point(50, 82);
             this.listViewTeachers.Name = "listViewTeachers";
-            this.listViewTeachers.Size = new System.Drawing.Size(939, 354);
+            this.listViewTeachers.Size = new System.Drawing.Size(503, 354);
             this.listViewTeachers.TabIndex = 0;
             this.listViewTeachers.UseCompatibleStateImageBehavior = false;
+            this.listViewTeachers.View = System.Windows.Forms.View.Details;
+            this.listViewTeachers.SelectedIndexChanged += new System.EventHandler(this.listViewTeachers_SelectedIndexChanged);
+            // 
+            // labteacher
+            // 
+            this.labteacher.AutoSize = true;
+            this.labteacher.Font = new System.Drawing.Font("Microsoft Sans Serif", 17F);
+            this.labteacher.Location = new System.Drawing.Point(19, 13);
+            this.labteacher.Name = "labteacher";
+            this.labteacher.Size = new System.Drawing.Size(137, 33);
+            this.labteacher.TabIndex = 1;
+            this.labteacher.Text = "Teachers";
+            // 
+            // pictureBox2
+            // 
+            this.pictureBox2.Image = global::SomerenUI.Properties.Resources.someren;
+            this.pictureBox2.Location = new System.Drawing.Point(943, 12);
+            this.pictureBox2.Name = "pictureBox2";
+            this.pictureBox2.Size = new System.Drawing.Size(287, 174);
+            this.pictureBox2.TabIndex = 2;
+            this.pictureBox2.TabStop = false;
+            // 
+            // TeacherID
+            // 
+            this.TeacherID.Text = "teacherID";
+            this.TeacherID.Width = 125;
+            // 
+            // FirstName
+            // 
+            this.FirstName.Text = "Firstname";
+            this.FirstName.Width = 125;
+            // 
+            // LastName
+            // 
+            this.LastName.Text = "Lastname";
+            this.LastName.Width = 125;
+            // 
+            // Supervisor
+            // 
+            this.Supervisor.Text = "Supervisor";
+            this.Supervisor.Width = 125;
             // 
             // SomerenUI
             // 
@@ -262,6 +320,8 @@
             this.pnlStudents.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.pnlTeachers.ResumeLayout(false);
+            this.pnlTeachers.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -290,6 +350,12 @@
         private System.Windows.Forms.ColumnHeader studentDOB;      
         private System.Windows.Forms.Panel pnlTeachers;
         private System.Windows.Forms.ListView listViewTeachers;
+        private System.Windows.Forms.PictureBox pictureBox2;
+        private System.Windows.Forms.Label labteacher;
+        private System.Windows.Forms.ColumnHeader TeacherID;
+        private System.Windows.Forms.ColumnHeader FirstName;
+        private System.Windows.Forms.ColumnHeader LastName;
+        private System.Windows.Forms.ColumnHeader Supervisor;
     }
 }
 

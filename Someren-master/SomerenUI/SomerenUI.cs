@@ -76,23 +76,63 @@ namespace SomerenUI
 
                 pnlTeachers.Show();
 
-                
+               
+
+
+
 
 
                 try
                 {
+
+                   
                     // fill the students listview within the students panel with a list of students
                     TeacherService teachService = new TeacherService(); ;
                     List<Teacher> teacherList = teachService.GetTeachers(); ;
-
+                   
+                    
                     // clear the listview before filling it again
                     listViewTeachers.Clear();
 
+                   
+                   
+                    
+
                     foreach (Teacher t in teacherList)
                     {
-                        ListViewItem li = new ListViewItem(t.Name);
+                        ListViewItem li = new ListViewItem(t.Number.ToString());
                         listViewTeachers.Items.Add(li);
+                       
                     }
+
+                    
+                   
+
+                    foreach(Teacher t in teacherList)
+                    {
+                        ListViewItem li2 = new ListViewItem(t.FirstName.ToString());
+                        listViewTeachers.Items.Add(li2);
+                       
+                    }
+                   
+                   
+
+                    foreach (Teacher t in teacherList)
+                    {
+                       
+                        ListViewItem li3 = new ListViewItem(t.LastName.ToString());
+                        listViewTeachers.Items.Add(li3);
+                    }
+
+                   
+
+                    foreach (Teacher t in teacherList)
+                    {
+
+                       ListViewItem li4 = new ListViewItem(t.Supervisor.ToString());
+                       listViewTeachers.Items.Add(li4);
+                    }
+
                 }
                 catch (Exception e)
                 {
@@ -137,6 +177,16 @@ namespace SomerenUI
         }
 
         private void panel1_Paint(object sender, PaintEventArgs e)
+        {
+
+        }
+
+        private void roomsToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void listViewTeachers_SelectedIndexChanged(object sender, EventArgs e)
         {
 
         }
