@@ -31,6 +31,7 @@ namespace SomerenUI
             {
                 // hide all other panels
                 pnlStudents.Hide();
+                pnlTeachers.Hide();
 
                 // show dashboard
                 pnlDashboard.Show();
@@ -41,6 +42,7 @@ namespace SomerenUI
                 // hide all other panels
                 pnlDashboard.Hide();
                 imgDashboard.Hide();
+                pnlTeachers.Hide();
 
                 // show students
                 pnlStudents.Show();
@@ -63,6 +65,38 @@ namespace SomerenUI
                 catch (Exception e)
                 {
                     MessageBox.Show("Something went wrong while loading the students: " + e.Message);
+                }
+            }
+            else if (panelName == "Lecturers")
+            {
+                // hide all other panels
+                pnlDashboard.Hide();
+                imgDashboard.Hide();
+                pnlStudents.Hide();
+
+                pnlTeachers.Show();
+
+                
+
+
+                try
+                {
+                    // fill the students listview within the students panel with a list of students
+                    TeacherService teachService = new TeacherService(); ;
+                    List<Teacher> teacherList = teachService.GetTeachers(); ;
+
+                    // clear the listview before filling it again
+                    listViewTeachers.Clear();
+
+                    foreach (Teacher t in teacherList)
+                    {
+                        ListViewItem li = new ListViewItem(t.Name);
+                        listViewTeachers.Items.Add(li);
+                    }
+                }
+                catch (Exception e)
+                {
+                    MessageBox.Show("Something went wrong while loading the Teachers: " + e.Message);
                 }
             }
         }
@@ -99,7 +133,12 @@ namespace SomerenUI
 
         private void lecturersToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            showPanel("lecturers");
+            showPanel("Lecturers");
+        }
+
+        private void panel1_Paint(object sender, PaintEventArgs e)
+        {
+
         }
     }
 }
