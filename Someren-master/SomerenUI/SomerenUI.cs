@@ -24,7 +24,7 @@ namespace SomerenUI
             {
                 // hide all other panels
                 pnlStudents.Hide();
-                //pnlTeachers.Hide();
+                pnlTeachers.Hide();
 
                 // show dashboard
                 pnlDashboard.Show();
@@ -35,7 +35,7 @@ namespace SomerenUI
                 // hide all other panels
                 pnlDashboard.Hide();
                 imgDashboard.Hide();
-                //pnlTeachers.Hide();
+                pnlTeachers.Hide();
 
                 // show students
                 pnlStudents.Show();
@@ -68,16 +68,14 @@ namespace SomerenUI
                 imgDashboard.Hide();
                 pnlStudents.Hide();
 
-<<<<<<< HEAD
+
                 pnlTeachers.Show();
 
                
 
 
 
-=======
-                //pnlTeachers.Show();
->>>>>>> be6577fe470f9b7502ab89a5c3df8866a782a438
+
 
 
                 try
@@ -90,7 +88,7 @@ namespace SomerenUI
                    
                     
                     // clear the listview before filling it again
-                    //listViewTeachers.Clear();
+                    listViewTeachers.Clear();
 
                    
                    
@@ -98,14 +96,13 @@ namespace SomerenUI
 
                     foreach (Teacher t in teacherList)
                     {
-<<<<<<< HEAD
+
                         ListViewItem li = new ListViewItem(t.Number.ToString());
                         listViewTeachers.Items.Add(li);
                        
-=======
-                        ListViewItem li = new ListViewItem(t.Name);
-                        //listViewTeachers.Items.Add(li);
->>>>>>> be6577fe470f9b7502ab89a5c3df8866a782a438
+
+                       
+
                     }
 
                     
@@ -166,7 +163,7 @@ namespace SomerenUI
             showPanel("Students");
         }
 
-<<<<<<< HEAD
+
         private void lecturersToolStripMenuItem_Click(object sender, EventArgs e)
         {
             showPanel("Lecturers");
@@ -186,7 +183,6 @@ namespace SomerenUI
         {
 
         }
-=======
->>>>>>> be6577fe470f9b7502ab89a5c3df8866a782a438
+
     }
 }

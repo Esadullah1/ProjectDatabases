@@ -48,7 +48,7 @@
             this.listViewStudents = new System.Windows.Forms.ListView();
             this.studentID = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.studentName = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
-<<<<<<< HEAD
+
             this.studentDOB = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.lbl_Students = new System.Windows.Forms.Label();
@@ -60,21 +60,21 @@
             this.FirstName = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.LastName = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.Supervisor = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
-=======
+
             this.label2 = new System.Windows.Forms.Label();
             this.lbl_Dashboard = new System.Windows.Forms.Label();
->>>>>>> be6577fe470f9b7502ab89a5c3df8866a782a438
+
             ((System.ComponentModel.ISupportInitialize)(this.imgDashboard)).BeginInit();
             this.menuStrip1.SuspendLayout();
             this.pnlDashboard.SuspendLayout();
             this.pnlStudents.SuspendLayout();
-<<<<<<< HEAD
+
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.pnlTeachers.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
-=======
+
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
->>>>>>> be6577fe470f9b7502ab89a5c3df8866a782a438
+
             this.SuspendLayout();
             // 
             // imgDashboard
@@ -252,7 +252,7 @@
             this.label2.Tag = "pnlStudents";
             this.label2.Text = "Students";
             // 
-<<<<<<< HEAD
+
             // pnlTeachers
             // 
             this.pnlTeachers.Controls.Add(this.pictureBox2);
@@ -320,7 +320,7 @@
             // 
             this.Supervisor.Text = "Supervisor";
             this.Supervisor.Width = 125;
-=======
+
             // lbl_Dashboard
             // 
             this.lbl_Dashboard.AutoSize = true;
@@ -330,7 +330,7 @@
             this.lbl_Dashboard.Size = new System.Drawing.Size(371, 25);
             this.lbl_Dashboard.TabIndex = 1;
             this.lbl_Dashboard.Text = "Welcome to the Someren Application!";
->>>>>>> be6577fe470f9b7502ab89a5c3df8866a782a438
+
             // 
             // SomerenUI
             // 
@@ -353,14 +353,14 @@
             this.pnlDashboard.PerformLayout();
             this.pnlStudents.ResumeLayout(false);
             this.pnlStudents.PerformLayout();
-<<<<<<< HEAD
+
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.pnlTeachers.ResumeLayout(false);
             this.pnlTeachers.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).EndInit();
-=======
+
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
->>>>>>> be6577fe470f9b7502ab89a5c3df8866a782a438
+
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -387,7 +387,7 @@
         private System.Windows.Forms.ListView listViewStudents;
         private System.Windows.Forms.ColumnHeader studentID;
         private System.Windows.Forms.ColumnHeader studentName;
-<<<<<<< HEAD
+
         private System.Windows.Forms.ColumnHeader studentDOB;      
         private System.Windows.Forms.Panel pnlTeachers;
         private System.Windows.Forms.ListView listViewTeachers;
@@ -397,13 +397,13 @@
         private System.Windows.Forms.ColumnHeader FirstName;
         private System.Windows.Forms.ColumnHeader LastName;
         private System.Windows.Forms.ColumnHeader Supervisor;
-=======
+
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.DataGridView dataGridView1;
         private System.Windows.Forms.DataGridViewTextBoxColumn id;
         private System.Windows.Forms.DataGridViewTextBoxColumn name;
         private System.Windows.Forms.DataGridViewTextBoxColumn DOB;
->>>>>>> be6577fe470f9b7502ab89a5c3df8866a782a438
+
     }
 }
 
