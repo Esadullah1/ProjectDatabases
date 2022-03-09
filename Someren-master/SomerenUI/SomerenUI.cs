@@ -178,20 +178,6 @@ namespace SomerenUI
             showPanel("Lecturers");
         }
 
-        private void panel1_Paint(object sender, PaintEventArgs e)
-        {
-
-        }
-
-        private void roomsToolStripMenuItem_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void listViewTeachers_SelectedIndexChanged(object sender, EventArgs e)
-        {
-
-        }
 
     }
 }
