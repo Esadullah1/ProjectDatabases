@@ -24,7 +24,10 @@ namespace SomerenUI
             {
                 // hide all other panels
                 pnlStudents.Hide();
+
                 panelTeachers.Hide();
+
+                pnlTeachers.Hide();
 
                 // show dashboard
                 pnlDashboard.Show();
@@ -35,7 +38,10 @@ namespace SomerenUI
                 // hide all other panels
                 pnlDashboard.Hide();
                 imgDashboard.Hide();
+
                 panelTeachers.Hide();
+
+                pnlTeachers.Hide();
 
                 // show students
                 pnlStudents.Show();
@@ -67,11 +73,20 @@ namespace SomerenUI
                 // hide all other panels
                 pnlDashboard.Hide();
                 imgDashboard.Hide();
+
                 pnlStudents.Show();
                 
                 panelTeachers.Show();
 
                
+
+                pnlStudents.Hide();
+
+
+                pnlTeachers.Show();
+
+               
+
                 try
                 {
 
@@ -82,7 +97,7 @@ namespace SomerenUI
                    
                     
                     // clear the listview before filling it again
-                    //listViewTeachers.Clear();
+                    listViewTeachers.Clear();
 
                    
                    
@@ -95,8 +110,11 @@ namespace SomerenUI
                         listViewTeach.Items.Add(li);
                        
 
+
                         //ListViewItem li = new ListViewItem(t.Name);
                         //listViewTeachers.Items.Add(li);
+
+                       
 
                     }
 
@@ -158,6 +176,21 @@ namespace SomerenUI
         private void lecturersToolStripMenuItem_Click(object sender, EventArgs e)
         {
             showPanel("Lecturers");
+        }
+
+        private void panel1_Paint(object sender, PaintEventArgs e)
+        {
+
+        }
+
+        private void roomsToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void listViewTeachers_SelectedIndexChanged(object sender, EventArgs e)
+        {
+
         }
 
     }
