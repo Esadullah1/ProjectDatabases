@@ -26,7 +26,7 @@ namespace SomerenUI
                 pnlStudents.Hide();
 
                 panelTeachers.Hide();
-
+                PanelRooms.Hide();
                 pnlTeachers.Hide();
 
                 // show dashboard
@@ -40,7 +40,7 @@ namespace SomerenUI
                 imgDashboard.Hide();
 
                 panelTeachers.Hide();
-
+                PanelRooms.Hide();
                 pnlTeachers.Hide();
 
                 // show students
@@ -149,8 +149,45 @@ namespace SomerenUI
                     MessageBox.Show("Something went wrong while loading the Teachers: " + e.Message);
                 }
             }
-            
+            else if (panelName == "Rooms")
+            {
+                // hide all other panels
+                pnlDashboard.Hide();
+                imgDashboard.Hide();
+                pnlStudents.Hide();
+                panelTeachers.Hide();
+                PanelRooms.Show();
+                listViewRooms.Show();
+
+
+                try
+                {
+                    // fill the students listview within the students panel with a list of students
+                    RoomService roomService = new RoomService(); ;
+                    List<Room> roomList = roomService.GetRooms();
+
+                    foreach (Room r in roomList)
+                    {
+                        string[] arr = new string[3];
+                        arr[0] = r.RoomID.ToString();
+                        arr[1] = r.Capacity.ToString();
+                        arr[2] = r.Type.ToString();
+                        ListViewItem li = new ListViewItem(arr);
+                        listViewRooms.Items.Add(li);
+                    }
+                }
+                catch (Exception e)
+                {
+                    MessageBox.Show("Something went wrong while loading the students: " + e.Message);
+                }
+
+
+
+
+            }
         }
+
+
 
 
         private void exitToolStripMenuItem_Click(object sender, EventArgs e)
@@ -178,6 +215,9 @@ namespace SomerenUI
             showPanel("Lecturers");
         }
 
-
+        private void roomsToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            showPanel("Rooms");
+        }
     }
 }
