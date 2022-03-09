@@ -2,12 +2,6 @@
 using SomerenModel;
 using System;
 using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
-using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
 
 namespace SomerenUI
@@ -26,12 +20,11 @@ namespace SomerenUI
 
         private void showPanel(string panelName)
         {
-
             if (panelName == "Dashboard")
             {
                 // hide all other panels
                 pnlStudents.Hide();
-                pnlTeachers.Hide();
+                //pnlTeachers.Hide();
 
                 // show dashboard
                 pnlDashboard.Show();
@@ -42,7 +35,7 @@ namespace SomerenUI
                 // hide all other panels
                 pnlDashboard.Hide();
                 imgDashboard.Hide();
-                pnlTeachers.Hide();
+                //pnlTeachers.Hide();
 
                 // show students
                 pnlStudents.Show();
@@ -53,12 +46,13 @@ namespace SomerenUI
                     StudentService studService = new StudentService(); ;
                     List<Student> studentList = studService.GetStudents(); ;
 
-                    // clear the listview before filling it again
-                    listViewStudents.Clear();
-
                     foreach (Student s in studentList)
                     {
-                        ListViewItem li = new ListViewItem(s.Name);
+                        string[] arr = new string[3];
+                        arr[0] = s.studentID.ToString();
+                        arr[1] = s.studentName;
+                        //arr[2] = s.studentDOB.ToString();
+                        ListViewItem li = new ListViewItem(arr);
                         listViewStudents.Items.Add(li);
                     }
                 }
@@ -74,12 +68,16 @@ namespace SomerenUI
                 imgDashboard.Hide();
                 pnlStudents.Hide();
 
+<<<<<<< HEAD
                 pnlTeachers.Show();
 
                
 
 
 
+=======
+                //pnlTeachers.Show();
+>>>>>>> be6577fe470f9b7502ab89a5c3df8866a782a438
 
 
                 try
@@ -92,7 +90,7 @@ namespace SomerenUI
                    
                     
                     // clear the listview before filling it again
-                    listViewTeachers.Clear();
+                    //listViewTeachers.Clear();
 
                    
                    
@@ -100,9 +98,14 @@ namespace SomerenUI
 
                     foreach (Teacher t in teacherList)
                     {
+<<<<<<< HEAD
                         ListViewItem li = new ListViewItem(t.Number.ToString());
                         listViewTeachers.Items.Add(li);
                        
+=======
+                        ListViewItem li = new ListViewItem(t.Name);
+                        //listViewTeachers.Items.Add(li);
+>>>>>>> be6577fe470f9b7502ab89a5c3df8866a782a438
                     }
 
                     
@@ -139,12 +142,9 @@ namespace SomerenUI
                     MessageBox.Show("Something went wrong while loading the Teachers: " + e.Message);
                 }
             }
+            
         }
 
-        private void dashboardToolStripMenuItem_Click(object sender, EventArgs e)
-        {
-            //
-        }
 
         private void exitToolStripMenuItem_Click(object sender, EventArgs e)
         {
@@ -154,11 +154,6 @@ namespace SomerenUI
         private void dashboardToolStripMenuItem1_Click(object sender, EventArgs e)
         {
             showPanel("Dashboard");
-        }
-
-        private void label1_Click(object sender, EventArgs e)
-        {
-
         }
 
         private void imgDashboard_Click(object sender, EventArgs e)
@@ -171,6 +166,7 @@ namespace SomerenUI
             showPanel("Students");
         }
 
+<<<<<<< HEAD
         private void lecturersToolStripMenuItem_Click(object sender, EventArgs e)
         {
             showPanel("Lecturers");
@@ -190,5 +186,7 @@ namespace SomerenUI
         {
 
         }
+=======
+>>>>>>> be6577fe470f9b7502ab89a5c3df8866a782a438
     }
 }
