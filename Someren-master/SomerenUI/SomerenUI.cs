@@ -24,6 +24,9 @@ namespace SomerenUI
             {
                 // hide all other panels
                 pnlStudents.Hide();
+
+                panelTeachers.Hide();
+
                 pnlTeachers.Hide();
 
                 // show dashboard
@@ -35,10 +38,14 @@ namespace SomerenUI
                 // hide all other panels
                 pnlDashboard.Hide();
                 imgDashboard.Hide();
+
+                panelTeachers.Hide();
+
                 pnlTeachers.Hide();
 
                 // show students
                 pnlStudents.Show();
+
 
                 try
                 {
@@ -66,17 +73,19 @@ namespace SomerenUI
                 // hide all other panels
                 pnlDashboard.Hide();
                 imgDashboard.Hide();
+
+                pnlStudents.Show();
+                
+                panelTeachers.Show();
+
+               
+
                 pnlStudents.Hide();
 
 
                 pnlTeachers.Show();
 
                
-
-
-
-
-
 
                 try
                 {
@@ -98,20 +107,21 @@ namespace SomerenUI
                     {
 
                         ListViewItem li = new ListViewItem(t.Number.ToString());
-                        listViewTeachers.Items.Add(li);
+                        listViewTeach.Items.Add(li);
                        
+
+
+                        //ListViewItem li = new ListViewItem(t.Name);
+                        //listViewTeachers.Items.Add(li);
 
                        
 
                     }
 
-                    
-                   
-
                     foreach(Teacher t in teacherList)
                     {
                         ListViewItem li2 = new ListViewItem(t.FirstName.ToString());
-                        listViewTeachers.Items.Add(li2);
+                        listViewTeach.Items.Add(li2);
                        
                     }
                    
@@ -121,7 +131,7 @@ namespace SomerenUI
                     {
                        
                         ListViewItem li3 = new ListViewItem(t.LastName.ToString());
-                        listViewTeachers.Items.Add(li3);
+                        listViewTeach.Items.Add(li3);
                     }
 
                    
@@ -130,7 +140,7 @@ namespace SomerenUI
                     {
 
                        ListViewItem li4 = new ListViewItem(t.Supervisor.ToString());
-                       listViewTeachers.Items.Add(li4);
+                       listViewTeach.Items.Add(li4);
                     }
 
                 }
@@ -163,26 +173,11 @@ namespace SomerenUI
             showPanel("Students");
         }
 
-
         private void lecturersToolStripMenuItem_Click(object sender, EventArgs e)
         {
             showPanel("Lecturers");
         }
 
-        private void panel1_Paint(object sender, PaintEventArgs e)
-        {
-
-        }
-
-        private void roomsToolStripMenuItem_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void listViewTeachers_SelectedIndexChanged(object sender, EventArgs e)
-        {
-
-        }
 
     }
 }
