@@ -97,7 +97,7 @@
             this.menuStrip1.Location = new System.Drawing.Point(0, 0);
             this.menuStrip1.Name = "menuStrip1";
             this.menuStrip1.Padding = new System.Windows.Forms.Padding(9, 3, 0, 3);
-            this.menuStrip1.Size = new System.Drawing.Size(2884, 42);
+            this.menuStrip1.Size = new System.Drawing.Size(1970, 42);
             this.menuStrip1.TabIndex = 1;
             this.menuStrip1.Text = "menuStrip1";
             // 
@@ -164,14 +164,15 @@
             this.pnlDashboard.Margin = new System.Windows.Forms.Padding(6);
             this.pnlDashboard.Name = "pnlDashboard";
             this.pnlDashboard.Size = new System.Drawing.Size(1800, 900);
-            this.pnlDashboard.TabIndex = 2;
+            this.pnlDashboard.TabIndex = 4;
             // 
             // pnlStudents
             // 
+            this.pnlStudents.Controls.Add(this.panelTeachers);
             this.pnlStudents.Controls.Add(this.Students);
             this.pnlStudents.Controls.Add(this.listViewStudents);
             this.pnlStudents.Location = new System.Drawing.Point(0, 0);
-            this.pnlStudents.Margin = new System.Windows.Forms.Padding(9);
+            this.pnlStudents.Margin = new System.Windows.Forms.Padding(6);
             this.pnlStudents.Name = "pnlStudents";
             this.pnlStudents.Size = new System.Drawing.Size(1800, 900);
             this.pnlStudents.TabIndex = 4;
@@ -180,7 +181,7 @@
             // 
             this.Students.AutoSize = true;
             this.Students.Font = new System.Drawing.Font("Microsoft Sans Serif", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.Students.Location = new System.Drawing.Point(140, 56);
+            this.Students.Location = new System.Drawing.Point(64, 48);
             this.Students.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.Students.Name = "Students";
             this.Students.Size = new System.Drawing.Size(222, 55);
@@ -194,7 +195,7 @@
             this.studentName});
             this.listViewStudents.GridLines = true;
             this.listViewStudents.HideSelection = false;
-            this.listViewStudents.Location = new System.Drawing.Point(154, 191);
+            this.listViewStudents.Location = new System.Drawing.Point(74, 161);
             this.listViewStudents.Margin = new System.Windows.Forms.Padding(9);
             this.listViewStudents.Name = "listViewStudents";
             this.listViewStudents.Size = new System.Drawing.Size(1000, 599);
@@ -227,7 +228,7 @@
             // 
             this.panelTeachers.Controls.Add(this.label1);
             this.panelTeachers.Controls.Add(this.listViewTeach);
-            this.panelTeachers.Location = new System.Drawing.Point(25, 50);
+            this.panelTeachers.Location = new System.Drawing.Point(0, 1);
             this.panelTeachers.Margin = new System.Windows.Forms.Padding(9);
             this.panelTeachers.Name = "panelTeachers";
             this.panelTeachers.Size = new System.Drawing.Size(1800, 900);
@@ -237,7 +238,7 @@
             // 
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.Location = new System.Drawing.Point(140, 56);
+            this.label1.Location = new System.Drawing.Point(76, 48);
             this.label1.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(233, 55);
@@ -253,10 +254,10 @@
             this.superv});
             this.listViewTeach.GridLines = true;
             this.listViewTeach.HideSelection = false;
-            this.listViewTeach.Location = new System.Drawing.Point(154, 191);
+            this.listViewTeach.Location = new System.Drawing.Point(86, 143);
             this.listViewTeach.Margin = new System.Windows.Forms.Padding(9);
             this.listViewTeach.Name = "listViewTeach";
-            this.listViewTeach.Size = new System.Drawing.Size(2422, 935);
+            this.listViewTeach.Size = new System.Drawing.Size(1244, 627);
             this.listViewTeach.TabIndex = 5;
             this.listViewTeach.TileSize = new System.Drawing.Size(1, 1);
             this.listViewTeach.UseCompatibleStateImageBehavior = false;
@@ -367,8 +368,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(12F, 25F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(2884, 1517);
-            this.Controls.Add(this.panelTeachers);
+            this.ClientSize = new System.Drawing.Size(1970, 1517);
             this.Controls.Add(this.pnlDashboard);
             this.Controls.Add(this.menuStrip1);
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
