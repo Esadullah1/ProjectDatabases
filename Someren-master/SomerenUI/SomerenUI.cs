@@ -24,8 +24,8 @@ namespace SomerenUI
             {
                 // hide all other panels
                 pnlStudents.Hide();
-
-                panelTeachers.Hide();
+                panelRooms.Hide();
+               
 
                 pnlTeachers.Hide();
 
@@ -39,7 +39,7 @@ namespace SomerenUI
                 pnlDashboard.Hide();
                 imgDashboard.Hide();
 
-                panelTeachers.Hide();
+                panelRooms.Hide();
 
                 pnlTeachers.Hide();
 
@@ -71,86 +71,43 @@ namespace SomerenUI
             else if (panelName == "Lecturers")
             {
                 // hide all other panels
+            }
+        
+            
+            else if (panelName == "Rooms")
+            {
+                // hide all other panels
                 pnlDashboard.Hide();
                 imgDashboard.Hide();
-
-                pnlStudents.Show();
-                
-                panelTeachers.Show();
-
-               
-
                 pnlStudents.Hide();
-
-
-                pnlTeachers.Show();
-
                
+                panelRooms.Show();
+                listViewRooms.Show();
+
 
                 try
                 {
-
-                   
                     // fill the students listview within the students panel with a list of students
-                    TeacherService teachService = new TeacherService(); ;
-                    List<Teacher> teacherList = teachService.GetTeachers(); ;
-                   
-                    
-                    // clear the listview before filling it again
-                    listViewTeachers.Clear();
+                    RoomService roomService = new RoomService(); ;
+                    List<Room> roomList = roomService.GetRooms();
 
-                   
-                   
-                    
-
-                    foreach (Teacher t in teacherList)
+                    foreach (Room r in roomList)
                     {
-
-                        ListViewItem li = new ListViewItem(t.Number.ToString());
-                        listViewTeach.Items.Add(li);
-                       
-
-
-                        //ListViewItem li = new ListViewItem(t.Name);
-                        //listViewTeachers.Items.Add(li);
-
-                       
-
+                        string[] arr = new string[3];
+                        arr[0] = r.RoomID.ToString();
+                        arr[1] = r.Capacity.ToString();
+                        arr[2] = r.Type.ToString();
+                        ListViewItem li = new ListViewItem(arr);
+                        listViewRooms.Items.Add(li);
                     }
-
-                    foreach(Teacher t in teacherList)
-                    {
-                        ListViewItem li2 = new ListViewItem(t.FirstName.ToString());
-                        listViewTeach.Items.Add(li2);
-                       
-                    }
-                   
-                   
-
-                    foreach (Teacher t in teacherList)
-                    {
-                       
-                        ListViewItem li3 = new ListViewItem(t.LastName.ToString());
-                        listViewTeach.Items.Add(li3);
-                    }
-
-                   
-
-                    foreach (Teacher t in teacherList)
-                    {
-
-                       ListViewItem li4 = new ListViewItem(t.Supervisor.ToString());
-                       listViewTeach.Items.Add(li4);
-                    }
-
                 }
                 catch (Exception e)
                 {
-                    MessageBox.Show("Something went wrong while loading the Teachers: " + e.Message);
+                    MessageBox.Show("Something went wrong while loading the students: " + e.Message);
                 }
             }
-            
-        }
+
+            }
 
 
         private void exitToolStripMenuItem_Click(object sender, EventArgs e)
@@ -176,6 +133,11 @@ namespace SomerenUI
         private void lecturersToolStripMenuItem_Click(object sender, EventArgs e)
         {
             showPanel("Lecturers");
+        }
+
+        private void roomsToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            showPanel("Rooms");
         }
 
 
