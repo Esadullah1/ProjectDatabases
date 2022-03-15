@@ -1,11 +1,9 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
-# Visual Studio 14
-VisualStudioVersion = 14.0.25420.1
+# Visual Studio Version 17
+VisualStudioVersion = 17.1.32228.430
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SomerenLogic", "SomerenLogic\SomerenLogic.csproj", "{715FC326-1104-4E49-8DF2-A36E0458067D}"
-EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SomerenDAL", "SomerenDAL\SomerenDAL.csproj", "{5C8BDA73-F134-4AF6-BB41-DBE88EBA2615}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SomerenModel", "SomerenModel\SomerenModel.csproj", "{90A9ED02-35D3-4D84-80E4-458BC835C722}"
 EndProject
@@ -21,10 +19,6 @@ Global
 		{715FC326-1104-4E49-8DF2-A36E0458067D}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{715FC326-1104-4E49-8DF2-A36E0458067D}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{715FC326-1104-4E49-8DF2-A36E0458067D}.Release|Any CPU.Build.0 = Release|Any CPU
-		{5C8BDA73-F134-4AF6-BB41-DBE88EBA2615}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{5C8BDA73-F134-4AF6-BB41-DBE88EBA2615}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{5C8BDA73-F134-4AF6-BB41-DBE88EBA2615}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{5C8BDA73-F134-4AF6-BB41-DBE88EBA2615}.Release|Any CPU.Build.0 = Release|Any CPU
 		{90A9ED02-35D3-4D84-80E4-458BC835C722}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
 		{90A9ED02-35D3-4D84-80E4-458BC835C722}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{90A9ED02-35D3-4D84-80E4-458BC835C722}.Release|Any CPU.ActiveCfg = Release|Any CPU
