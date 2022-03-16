@@ -11,5 +11,17 @@ namespace SomerenLogic
 {
     class RevenueService
     {
+        RevenueDao revenuedb;
+
+        public RevenueService()
+        {
+            revenuedb = new RevenueDao();
+        }
+
+        public List<Revenue> GetRevenue()
+        {
+            List<Revenue> revenue = revenuedb.GetPrice();
+            return revenue;
+        }
     }
 }

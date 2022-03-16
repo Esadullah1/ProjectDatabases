@@ -12,10 +12,10 @@ namespace SomerenDAL
 {
     public class RevenueDao : BaseDao
     {
-        public List<Room> Get()
+        public List<Revenue> GetPrice()
         {
 
-            string query = "SELECT RoomID, Capacity, Type FROM [Rooms]";
+            string query = $"SELECT [Student] FROM [CashRegister] WHERE [date] BETWEEN ";
 
 
 
@@ -23,23 +23,23 @@ namespace SomerenDAL
             return ReadTables(ExecuteSelectQuery(query, sqlParameters));
         }
 
-        private List<Room> ReadTables(DataTable dataTable)
+        private List<Revenue> ReadTables(DataTable dataTable)
         {
-            List<Room> Rooms = new List<Room>();
+            List<Revenue> revenue = new List<Revenue>();
 
             foreach (DataRow dr in dataTable.Rows)
             {
-                Room Room = new Room()
+                Revenue revenues = new Revenue()
                 {
-                    RoomID = (int)dr["RoomID"],
-                    Capacity = (int)dr["Capacity"],
-                    Type = (bool)dr["Type"]
+                    price = (int)dr["Price"],
+                    turnover = (int)dr["turnover"],
+                    customers = (bool)dr["Student"]
 
 
                 };
-                Rooms.Add(Room);
+                revenue.Add(revenues);
             }
-            return Rooms;
+            return revenue;
         }
     }
 }
