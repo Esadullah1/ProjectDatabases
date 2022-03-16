@@ -65,6 +65,16 @@
             this.FirstName = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.LastName = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.Supervisor = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.panelRooms = new System.Windows.Forms.Panel();
+            this.label2 = new System.Windows.Forms.Label();
+            this.listViewRooms = new System.Windows.Forms.ListView();
+            this.RoomID = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.Capacity = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.Type = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.revenueToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.Revenuepnl = new System.Windows.Forms.Panel();
+            this.label3 = new System.Windows.Forms.Label();
+            this.monthCalendar1 = new System.Windows.Forms.MonthCalendar();
             ((System.ComponentModel.ISupportInitialize)(this.imgDashboard)).BeginInit();
             this.menuStrip1.SuspendLayout();
             this.pnlDashboard.SuspendLayout();
@@ -73,32 +83,34 @@
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.pnlTeachers.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
+            this.panelRooms.SuspendLayout();
+            this.Revenuepnl.SuspendLayout();
             this.SuspendLayout();
             // 
             // imgDashboard
             // 
-            this.imgDashboard.Location = new System.Drawing.Point(1254, 0);
-            this.imgDashboard.Margin = new System.Windows.Forms.Padding(6);
+            this.imgDashboard.Location = new System.Drawing.Point(836, 0);
+            this.imgDashboard.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.imgDashboard.Name = "imgDashboard";
-            this.imgDashboard.Size = new System.Drawing.Size(622, 519);
+            this.imgDashboard.Size = new System.Drawing.Size(415, 332);
             this.imgDashboard.TabIndex = 0;
             this.imgDashboard.TabStop = false;
             this.imgDashboard.Click += new System.EventHandler(this.imgDashboard_Click);
             // 
             // menuStrip1
             // 
-            this.menuStrip1.GripMargin = new System.Windows.Forms.Padding(2, 2, 0, 2);
             this.menuStrip1.ImageScalingSize = new System.Drawing.Size(32, 32);
             this.menuStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.dashboardToolStripMenuItem,
             this.studentsToolStripMenuItem,
             this.lecturersToolStripMenuItem,
             this.activitiesToolStripMenuItem,
-            this.roomsToolStripMenuItem});
+            this.roomsToolStripMenuItem,
+            this.revenueToolStripMenuItem});
             this.menuStrip1.Location = new System.Drawing.Point(0, 0);
             this.menuStrip1.Name = "menuStrip1";
-            this.menuStrip1.Padding = new System.Windows.Forms.Padding(9, 3, 0, 3);
-            this.menuStrip1.Size = new System.Drawing.Size(1924, 42);
+            this.menuStrip1.Padding = new System.Windows.Forms.Padding(6, 2, 0, 2);
+            this.menuStrip1.Size = new System.Drawing.Size(1283, 28);
             this.menuStrip1.TabIndex = 1;
             this.menuStrip1.Text = "menuStrip1";
             // 
@@ -109,52 +121,52 @@
             this.toolStripSeparator1,
             this.exitToolStripMenuItem});
             this.dashboardToolStripMenuItem.Name = "dashboardToolStripMenuItem";
-            this.dashboardToolStripMenuItem.Size = new System.Drawing.Size(155, 36);
+            this.dashboardToolStripMenuItem.Size = new System.Drawing.Size(100, 24);
             this.dashboardToolStripMenuItem.Text = "Application";
             // 
             // dashboardToolStripMenuItem1
             // 
             this.dashboardToolStripMenuItem1.Name = "dashboardToolStripMenuItem1";
-            this.dashboardToolStripMenuItem1.Size = new System.Drawing.Size(264, 44);
+            this.dashboardToolStripMenuItem1.Size = new System.Drawing.Size(165, 26);
             this.dashboardToolStripMenuItem1.Text = "Dashboard";
             this.dashboardToolStripMenuItem1.Click += new System.EventHandler(this.dashboardToolStripMenuItem1_Click);
             // 
             // toolStripSeparator1
             // 
             this.toolStripSeparator1.Name = "toolStripSeparator1";
-            this.toolStripSeparator1.Size = new System.Drawing.Size(261, 6);
+            this.toolStripSeparator1.Size = new System.Drawing.Size(162, 6);
             // 
             // exitToolStripMenuItem
             // 
             this.exitToolStripMenuItem.Name = "exitToolStripMenuItem";
-            this.exitToolStripMenuItem.Size = new System.Drawing.Size(264, 44);
+            this.exitToolStripMenuItem.Size = new System.Drawing.Size(165, 26);
             this.exitToolStripMenuItem.Text = "Exit";
             this.exitToolStripMenuItem.Click += new System.EventHandler(this.exitToolStripMenuItem_Click);
             // 
             // studentsToolStripMenuItem
             // 
             this.studentsToolStripMenuItem.Name = "studentsToolStripMenuItem";
-            this.studentsToolStripMenuItem.Size = new System.Drawing.Size(128, 36);
+            this.studentsToolStripMenuItem.Size = new System.Drawing.Size(80, 24);
             this.studentsToolStripMenuItem.Text = "Students";
             this.studentsToolStripMenuItem.Click += new System.EventHandler(this.studentsToolStripMenuItem_Click);
             // 
             // lecturersToolStripMenuItem
             // 
             this.lecturersToolStripMenuItem.Name = "lecturersToolStripMenuItem";
-            this.lecturersToolStripMenuItem.Size = new System.Drawing.Size(131, 36);
+            this.lecturersToolStripMenuItem.Size = new System.Drawing.Size(82, 24);
             this.lecturersToolStripMenuItem.Text = "Lecturers";
             this.lecturersToolStripMenuItem.Click += new System.EventHandler(this.lecturersToolStripMenuItem_Click_1);
             // 
             // activitiesToolStripMenuItem
             // 
             this.activitiesToolStripMenuItem.Name = "activitiesToolStripMenuItem";
-            this.activitiesToolStripMenuItem.Size = new System.Drawing.Size(130, 36);
+            this.activitiesToolStripMenuItem.Size = new System.Drawing.Size(83, 24);
             this.activitiesToolStripMenuItem.Text = "Activities";
             // 
             // roomsToolStripMenuItem
             // 
             this.roomsToolStripMenuItem.Name = "roomsToolStripMenuItem";
-            this.roomsToolStripMenuItem.Size = new System.Drawing.Size(107, 36);
+            this.roomsToolStripMenuItem.Size = new System.Drawing.Size(69, 24);
             this.roomsToolStripMenuItem.Text = "Rooms";
             this.roomsToolStripMenuItem.Click += new System.EventHandler(this.roomsToolStripMenuItem_Click);
             // 
@@ -162,19 +174,19 @@
             // 
             this.pnlDashboard.Controls.Add(this.lbl_Dashboard);
             this.pnlDashboard.Controls.Add(this.imgDashboard);
-            this.pnlDashboard.Location = new System.Drawing.Point(26, 50);
-            this.pnlDashboard.Margin = new System.Windows.Forms.Padding(6);
+            this.pnlDashboard.Location = new System.Drawing.Point(17, 32);
+            this.pnlDashboard.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.pnlDashboard.Name = "pnlDashboard";
-            this.pnlDashboard.Size = new System.Drawing.Size(1800, 900);
+            this.pnlDashboard.Size = new System.Drawing.Size(1200, 576);
             this.pnlDashboard.TabIndex = 2;
             // 
             // lbl_Dashboard
             // 
             this.lbl_Dashboard.AutoSize = true;
-            this.lbl_Dashboard.Location = new System.Drawing.Point(39, 39);
-            this.lbl_Dashboard.Margin = new System.Windows.Forms.Padding(9, 0, 9, 0);
+            this.lbl_Dashboard.Location = new System.Drawing.Point(26, 25);
+            this.lbl_Dashboard.Margin = new System.Windows.Forms.Padding(6, 0, 6, 0);
             this.lbl_Dashboard.Name = "lbl_Dashboard";
-            this.lbl_Dashboard.Size = new System.Drawing.Size(371, 25);
+            this.lbl_Dashboard.Size = new System.Drawing.Size(243, 17);
             this.lbl_Dashboard.TabIndex = 1;
             this.lbl_Dashboard.Text = "Welcome to the Someren Application!";
             // 
@@ -182,20 +194,19 @@
             // 
             this.pnlStudents.Controls.Add(this.Students);
             this.pnlStudents.Controls.Add(this.listViewStudents);
-            this.pnlStudents.Location = new System.Drawing.Point(26, 50);
-            this.pnlStudents.Margin = new System.Windows.Forms.Padding(9);
+            this.pnlStudents.Location = new System.Drawing.Point(17, 32);
+            this.pnlStudents.Margin = new System.Windows.Forms.Padding(6, 6, 6, 6);
             this.pnlStudents.Name = "pnlStudents";
-            this.pnlStudents.Size = new System.Drawing.Size(1800, 900);
+            this.pnlStudents.Size = new System.Drawing.Size(1200, 576);
             this.pnlStudents.TabIndex = 4;
             // 
             // Students
             // 
             this.Students.AutoSize = true;
             this.Students.Font = new System.Drawing.Font("Microsoft Sans Serif", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.Students.Location = new System.Drawing.Point(20, 20);
-            this.Students.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.Students.Location = new System.Drawing.Point(13, 13);
             this.Students.Name = "Students";
-            this.Students.Size = new System.Drawing.Size(222, 55);
+            this.Students.Size = new System.Drawing.Size(141, 36);
             this.Students.TabIndex = 6;
             this.Students.Text = "Students";
             // 
@@ -207,10 +218,10 @@
             this.DateOfBirth});
             this.listViewStudents.GridLines = true;
             this.listViewStudents.HideSelection = false;
-            this.listViewStudents.Location = new System.Drawing.Point(30, 100);
-            this.listViewStudents.Margin = new System.Windows.Forms.Padding(9);
+            this.listViewStudents.Location = new System.Drawing.Point(20, 64);
+            this.listViewStudents.Margin = new System.Windows.Forms.Padding(6, 6, 6, 6);
             this.listViewStudents.Name = "listViewStudents";
-            this.listViewStudents.Size = new System.Drawing.Size(1250, 600);
+            this.listViewStudents.Size = new System.Drawing.Size(835, 385);
             this.listViewStudents.TabIndex = 5;
             this.listViewStudents.TileSize = new System.Drawing.Size(1, 1);
             this.listViewStudents.UseCompatibleStateImageBehavior = false;
@@ -235,20 +246,19 @@
             // 
             this.panelTeachers.Controls.Add(this.label1);
             this.panelTeachers.Controls.Add(this.listViewTeach);
-            this.panelTeachers.Location = new System.Drawing.Point(26, 50);
-            this.panelTeachers.Margin = new System.Windows.Forms.Padding(9);
+            this.panelTeachers.Location = new System.Drawing.Point(17, 32);
+            this.panelTeachers.Margin = new System.Windows.Forms.Padding(6, 6, 6, 6);
             this.panelTeachers.Name = "panelTeachers";
-            this.panelTeachers.Size = new System.Drawing.Size(1800, 900);
+            this.panelTeachers.Size = new System.Drawing.Size(1200, 576);
             this.panelTeachers.TabIndex = 7;
             // 
             // label1
             // 
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.Location = new System.Drawing.Point(20, 20);
-            this.label1.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.label1.Location = new System.Drawing.Point(13, 13);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(233, 55);
+            this.label1.Size = new System.Drawing.Size(146, 36);
             this.label1.TabIndex = 6;
             this.label1.Text = "Teachers";
             // 
@@ -261,10 +271,10 @@
             this.superv});
             this.listViewTeach.GridLines = true;
             this.listViewTeach.HideSelection = false;
-            this.listViewTeach.Location = new System.Drawing.Point(30, 100);
-            this.listViewTeach.Margin = new System.Windows.Forms.Padding(9);
+            this.listViewTeach.Location = new System.Drawing.Point(20, 64);
+            this.listViewTeach.Margin = new System.Windows.Forms.Padding(6, 6, 6, 6);
             this.listViewTeach.Name = "listViewTeach";
-            this.listViewTeach.Size = new System.Drawing.Size(1250, 600);
+            this.listViewTeach.Size = new System.Drawing.Size(835, 385);
             this.listViewTeach.TabIndex = 5;
             this.listViewTeach.TileSize = new System.Drawing.Size(1, 1);
             this.listViewTeach.UseCompatibleStateImageBehavior = false;
@@ -282,15 +292,8 @@
             // 
             // lname
             // 
-            this.label2.AutoSize = true;
-            this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 16.125F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label2.Location = new System.Drawing.Point(41, 16);
-            this.label2.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(130, 31);
-            this.label2.TabIndex = 7;
-            this.label2.Tag = "pnlStudents";
-            this.label2.Text = "Students";
+            this.lname.Text = "LastName";
+            this.lname.Width = 150;
             // 
             // superv
             // 
@@ -338,7 +341,7 @@
             this.labteacher.Font = new System.Drawing.Font("Microsoft Sans Serif", 17F);
             this.labteacher.Location = new System.Drawing.Point(19, 13);
             this.labteacher.Name = "labteacher";
-            this.labteacher.Size = new System.Drawing.Size(216, 53);
+            this.labteacher.Size = new System.Drawing.Size(137, 33);
             this.labteacher.TabIndex = 1;
             this.labteacher.Text = "Teachers";
             // 
@@ -378,17 +381,105 @@
             this.Supervisor.Text = "Supervisor";
             this.Supervisor.Width = 125;
             // 
+            // panelRooms
+            // 
+            this.panelRooms.Controls.Add(this.label2);
+            this.panelRooms.Controls.Add(this.listViewRooms);
+            this.panelRooms.Location = new System.Drawing.Point(17, 32);
+            this.panelRooms.Margin = new System.Windows.Forms.Padding(6, 6, 6, 6);
+            this.panelRooms.Name = "panelRooms";
+            this.panelRooms.Size = new System.Drawing.Size(1200, 576);
+            this.panelRooms.TabIndex = 8;
+            // 
+            // label2
+            // 
+            this.label2.AutoSize = true;
+            this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label2.Location = new System.Drawing.Point(13, 13);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(114, 36);
+            this.label2.TabIndex = 6;
+            this.label2.Text = "Rooms";
+            // 
+            // listViewRooms
+            // 
+            this.listViewRooms.Columns.AddRange(new System.Windows.Forms.ColumnHeader[] {
+            this.RoomID,
+            this.Capacity,
+            this.Type});
+            this.listViewRooms.GridLines = true;
+            this.listViewRooms.HideSelection = false;
+            this.listViewRooms.Location = new System.Drawing.Point(20, 64);
+            this.listViewRooms.Margin = new System.Windows.Forms.Padding(6, 6, 6, 6);
+            this.listViewRooms.Name = "listViewRooms";
+            this.listViewRooms.Size = new System.Drawing.Size(835, 385);
+            this.listViewRooms.TabIndex = 5;
+            this.listViewRooms.TileSize = new System.Drawing.Size(1, 1);
+            this.listViewRooms.UseCompatibleStateImageBehavior = false;
+            this.listViewRooms.View = System.Windows.Forms.View.Details;
+            // 
+            // RoomID
+            // 
+            this.RoomID.Text = "Room id";
+            this.RoomID.Width = 150;
+            // 
+            // Capacity
+            // 
+            this.Capacity.Text = "Capacity";
+            this.Capacity.Width = 150;
+            // 
+            // Type
+            // 
+            this.Type.Text = "Type (False = StudentRooms/True = TeacherRooms)";
+            this.Type.Width = 150;
+            // 
+            // revenueToolStripMenuItem
+            // 
+            this.revenueToolStripMenuItem.Name = "revenueToolStripMenuItem";
+            this.revenueToolStripMenuItem.Size = new System.Drawing.Size(79, 24);
+            this.revenueToolStripMenuItem.Text = "Revenue";
+            this.revenueToolStripMenuItem.Click += new System.EventHandler(this.revenueToolStripMenuItem_Click);
+            // 
+            // Revenuepnl
+            // 
+            this.Revenuepnl.Controls.Add(this.monthCalendar1);
+            this.Revenuepnl.Controls.Add(this.label3);
+            this.Revenuepnl.Location = new System.Drawing.Point(17, 31);
+            this.Revenuepnl.Name = "Revenuepnl";
+            this.Revenuepnl.Size = new System.Drawing.Size(1094, 500);
+            this.Revenuepnl.TabIndex = 7;
+            // 
+            // label3
+            // 
+            this.label3.AutoSize = true;
+            this.label3.Font = new System.Drawing.Font("Microsoft Sans Serif", 16.16F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label3.Location = new System.Drawing.Point(14, 17);
+            this.label3.Name = "label3";
+            this.label3.Size = new System.Drawing.Size(123, 31);
+            this.label3.TabIndex = 0;
+            this.label3.Text = "Revenue";
+            // 
+            // monthCalendar1
+            // 
+            this.monthCalendar1.Location = new System.Drawing.Point(20, 65);
+            this.monthCalendar1.Name = "monthCalendar1";
+            this.monthCalendar1.TabIndex = 1;
+            this.monthCalendar1.DateChanged += new System.Windows.Forms.DateRangeEventHandler(this.monthCalendar1_DateChanged);
+            // 
             // SomerenUI
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(12F, 25F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1283, 621);
+            this.ClientSize = new System.Drawing.Size(1283, 675);
+            this.Controls.Add(this.Revenuepnl);
+            this.Controls.Add(this.panelRooms);
+            this.Controls.Add(this.panelTeachers);
             this.Controls.Add(this.pnlStudents);
             this.Controls.Add(this.pnlDashboard);
             this.Controls.Add(this.menuStrip1);
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.MainMenuStrip = this.menuStrip1;
-            this.Margin = new System.Windows.Forms.Padding(6);
+            this.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.Name = "SomerenUI";
             this.RightToLeft = System.Windows.Forms.RightToLeft.No;
             this.Text = "SomerenApp";
@@ -406,6 +497,10 @@
             this.pnlTeachers.ResumeLayout(false);
             this.pnlTeachers.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).EndInit();
+            this.panelRooms.ResumeLayout(false);
+            this.panelRooms.PerformLayout();
+            this.Revenuepnl.ResumeLayout(false);
+            this.Revenuepnl.PerformLayout();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -455,11 +550,14 @@
         private System.Windows.Forms.ColumnHeader DateOfBirth;
         private System.Windows.Forms.Panel panelRooms;
         private System.Windows.Forms.Label label2;
-        private System.Windows.Forms.DataGridView dataGridView1;
-        private System.Windows.Forms.DataGridViewTextBoxColumn id;
-        private System.Windows.Forms.DataGridViewTextBoxColumn name;
-        private System.Windows.Forms.DataGridViewTextBoxColumn DOB;
-
+        private System.Windows.Forms.ListView listViewRooms;
+        private System.Windows.Forms.ColumnHeader RoomID;
+        private System.Windows.Forms.ColumnHeader Capacity;
+        private System.Windows.Forms.ColumnHeader Type;
+        private System.Windows.Forms.ToolStripMenuItem revenueToolStripMenuItem;
+        private System.Windows.Forms.Panel Revenuepnl;
+        private System.Windows.Forms.MonthCalendar monthCalendar1;
+        private System.Windows.Forms.Label label3;
     }
 }
 
