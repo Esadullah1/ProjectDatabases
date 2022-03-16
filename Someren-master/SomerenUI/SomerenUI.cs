@@ -80,10 +80,15 @@ namespace SomerenUI
                 pnlDashboard.Hide();
                 imgDashboard.Hide();
                 pnlStudents.Hide();
+<<<<<<< Updated upstream
                
                 panelRooms.Show();
                 listViewRooms.Show();
 
+=======
+
+                pnlTeachers.Show();
+>>>>>>> Stashed changes
 
                 try
                 {
@@ -120,6 +125,10 @@ namespace SomerenUI
             showPanel("Dashboard");
         }
 
+<<<<<<< Updated upstream
+=======
+
+>>>>>>> Stashed changes
         private void imgDashboard_Click(object sender, EventArgs e)
         {
             MessageBox.Show("What happens in Someren, stays in Someren!");
@@ -135,9 +144,16 @@ namespace SomerenUI
             showPanel("Lecturers");
         }
 
+<<<<<<< Updated upstream
         private void roomsToolStripMenuItem_Click(object sender, EventArgs e)
         {
             showPanel("Rooms");
+=======
+
+        private void cashRegisterToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            showPanel("Cash register");
+>>>>>>> Stashed changes
         }
 
 
