@@ -75,6 +75,7 @@
             this.Revenuepnl = new System.Windows.Forms.Panel();
             this.label3 = new System.Windows.Forms.Label();
             this.monthCalendar1 = new System.Windows.Forms.MonthCalendar();
+            this.monthCalendar2 = new System.Windows.Forms.MonthCalendar();
             ((System.ComponentModel.ISupportInitialize)(this.imgDashboard)).BeginInit();
             this.menuStrip1.SuspendLayout();
             this.pnlDashboard.SuspendLayout();
@@ -442,9 +443,10 @@
             // 
             // Revenuepnl
             // 
+            this.Revenuepnl.Controls.Add(this.monthCalendar2);
             this.Revenuepnl.Controls.Add(this.monthCalendar1);
             this.Revenuepnl.Controls.Add(this.label3);
-            this.Revenuepnl.Location = new System.Drawing.Point(17, 31);
+            this.Revenuepnl.Location = new System.Drawing.Point(0, 32);
             this.Revenuepnl.Name = "Revenuepnl";
             this.Revenuepnl.Size = new System.Drawing.Size(1094, 500);
             this.Revenuepnl.TabIndex = 7;
@@ -463,8 +465,16 @@
             // 
             this.monthCalendar1.Location = new System.Drawing.Point(20, 65);
             this.monthCalendar1.Name = "monthCalendar1";
+            this.monthCalendar1.SelectionRange = new System.Windows.Forms.SelectionRange(new System.DateTime(2021, 3, 16, 0, 0, 0, 0), new System.DateTime(2021, 3, 22, 0, 0, 0, 0));
             this.monthCalendar1.TabIndex = 1;
             this.monthCalendar1.DateChanged += new System.Windows.Forms.DateRangeEventHandler(this.monthCalendar1_DateChanged);
+            // 
+            // monthCalendar2
+            // 
+            this.monthCalendar2.Location = new System.Drawing.Point(217, 65);
+            this.monthCalendar2.Name = "monthCalendar2";
+            this.monthCalendar2.SelectionRange = new System.Windows.Forms.SelectionRange(new System.DateTime(2021, 3, 16, 0, 0, 0, 0), new System.DateTime(2021, 3, 22, 0, 0, 0, 0));
+            this.monthCalendar2.TabIndex = 2;
             // 
             // SomerenUI
             // 
@@ -558,6 +568,7 @@
         private System.Windows.Forms.Panel Revenuepnl;
         private System.Windows.Forms.MonthCalendar monthCalendar1;
         private System.Windows.Forms.Label label3;
+        private System.Windows.Forms.MonthCalendar monthCalendar2;
     }
 }
 
