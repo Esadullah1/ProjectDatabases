@@ -72,11 +72,28 @@ namespace SomerenUI
 
                 panelTeachers.Show();
 
+                pnlTeachers.Show();
+
+               
+
+
+
+
+
+
                 try
                 {
                     // fill the students listview within the students panel with a list of students
                     TeacherService teachService = new TeacherService(); ;
                     List<Teacher> teacherList = teachService.GetTeachers(); ;
+                   
+                    
+                    // clear the listview before filling it again
+                    listViewTeachers.Clear();
+
+                   
+                   
+                    
 
                     foreach (Teacher t in teacherList)
                     {
@@ -86,41 +103,40 @@ namespace SomerenUI
                         arr[2] = t.TeacherLastName;
                         arr[3] = t.Supervisors.ToString();
 
-                        ListViewItem li = new ListViewItem(arr);
-                        listViewTeach.Items.Add(li);
+                        ListViewItem li = new ListViewItem(t.Number.ToString());
+                        listViewTeachers.Items.Add(li);
+                       
+
+                       
+
                     }
 
-                }
-                catch (Exception e)
-                {
-                    MessageBox.Show("Something went wrong while loading the Teachers: " + e.Message);
-                }
-            }
-            else if (panelName == "Rooms")
-            {
-                listViewRooms.Items.Clear();
-                pnlDashboard.Hide();
-                imgDashboard.Hide();
-                pnlStudents.Hide();
-                panelTeachers.Hide();
+                    
+                   
 
-                panelRooms.Show();
+                    foreach(Teacher t in teacherList)
+                    {
+                        ListViewItem li2 = new ListViewItem(t.FirstName.ToString());
+                        listViewTeachers.Items.Add(li2);
+                       
+                    }
+                   
+                   
 
+                    foreach (Teacher t in teacherList)
+                    {
+                       
+                        ListViewItem li3 = new ListViewItem(t.LastName.ToString());
+                        listViewTeachers.Items.Add(li3);
+                    }
 
-                try
-                {
-                    // fill the students listview within the students panel with a list of students
-                    RoomService roomService = new RoomService(); ;
-                    List<Room> roomList = roomService.GetRooms();
+                   
 
                     foreach (Room r in roomList)
                     {
-                        string[] arr = new string[3];
-                        arr[0] = r.RoomID.ToString();
-                        arr[1] = r.Capacity.ToString();
-                        arr[2] = r.Type.ToString();
-                        ListViewItem li = new ListViewItem(arr);
-                        listViewRooms.Items.Add(li);
+
+                       ListViewItem li4 = new ListViewItem(t.Supervisor.ToString());
+                       listViewTeachers.Items.Add(li4);
                     }
                 }
                 catch (Exception e)
