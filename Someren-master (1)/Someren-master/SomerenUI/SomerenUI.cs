@@ -109,10 +109,33 @@ namespace SomerenUI
                 panelRooms.Hide();
 
                 Revenuepnl.Show();
-                
+
+                try
+                {
+                    // fill the students listview within the students panel with a list of students
+                    RevenueService revenueService = new RevenueService(); ;
+                    List<Revenue> revenueList = revenueService.GetPrice();
+                   
+
+                    foreach (Revenue r in revenueList)
+                    {
+                        string[] arr = new string[2];
+                        arr[0] = r.student.ToString();
+                        arr[1] = r.drink.ToString();
+                        ListViewItem li = new ListViewItem(arr);
+                        studentrevlist.Items.Add(li);
+                    }
+
+                    
+                }
+                catch (Exception e)
+                {
+                    MessageBox.Show("Something went wrong while loading the Revenue: " + e.Message);
+                }
 
 
-                
+
+
             }
             else if (panelName == "Rooms")
             {
@@ -215,6 +238,11 @@ namespace SomerenUI
             
 
             
+        }
+
+        private void totalpricelist_SelectedIndexChanged(object sender, EventArgs e)
+        {
+
         }
     }
 }

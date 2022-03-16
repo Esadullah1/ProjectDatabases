@@ -39,6 +39,7 @@
             this.lecturersToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.activitiesToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.roomsToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.revenueToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.pnlDashboard = new System.Windows.Forms.Panel();
             this.lbl_Dashboard = new System.Windows.Forms.Label();
             this.pnlStudents = new System.Windows.Forms.Panel();
@@ -71,13 +72,15 @@
             this.RoomID = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.Capacity = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.Type = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
-            this.revenueToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.Revenuepnl = new System.Windows.Forms.Panel();
-            this.label3 = new System.Windows.Forms.Label();
-            this.monthCalendar1 = new System.Windows.Forms.MonthCalendar();
-            this.monthCalendar2 = new System.Windows.Forms.MonthCalendar();
-            this.label4 = new System.Windows.Forms.Label();
+            this.studentrevlist = new System.Windows.Forms.ListView();
+            this.student = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.button1 = new System.Windows.Forms.Button();
+            this.label4 = new System.Windows.Forms.Label();
+            this.monthCalendar2 = new System.Windows.Forms.MonthCalendar();
+            this.monthCalendar1 = new System.Windows.Forms.MonthCalendar();
+            this.label3 = new System.Windows.Forms.Label();
+            this.drink = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             ((System.ComponentModel.ISupportInitialize)(this.imgDashboard)).BeginInit();
             this.menuStrip1.SuspendLayout();
             this.pnlDashboard.SuspendLayout();
@@ -93,7 +96,7 @@
             // imgDashboard
             // 
             this.imgDashboard.Location = new System.Drawing.Point(836, 0);
-            this.imgDashboard.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.imgDashboard.Margin = new System.Windows.Forms.Padding(4);
             this.imgDashboard.Name = "imgDashboard";
             this.imgDashboard.Size = new System.Drawing.Size(415, 332);
             this.imgDashboard.TabIndex = 0;
@@ -112,7 +115,6 @@
             this.revenueToolStripMenuItem});
             this.menuStrip1.Location = new System.Drawing.Point(0, 0);
             this.menuStrip1.Name = "menuStrip1";
-            this.menuStrip1.Padding = new System.Windows.Forms.Padding(6, 2, 0, 2);
             this.menuStrip1.Size = new System.Drawing.Size(1283, 28);
             this.menuStrip1.TabIndex = 1;
             this.menuStrip1.Text = "menuStrip1";
@@ -173,12 +175,19 @@
             this.roomsToolStripMenuItem.Text = "Rooms";
             this.roomsToolStripMenuItem.Click += new System.EventHandler(this.roomsToolStripMenuItem_Click);
             // 
+            // revenueToolStripMenuItem
+            // 
+            this.revenueToolStripMenuItem.Name = "revenueToolStripMenuItem";
+            this.revenueToolStripMenuItem.Size = new System.Drawing.Size(79, 24);
+            this.revenueToolStripMenuItem.Text = "Revenue";
+            this.revenueToolStripMenuItem.Click += new System.EventHandler(this.revenueToolStripMenuItem_Click);
+            // 
             // pnlDashboard
             // 
             this.pnlDashboard.Controls.Add(this.lbl_Dashboard);
             this.pnlDashboard.Controls.Add(this.imgDashboard);
             this.pnlDashboard.Location = new System.Drawing.Point(17, 32);
-            this.pnlDashboard.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.pnlDashboard.Margin = new System.Windows.Forms.Padding(4);
             this.pnlDashboard.Name = "pnlDashboard";
             this.pnlDashboard.Size = new System.Drawing.Size(1200, 576);
             this.pnlDashboard.TabIndex = 2;
@@ -198,7 +207,7 @@
             this.pnlStudents.Controls.Add(this.Students);
             this.pnlStudents.Controls.Add(this.listViewStudents);
             this.pnlStudents.Location = new System.Drawing.Point(17, 32);
-            this.pnlStudents.Margin = new System.Windows.Forms.Padding(6, 6, 6, 6);
+            this.pnlStudents.Margin = new System.Windows.Forms.Padding(6);
             this.pnlStudents.Name = "pnlStudents";
             this.pnlStudents.Size = new System.Drawing.Size(1200, 576);
             this.pnlStudents.TabIndex = 4;
@@ -222,7 +231,7 @@
             this.listViewStudents.GridLines = true;
             this.listViewStudents.HideSelection = false;
             this.listViewStudents.Location = new System.Drawing.Point(20, 64);
-            this.listViewStudents.Margin = new System.Windows.Forms.Padding(6, 6, 6, 6);
+            this.listViewStudents.Margin = new System.Windows.Forms.Padding(6);
             this.listViewStudents.Name = "listViewStudents";
             this.listViewStudents.Size = new System.Drawing.Size(835, 385);
             this.listViewStudents.TabIndex = 5;
@@ -250,7 +259,7 @@
             this.panelTeachers.Controls.Add(this.label1);
             this.panelTeachers.Controls.Add(this.listViewTeach);
             this.panelTeachers.Location = new System.Drawing.Point(17, 32);
-            this.panelTeachers.Margin = new System.Windows.Forms.Padding(6, 6, 6, 6);
+            this.panelTeachers.Margin = new System.Windows.Forms.Padding(6);
             this.panelTeachers.Name = "panelTeachers";
             this.panelTeachers.Size = new System.Drawing.Size(1200, 576);
             this.panelTeachers.TabIndex = 7;
@@ -275,7 +284,7 @@
             this.listViewTeach.GridLines = true;
             this.listViewTeach.HideSelection = false;
             this.listViewTeach.Location = new System.Drawing.Point(20, 64);
-            this.listViewTeach.Margin = new System.Windows.Forms.Padding(6, 6, 6, 6);
+            this.listViewTeach.Margin = new System.Windows.Forms.Padding(6);
             this.listViewTeach.Name = "listViewTeach";
             this.listViewTeach.Size = new System.Drawing.Size(835, 385);
             this.listViewTeach.TabIndex = 5;
@@ -389,7 +398,7 @@
             this.panelRooms.Controls.Add(this.label2);
             this.panelRooms.Controls.Add(this.listViewRooms);
             this.panelRooms.Location = new System.Drawing.Point(17, 32);
-            this.panelRooms.Margin = new System.Windows.Forms.Padding(6, 6, 6, 6);
+            this.panelRooms.Margin = new System.Windows.Forms.Padding(6);
             this.panelRooms.Name = "panelRooms";
             this.panelRooms.Size = new System.Drawing.Size(1200, 576);
             this.panelRooms.TabIndex = 8;
@@ -413,7 +422,7 @@
             this.listViewRooms.GridLines = true;
             this.listViewRooms.HideSelection = false;
             this.listViewRooms.Location = new System.Drawing.Point(20, 64);
-            this.listViewRooms.Margin = new System.Windows.Forms.Padding(6, 6, 6, 6);
+            this.listViewRooms.Margin = new System.Windows.Forms.Padding(6);
             this.listViewRooms.Name = "listViewRooms";
             this.listViewRooms.Size = new System.Drawing.Size(835, 385);
             this.listViewRooms.TabIndex = 5;
@@ -436,15 +445,9 @@
             this.Type.Text = "Type (False = StudentRooms/True = TeacherRooms)";
             this.Type.Width = 150;
             // 
-            // revenueToolStripMenuItem
-            // 
-            this.revenueToolStripMenuItem.Name = "revenueToolStripMenuItem";
-            this.revenueToolStripMenuItem.Size = new System.Drawing.Size(79, 24);
-            this.revenueToolStripMenuItem.Text = "Revenue";
-            this.revenueToolStripMenuItem.Click += new System.EventHandler(this.revenueToolStripMenuItem_Click);
-            // 
             // Revenuepnl
             // 
+            this.Revenuepnl.Controls.Add(this.studentrevlist);
             this.Revenuepnl.Controls.Add(this.button1);
             this.Revenuepnl.Controls.Add(this.label4);
             this.Revenuepnl.Controls.Add(this.monthCalendar2);
@@ -454,6 +457,60 @@
             this.Revenuepnl.Name = "Revenuepnl";
             this.Revenuepnl.Size = new System.Drawing.Size(1094, 500);
             this.Revenuepnl.TabIndex = 7;
+            // 
+            // studentrevlist
+            // 
+            this.studentrevlist.Columns.AddRange(new System.Windows.Forms.ColumnHeader[] {
+            this.student,
+            this.drink});
+            this.studentrevlist.GridLines = true;
+            this.studentrevlist.HideSelection = false;
+            this.studentrevlist.Location = new System.Drawing.Point(464, 65);
+            this.studentrevlist.Name = "studentrevlist";
+            this.studentrevlist.Size = new System.Drawing.Size(178, 352);
+            this.studentrevlist.TabIndex = 5;
+            this.studentrevlist.UseCompatibleStateImageBehavior = false;
+            this.studentrevlist.View = System.Windows.Forms.View.Details;
+            // 
+            // student
+            // 
+            this.student.Text = "student";
+            // 
+            // button1
+            // 
+            this.button1.Location = new System.Drawing.Point(96, 338);
+            this.button1.Name = "button1";
+            this.button1.Size = new System.Drawing.Size(75, 23);
+            this.button1.TabIndex = 4;
+            this.button1.Text = "button1";
+            this.button1.UseVisualStyleBackColor = true;
+            this.button1.Click += new System.EventHandler(this.button1_Click);
+            // 
+            // label4
+            // 
+            this.label4.AutoSize = true;
+            this.label4.Location = new System.Drawing.Point(214, 344);
+            this.label4.Name = "label4";
+            this.label4.Size = new System.Drawing.Size(46, 17);
+            this.label4.TabIndex = 3;
+            this.label4.Text = "label4";
+            this.label4.Click += new System.EventHandler(this.label4_Click);
+            // 
+            // monthCalendar2
+            // 
+            this.monthCalendar2.Location = new System.Drawing.Point(237, 65);
+            this.monthCalendar2.Name = "monthCalendar2";
+            this.monthCalendar2.SelectionRange = new System.Windows.Forms.SelectionRange(new System.DateTime(2021, 3, 16, 0, 0, 0, 0), new System.DateTime(2021, 3, 22, 0, 0, 0, 0));
+            this.monthCalendar2.TabIndex = 2;
+            this.monthCalendar2.DateChanged += new System.Windows.Forms.DateRangeEventHandler(this.monthCalendar2_DateChanged);
+            // 
+            // monthCalendar1
+            // 
+            this.monthCalendar1.Location = new System.Drawing.Point(20, 65);
+            this.monthCalendar1.Name = "monthCalendar1";
+            this.monthCalendar1.SelectionRange = new System.Windows.Forms.SelectionRange(new System.DateTime(2021, 3, 16, 0, 0, 0, 0), new System.DateTime(2021, 3, 22, 0, 0, 0, 0));
+            this.monthCalendar1.TabIndex = 1;
+            this.monthCalendar1.DateChanged += new System.Windows.Forms.DateRangeEventHandler(this.monthCalendar1_DateChanged);
             // 
             // label3
             // 
@@ -465,41 +522,9 @@
             this.label3.TabIndex = 0;
             this.label3.Text = "Revenue";
             // 
-            // monthCalendar1
+            // drink
             // 
-            this.monthCalendar1.Location = new System.Drawing.Point(20, 65);
-            this.monthCalendar1.Name = "monthCalendar1";
-            this.monthCalendar1.SelectionRange = new System.Windows.Forms.SelectionRange(new System.DateTime(2021, 3, 16, 0, 0, 0, 0), new System.DateTime(2021, 3, 22, 0, 0, 0, 0));
-            this.monthCalendar1.TabIndex = 1;
-            this.monthCalendar1.DateChanged += new System.Windows.Forms.DateRangeEventHandler(this.monthCalendar1_DateChanged);
-            // 
-            // monthCalendar2
-            // 
-            this.monthCalendar2.Location = new System.Drawing.Point(217, 65);
-            this.monthCalendar2.Name = "monthCalendar2";
-            this.monthCalendar2.SelectionRange = new System.Windows.Forms.SelectionRange(new System.DateTime(2021, 3, 16, 0, 0, 0, 0), new System.DateTime(2021, 3, 22, 0, 0, 0, 0));
-            this.monthCalendar2.TabIndex = 2;
-            this.monthCalendar2.DateChanged += new System.Windows.Forms.DateRangeEventHandler(this.monthCalendar2_DateChanged);
-            // 
-            // label4
-            // 
-            this.label4.AutoSize = true;
-            this.label4.Location = new System.Drawing.Point(553, 169);
-            this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(46, 17);
-            this.label4.TabIndex = 3;
-            this.label4.Text = "label4";
-            this.label4.Click += new System.EventHandler(this.label4_Click);
-            // 
-            // button1
-            // 
-            this.button1.Location = new System.Drawing.Point(771, 235);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(75, 23);
-            this.button1.TabIndex = 4;
-            this.button1.Text = "button1";
-            this.button1.UseVisualStyleBackColor = true;
-            this.button1.Click += new System.EventHandler(this.button1_Click);
+            this.drink.Text = "drink";
             // 
             // SomerenUI
             // 
@@ -514,7 +539,7 @@
             this.Controls.Add(this.menuStrip1);
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.MainMenuStrip = this.menuStrip1;
-            this.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.Margin = new System.Windows.Forms.Padding(4);
             this.Name = "SomerenUI";
             this.RightToLeft = System.Windows.Forms.RightToLeft.No;
             this.Text = "SomerenApp";
@@ -596,6 +621,9 @@
         private System.Windows.Forms.MonthCalendar monthCalendar2;
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.Button button1;
+        private System.Windows.Forms.ListView studentrevlist;
+        private System.Windows.Forms.ColumnHeader student;
+        private System.Windows.Forms.ColumnHeader drink;
     }
 }
 
