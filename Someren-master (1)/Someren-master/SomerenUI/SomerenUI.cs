@@ -189,7 +189,31 @@ namespace SomerenUI
 
         private void monthCalendar1_DateChanged(object sender, DateRangeEventArgs e)
         {
-           //if(int.Parse(monthCalendar1_DateChanged))
+            
+
+
+
+        }
+
+        private void monthCalendar2_DateChanged(object sender, DateRangeEventArgs e)
+        {
+            
+        }
+
+        private void label4_Click(object sender, EventArgs e)
+        {
+            
+        }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            String startdate = monthCalendar1.SelectionRange.Start.ToString("dd-MM-yyyy");
+            String enddate = monthCalendar2.SelectionRange.Start.ToString("dd-MM-yyyy");
+
+            
+
+            
+
             
         }
     }

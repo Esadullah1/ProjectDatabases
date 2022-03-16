@@ -76,6 +76,8 @@
             this.label3 = new System.Windows.Forms.Label();
             this.monthCalendar1 = new System.Windows.Forms.MonthCalendar();
             this.monthCalendar2 = new System.Windows.Forms.MonthCalendar();
+            this.label4 = new System.Windows.Forms.Label();
+            this.button1 = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.imgDashboard)).BeginInit();
             this.menuStrip1.SuspendLayout();
             this.pnlDashboard.SuspendLayout();
@@ -443,6 +445,8 @@
             // 
             // Revenuepnl
             // 
+            this.Revenuepnl.Controls.Add(this.button1);
+            this.Revenuepnl.Controls.Add(this.label4);
             this.Revenuepnl.Controls.Add(this.monthCalendar2);
             this.Revenuepnl.Controls.Add(this.monthCalendar1);
             this.Revenuepnl.Controls.Add(this.label3);
@@ -475,6 +479,27 @@
             this.monthCalendar2.Name = "monthCalendar2";
             this.monthCalendar2.SelectionRange = new System.Windows.Forms.SelectionRange(new System.DateTime(2021, 3, 16, 0, 0, 0, 0), new System.DateTime(2021, 3, 22, 0, 0, 0, 0));
             this.monthCalendar2.TabIndex = 2;
+            this.monthCalendar2.DateChanged += new System.Windows.Forms.DateRangeEventHandler(this.monthCalendar2_DateChanged);
+            // 
+            // label4
+            // 
+            this.label4.AutoSize = true;
+            this.label4.Location = new System.Drawing.Point(553, 169);
+            this.label4.Name = "label4";
+            this.label4.Size = new System.Drawing.Size(46, 17);
+            this.label4.TabIndex = 3;
+            this.label4.Text = "label4";
+            this.label4.Click += new System.EventHandler(this.label4_Click);
+            // 
+            // button1
+            // 
+            this.button1.Location = new System.Drawing.Point(771, 235);
+            this.button1.Name = "button1";
+            this.button1.Size = new System.Drawing.Size(75, 23);
+            this.button1.TabIndex = 4;
+            this.button1.Text = "button1";
+            this.button1.UseVisualStyleBackColor = true;
+            this.button1.Click += new System.EventHandler(this.button1_Click);
             // 
             // SomerenUI
             // 
@@ -569,6 +594,8 @@
         private System.Windows.Forms.MonthCalendar monthCalendar1;
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.MonthCalendar monthCalendar2;
+        private System.Windows.Forms.Label label4;
+        private System.Windows.Forms.Button button1;
     }
 }
 
