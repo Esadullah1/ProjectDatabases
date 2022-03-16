@@ -8,6 +8,10 @@ namespace SomerenUI
 {
     public partial class SomerenUI : Form
     {
+        Drinks deleteDrink;
+        Drinks updateDrink;
+        int rowIndex;
+
         public SomerenUI()
         {
             InitializeComponent();
@@ -25,7 +29,7 @@ namespace SomerenUI
                 pnlStudents.Hide();
                 panelTeachers.Hide();
                 panelRooms.Hide();
-
+                panelDrink.Hide();
                 pnlDashboard.Show();
                 imgDashboard.Show();
             }
@@ -36,7 +40,7 @@ namespace SomerenUI
                 imgDashboard.Hide();
                 panelTeachers.Hide();
                 panelRooms.Hide();
-
+                panelDrink.Hide();
                 pnlStudents.Show();
 
 
@@ -69,7 +73,7 @@ namespace SomerenUI
                 imgDashboard.Hide();
                 pnlStudents.Hide();
                 panelRooms.Hide();
-
+                panelDrink.Hide();
                 panelTeachers.Show();
 
                 try
@@ -103,7 +107,7 @@ namespace SomerenUI
                 imgDashboard.Hide();
                 pnlStudents.Hide();
                 panelTeachers.Hide();
-
+                panelDrink.Hide();
                 panelRooms.Show();
 
 
@@ -127,6 +131,52 @@ namespace SomerenUI
                 {
                     MessageBox.Show("Something went wrong while loading the students: " + e.Message);
                 }
+            }
+            else if (panelName == "Drinks")
+            {
+                listViewDrinks.Items.Clear();
+                pnlDashboard.Hide();
+                imgDashboard.Hide();
+                pnlStudents.Hide();
+                panelTeachers.Hide();
+                panelRooms.Hide();
+                panelDrink.Show();
+
+                try
+                {
+                    // fill the students listview within the students panel with a list of students
+                    DrinksService drinkService = new DrinksService(); 
+                    List<Drinks> drinkList = drinkService.GetDrinks();
+
+                    foreach (Drinks d in drinkList)
+                    {
+                        
+
+                        string[] arr = new string[5];
+                        arr[0] = d.DrinkName;
+                        arr[1] = d.Price.ToString("0.00");
+                        arr[2] = d.Voucher.ToString();
+                        arr[3] = d.Alcoholic.ToString();
+                        arr[4] = d.Stock.ToString();
+                        ListViewItem li = new ListViewItem(arr);
+                        listViewDrinks.Items.Add(li);
+                      
+                        
+                        
+
+
+
+                    }
+                }
+                catch (Exception e)
+                {
+                    MessageBox.Show("Something went wrong while loading the students: " + e.Message);
+                }
+
+
+
+
+
             }
 
         }
@@ -161,6 +211,59 @@ namespace SomerenUI
         private void roomsToolStripMenuItem_Click(object sender, EventArgs e)
         {
             showPanel("Rooms");
+        }
+
+       
+
+        private void drinksToolStripMenuItem_Click_1(object sender, EventArgs e)
+        {
+            showPanel("Drinks");
+        }
+
+        private void buttonDeleteDrink_Click(object sender, EventArgs e)
+        {
+            
+
+            DrinksService drinksService = new DrinksService();
+            drinksService.DeleteDrink(deleteDrink);
+            showPanel("Drinks");
+
+          
+        }
+
+        private void buttonUpdateDrink_Click(object sender, EventArgs e)
+        {
+            DrinksService drinksService = new DrinksService();
+            drinksService.UpdateDrink(updateDrink);
+            showPanel("Drinks");
+        }
+
+     
+
+        private void listViewDrinks_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            this.deleteDrink = new Drinks();
+            deleteDrink.DrinkName = listViewDrinks.FocusedItem.SubItems[0].Text;
+
+            this.updateDrink = new Drinks();
+
+            if (listViewDrinks.SelectedIndices.Count > 0)
+            {
+                ListViewItem item = listViewDrinks.SelectedItems[0];
+
+                rowIndex = item.Index; 
+                txtUpdateDrink.Text = item.SubItems[0].Text;
+
+                foreach (ListViewItem lvi in listViewDrinks.Items)
+                {
+                    if (lvi.Index == rowIndex)
+                    {
+                        updateDrink.DrinkName = listViewDrinks.Items[lvi.Index].SubItems[0].Text = txtUpdateDrink.Text;
+                    }
+
+                }
+            }
+
         }
     }
 }
