@@ -10,7 +10,36 @@ using SomerenModel;
 
 namespace SomerenDAL
 {
-    class RevenueDao
+    public class RevenueDao : BaseDao
     {
+        public List<Room> Get()
+        {
+
+            string query = "SELECT RoomID, Capacity, Type FROM [Rooms]";
+
+
+
+            SqlParameter[] sqlParameters = new SqlParameter[0];
+            return ReadTables(ExecuteSelectQuery(query, sqlParameters));
+        }
+
+        private List<Room> ReadTables(DataTable dataTable)
+        {
+            List<Room> Rooms = new List<Room>();
+
+            foreach (DataRow dr in dataTable.Rows)
+            {
+                Room Room = new Room()
+                {
+                    RoomID = (int)dr["RoomID"],
+                    Capacity = (int)dr["Capacity"],
+                    Type = (bool)dr["Type"]
+
+
+                };
+                Rooms.Add(Room);
+            }
+            return Rooms;
+        }
     }
 }

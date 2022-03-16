@@ -144,7 +144,7 @@ namespace SomerenUI
                 }
                 catch (Exception e)
                 {
-                    MessageBox.Show("Something went wrong while loading the students: " + e.Message);
+                    MessageBox.Show("Something went wrong while loading the Rooms: " + e.Message);
                 }
             }
 
