@@ -73,6 +73,9 @@
             this.Capacity = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.Type = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.panelDrink = new System.Windows.Forms.Panel();
+            this.label7 = new System.Windows.Forms.Label();
+            this.label6 = new System.Windows.Forms.Label();
+            this.txtUpdateStockOfDrink = new System.Windows.Forms.TextBox();
             this.label5 = new System.Windows.Forms.Label();
             this.label4 = new System.Windows.Forms.Label();
             this.txtUpdateDrink = new System.Windows.Forms.TextBox();
@@ -86,9 +89,33 @@
             this.columnHeader5 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.columnHeader4 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.columnHeader6 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
-            this.txtUpdateStockOfDrink = new System.Windows.Forms.TextBox();
-            this.label6 = new System.Windows.Forms.Label();
-            this.label7 = new System.Windows.Forms.Label();
+            this.panelCashRegister = new System.Windows.Forms.Panel();
+            this.label8 = new System.Windows.Forms.Label();
+            this.comboBox3 = new System.Windows.Forms.ComboBox();
+            this.label9 = new System.Windows.Forms.Label();
+            this.btnCheckout = new System.Windows.Forms.Button();
+            this.label10 = new System.Windows.Forms.Label();
+            this.label11 = new System.Windows.Forms.Label();
+            this.label12 = new System.Windows.Forms.Label();
+            this.monthCalendar1 = new System.Windows.Forms.MonthCalendar();
+            this.comboBox2 = new System.Windows.Forms.ComboBox();
+            this.comboBox1 = new System.Windows.Forms.ComboBox();
+            this.label13 = new System.Windows.Forms.Label();
+            this.cashRegisterToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.revenueToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.Revenuepnl = new System.Windows.Forms.Panel();
+            this.sumlist = new System.Windows.Forms.ListView();
+            this.price = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.studentnameslist = new System.Windows.Forms.ListView();
+            this.student1 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.studentrevlist = new System.Windows.Forms.ListView();
+            this.student = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.drink = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.button1 = new System.Windows.Forms.Button();
+            this.calanderlabel = new System.Windows.Forms.Label();
+            this.monthCalendar2 = new System.Windows.Forms.MonthCalendar();
+            this.monthCalendar3 = new System.Windows.Forms.MonthCalendar();
+            this.label14 = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.imgDashboard)).BeginInit();
             this.menuStrip1.SuspendLayout();
             this.pnlDashboard.SuspendLayout();
@@ -99,6 +126,8 @@
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
             this.panelRooms.SuspendLayout();
             this.panelDrink.SuspendLayout();
+            this.panelCashRegister.SuspendLayout();
+            this.Revenuepnl.SuspendLayout();
             this.SuspendLayout();
             // 
             // imgDashboard
@@ -119,7 +148,9 @@
             this.lecturersToolStripMenuItem,
             this.activitiesToolStripMenuItem,
             this.roomsToolStripMenuItem,
-            this.drinksToolStripMenuItem});
+            this.drinksToolStripMenuItem,
+            this.cashRegisterToolStripMenuItem,
+            this.revenueToolStripMenuItem});
             this.menuStrip1.Location = new System.Drawing.Point(0, 0);
             this.menuStrip1.Name = "menuStrip1";
             this.menuStrip1.Padding = new System.Windows.Forms.Padding(4, 2, 0, 2);
@@ -474,6 +505,32 @@
             this.panelDrink.Size = new System.Drawing.Size(902, 468);
             this.panelDrink.TabIndex = 7;
             // 
+            // label7
+            // 
+            this.label7.AutoSize = true;
+            this.label7.Location = new System.Drawing.Point(760, 207);
+            this.label7.Name = "label7";
+            this.label7.Size = new System.Drawing.Size(35, 13);
+            this.label7.TabIndex = 10;
+            this.label7.Text = "Stock";
+            // 
+            // label6
+            // 
+            this.label6.AutoSize = true;
+            this.label6.Location = new System.Drawing.Point(757, 140);
+            this.label6.Name = "label6";
+            this.label6.Size = new System.Drawing.Size(73, 13);
+            this.label6.TabIndex = 9;
+            this.label6.Text = "Name of drink";
+            // 
+            // txtUpdateStockOfDrink
+            // 
+            this.txtUpdateStockOfDrink.Location = new System.Drawing.Point(757, 225);
+            this.txtUpdateStockOfDrink.Margin = new System.Windows.Forms.Padding(2);
+            this.txtUpdateStockOfDrink.Name = "txtUpdateStockOfDrink";
+            this.txtUpdateStockOfDrink.Size = new System.Drawing.Size(125, 20);
+            this.txtUpdateStockOfDrink.TabIndex = 8;
+            // 
             // label5
             // 
             this.label5.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -583,37 +640,276 @@
             this.columnHeader6.Text = "DrinkID";
             this.columnHeader6.Width = 71;
             // 
-            // txtUpdateStockOfDrink
+            // panelCashRegister
             // 
-            this.txtUpdateStockOfDrink.Location = new System.Drawing.Point(757, 225);
-            this.txtUpdateStockOfDrink.Margin = new System.Windows.Forms.Padding(2);
-            this.txtUpdateStockOfDrink.Name = "txtUpdateStockOfDrink";
-            this.txtUpdateStockOfDrink.Size = new System.Drawing.Size(125, 20);
-            this.txtUpdateStockOfDrink.TabIndex = 8;
+            this.panelCashRegister.Controls.Add(this.label8);
+            this.panelCashRegister.Controls.Add(this.comboBox3);
+            this.panelCashRegister.Controls.Add(this.label9);
+            this.panelCashRegister.Controls.Add(this.btnCheckout);
+            this.panelCashRegister.Controls.Add(this.label10);
+            this.panelCashRegister.Controls.Add(this.label11);
+            this.panelCashRegister.Controls.Add(this.label12);
+            this.panelCashRegister.Controls.Add(this.monthCalendar1);
+            this.panelCashRegister.Controls.Add(this.comboBox2);
+            this.panelCashRegister.Controls.Add(this.comboBox1);
+            this.panelCashRegister.Controls.Add(this.label13);
+            this.panelCashRegister.Location = new System.Drawing.Point(11, 26);
+            this.panelCashRegister.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.panelCashRegister.Name = "panelCashRegister";
+            this.panelCashRegister.Size = new System.Drawing.Size(912, 477);
+            this.panelCashRegister.TabIndex = 10;
             // 
-            // label6
+            // label8
             // 
-            this.label6.AutoSize = true;
-            this.label6.Location = new System.Drawing.Point(757, 140);
-            this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(73, 13);
-            this.label6.TabIndex = 9;
-            this.label6.Text = "Name of drink";
+            this.label8.AutoSize = true;
+            this.label8.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label8.Location = new System.Drawing.Point(286, 82);
+            this.label8.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.label8.Name = "label8";
+            this.label8.Size = new System.Drawing.Size(35, 15);
+            this.label8.TabIndex = 16;
+            this.label8.Text = "Price";
             // 
-            // label7
+            // comboBox3
             // 
-            this.label7.AutoSize = true;
-            this.label7.Location = new System.Drawing.Point(760, 207);
-            this.label7.Name = "label7";
-            this.label7.Size = new System.Drawing.Size(35, 13);
-            this.label7.TabIndex = 10;
-            this.label7.Text = "Stock";
+            this.comboBox3.FormattingEnabled = true;
+            this.comboBox3.Location = new System.Drawing.Point(288, 118);
+            this.comboBox3.Margin = new System.Windows.Forms.Padding(2);
+            this.comboBox3.Name = "comboBox3";
+            this.comboBox3.Size = new System.Drawing.Size(120, 21);
+            this.comboBox3.TabIndex = 15;
+            // 
+            // label9
+            // 
+            this.label9.AutoSize = true;
+            this.label9.Location = new System.Drawing.Point(336, 338);
+            this.label9.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.label9.Name = "label9";
+            this.label9.Size = new System.Drawing.Size(0, 13);
+            this.label9.TabIndex = 14;
+            // 
+            // btnCheckout
+            // 
+            this.btnCheckout.Location = new System.Drawing.Point(438, 296);
+            this.btnCheckout.Margin = new System.Windows.Forms.Padding(2);
+            this.btnCheckout.Name = "btnCheckout";
+            this.btnCheckout.Size = new System.Drawing.Size(202, 22);
+            this.btnCheckout.TabIndex = 13;
+            this.btnCheckout.Text = "Checkout";
+            this.btnCheckout.UseVisualStyleBackColor = true;
+            this.btnCheckout.Click += new System.EventHandler(this.btnCheckout_Click);
+            // 
+            // label10
+            // 
+            this.label10.AutoSize = true;
+            this.label10.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label10.Location = new System.Drawing.Point(436, 82);
+            this.label10.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.label10.Name = "label10";
+            this.label10.Size = new System.Drawing.Size(100, 15);
+            this.label10.TabIndex = 12;
+            this.label10.Text = "Date of purchase";
+            // 
+            // label11
+            // 
+            this.label11.AutoSize = true;
+            this.label11.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label11.Location = new System.Drawing.Point(150, 82);
+            this.label11.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.label11.Name = "label11";
+            this.label11.Size = new System.Drawing.Size(84, 15);
+            this.label11.TabIndex = 11;
+            this.label11.Text = "Name of drink";
+            // 
+            // label12
+            // 
+            this.label12.AutoSize = true;
+            this.label12.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label12.Location = new System.Drawing.Point(12, 82);
+            this.label12.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.label12.Name = "label12";
+            this.label12.Size = new System.Drawing.Size(97, 15);
+            this.label12.TabIndex = 10;
+            this.label12.Text = "Name of student";
+            // 
+            // monthCalendar1
+            // 
+            this.monthCalendar1.Location = new System.Drawing.Point(438, 118);
+            this.monthCalendar1.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.monthCalendar1.Name = "monthCalendar1";
+            this.monthCalendar1.TabIndex = 9;
+            // 
+            // comboBox2
+            // 
+            this.comboBox2.FormattingEnabled = true;
+            this.comboBox2.Location = new System.Drawing.Point(153, 118);
+            this.comboBox2.Margin = new System.Windows.Forms.Padding(2);
+            this.comboBox2.Name = "comboBox2";
+            this.comboBox2.Size = new System.Drawing.Size(120, 21);
+            this.comboBox2.TabIndex = 8;
+            // 
+            // comboBox1
+            // 
+            this.comboBox1.FormattingEnabled = true;
+            this.comboBox1.Location = new System.Drawing.Point(15, 118);
+            this.comboBox1.Margin = new System.Windows.Forms.Padding(2);
+            this.comboBox1.Name = "comboBox1";
+            this.comboBox1.Size = new System.Drawing.Size(120, 21);
+            this.comboBox1.TabIndex = 7;
+            // 
+            // label13
+            // 
+            this.label13.AutoSize = true;
+            this.label13.Font = new System.Drawing.Font("Microsoft Sans Serif", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label13.Location = new System.Drawing.Point(10, 10);
+            this.label13.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.label13.Name = "label13";
+            this.label13.Size = new System.Drawing.Size(169, 29);
+            this.label13.TabIndex = 6;
+            this.label13.Text = "Cash register";
+            // 
+            // cashRegisterToolStripMenuItem
+            // 
+            this.cashRegisterToolStripMenuItem.Name = "cashRegisterToolStripMenuItem";
+            this.cashRegisterToolStripMenuItem.Size = new System.Drawing.Size(90, 20);
+            this.cashRegisterToolStripMenuItem.Text = "Cash Register";
+            this.cashRegisterToolStripMenuItem.Click += new System.EventHandler(this.cashRegisterToolStripMenuItem_Click);
+            // 
+            // revenueToolStripMenuItem
+            // 
+            this.revenueToolStripMenuItem.Name = "revenueToolStripMenuItem";
+            this.revenueToolStripMenuItem.Size = new System.Drawing.Size(64, 20);
+            this.revenueToolStripMenuItem.Text = "Revenue";
+            this.revenueToolStripMenuItem.Click += new System.EventHandler(this.revenueToolStripMenuItem_Click);
+            // 
+            // Revenuepnl
+            // 
+            this.Revenuepnl.Controls.Add(this.sumlist);
+            this.Revenuepnl.Controls.Add(this.studentnameslist);
+            this.Revenuepnl.Controls.Add(this.studentrevlist);
+            this.Revenuepnl.Controls.Add(this.button1);
+            this.Revenuepnl.Controls.Add(this.calanderlabel);
+            this.Revenuepnl.Controls.Add(this.monthCalendar2);
+            this.Revenuepnl.Controls.Add(this.monthCalendar3);
+            this.Revenuepnl.Controls.Add(this.label14);
+            this.Revenuepnl.Location = new System.Drawing.Point(11, 26);
+            this.Revenuepnl.Margin = new System.Windows.Forms.Padding(2);
+            this.Revenuepnl.Name = "Revenuepnl";
+            this.Revenuepnl.Size = new System.Drawing.Size(921, 477);
+            this.Revenuepnl.TabIndex = 11;
+            // 
+            // sumlist
+            // 
+            this.sumlist.Columns.AddRange(new System.Windows.Forms.ColumnHeader[] {
+            this.price});
+            this.sumlist.GridLines = true;
+            this.sumlist.HideSelection = false;
+            this.sumlist.Location = new System.Drawing.Point(604, 53);
+            this.sumlist.Margin = new System.Windows.Forms.Padding(2);
+            this.sumlist.Name = "sumlist";
+            this.sumlist.Size = new System.Drawing.Size(92, 287);
+            this.sumlist.TabIndex = 7;
+            this.sumlist.UseCompatibleStateImageBehavior = false;
+            this.sumlist.View = System.Windows.Forms.View.Details;
+            // 
+            // price
+            // 
+            this.price.Text = "Total sum";
+            // 
+            // studentnameslist
+            // 
+            this.studentnameslist.Columns.AddRange(new System.Windows.Forms.ColumnHeader[] {
+            this.student1});
+            this.studentnameslist.GridLines = true;
+            this.studentnameslist.HideSelection = false;
+            this.studentnameslist.Location = new System.Drawing.Point(485, 53);
+            this.studentnameslist.Margin = new System.Windows.Forms.Padding(2);
+            this.studentnameslist.Name = "studentnameslist";
+            this.studentnameslist.Size = new System.Drawing.Size(92, 287);
+            this.studentnameslist.TabIndex = 6;
+            this.studentnameslist.UseCompatibleStateImageBehavior = false;
+            this.studentnameslist.View = System.Windows.Forms.View.Details;
+            // 
+            // student1
+            // 
+            this.student1.Text = "student";
+            // 
+            // studentrevlist
+            // 
+            this.studentrevlist.Columns.AddRange(new System.Windows.Forms.ColumnHeader[] {
+            this.student,
+            this.drink});
+            this.studentrevlist.GridLines = true;
+            this.studentrevlist.HideSelection = false;
+            this.studentrevlist.Location = new System.Drawing.Point(348, 53);
+            this.studentrevlist.Margin = new System.Windows.Forms.Padding(2);
+            this.studentrevlist.Name = "studentrevlist";
+            this.studentrevlist.Size = new System.Drawing.Size(113, 287);
+            this.studentrevlist.TabIndex = 5;
+            this.studentrevlist.UseCompatibleStateImageBehavior = false;
+            this.studentrevlist.View = System.Windows.Forms.View.Details;
+            // 
+            // student
+            // 
+            this.student.Text = "drinks";
+            // 
+            // drink
+            // 
+            this.drink.Text = "drinks bought";
+            // 
+            // button1
+            // 
+            this.button1.Location = new System.Drawing.Point(15, 254);
+            this.button1.Margin = new System.Windows.Forms.Padding(2);
+            this.button1.Name = "button1";
+            this.button1.Size = new System.Drawing.Size(100, 56);
+            this.button1.TabIndex = 4;
+            this.button1.Text = "Turnover date";
+            this.button1.UseVisualStyleBackColor = true;
+            // 
+            // calanderlabel
+            // 
+            this.calanderlabel.AutoSize = true;
+            this.calanderlabel.Location = new System.Drawing.Point(194, 275);
+            this.calanderlabel.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.calanderlabel.Name = "calanderlabel";
+            this.calanderlabel.Size = new System.Drawing.Size(0, 13);
+            this.calanderlabel.TabIndex = 3;
+            // 
+            // monthCalendar2
+            // 
+            this.monthCalendar2.Location = new System.Drawing.Point(178, 53);
+            this.monthCalendar2.Margin = new System.Windows.Forms.Padding(7);
+            this.monthCalendar2.Name = "monthCalendar2";
+            this.monthCalendar2.SelectionRange = new System.Windows.Forms.SelectionRange(new System.DateTime(2021, 3, 16, 0, 0, 0, 0), new System.DateTime(2021, 3, 22, 0, 0, 0, 0));
+            this.monthCalendar2.TabIndex = 2;
+            // 
+            // monthCalendar3
+            // 
+            this.monthCalendar3.Location = new System.Drawing.Point(15, 53);
+            this.monthCalendar3.Margin = new System.Windows.Forms.Padding(7);
+            this.monthCalendar3.Name = "monthCalendar3";
+            this.monthCalendar3.SelectionRange = new System.Windows.Forms.SelectionRange(new System.DateTime(2021, 3, 16, 0, 0, 0, 0), new System.DateTime(2021, 3, 22, 0, 0, 0, 0));
+            this.monthCalendar3.TabIndex = 1;
+            // 
+            // label14
+            // 
+            this.label14.AutoSize = true;
+            this.label14.Font = new System.Drawing.Font("Microsoft Sans Serif", 16.16F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label14.Location = new System.Drawing.Point(10, 14);
+            this.label14.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.label14.Name = "label14";
+            this.label14.Size = new System.Drawing.Size(99, 26);
+            this.label14.TabIndex = 0;
+            this.label14.Text = "Revenue";
             // 
             // SomerenUI
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(962, 548);
+            this.Controls.Add(this.Revenuepnl);
+            this.Controls.Add(this.panelCashRegister);
             this.Controls.Add(this.panelDrink);
             this.Controls.Add(this.panelRooms);
             this.Controls.Add(this.panelTeachers);
@@ -643,6 +939,10 @@
             this.panelRooms.PerformLayout();
             this.panelDrink.ResumeLayout(false);
             this.panelDrink.PerformLayout();
+            this.panelCashRegister.ResumeLayout(false);
+            this.panelCashRegister.PerformLayout();
+            this.Revenuepnl.ResumeLayout(false);
+            this.Revenuepnl.PerformLayout();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -714,6 +1014,33 @@
         private System.Windows.Forms.Label label7;
         private System.Windows.Forms.Label label6;
         private System.Windows.Forms.TextBox txtUpdateStockOfDrink;
+        private System.Windows.Forms.ToolStripMenuItem cashRegisterToolStripMenuItem;
+        private System.Windows.Forms.Panel panelCashRegister;
+        private System.Windows.Forms.Label label8;
+        private System.Windows.Forms.ComboBox comboBox3;
+        private System.Windows.Forms.Label label9;
+        private System.Windows.Forms.Button btnCheckout;
+        private System.Windows.Forms.Label label10;
+        private System.Windows.Forms.Label label11;
+        private System.Windows.Forms.Label label12;
+        private System.Windows.Forms.MonthCalendar monthCalendar1;
+        private System.Windows.Forms.ComboBox comboBox2;
+        private System.Windows.Forms.ComboBox comboBox1;
+        private System.Windows.Forms.Label label13;
+        private System.Windows.Forms.ToolStripMenuItem revenueToolStripMenuItem;
+        private System.Windows.Forms.Panel Revenuepnl;
+        private System.Windows.Forms.ListView sumlist;
+        private System.Windows.Forms.ColumnHeader price;
+        private System.Windows.Forms.ListView studentnameslist;
+        private System.Windows.Forms.ColumnHeader student1;
+        private System.Windows.Forms.ListView studentrevlist;
+        private System.Windows.Forms.ColumnHeader student;
+        private System.Windows.Forms.ColumnHeader drink;
+        private System.Windows.Forms.Button button1;
+        private System.Windows.Forms.Label calanderlabel;
+        private System.Windows.Forms.MonthCalendar monthCalendar2;
+        private System.Windows.Forms.MonthCalendar monthCalendar3;
+        private System.Windows.Forms.Label label14;
     }
 }
 
