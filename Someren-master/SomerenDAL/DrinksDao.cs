@@ -15,7 +15,7 @@ namespace SomerenDAL
         public List<Drinks> GetAllDrinks()
         {
 
-            string query = "SELECT DrinkName, Price, Alcoholic, Stock, Voucher FROM [Drinks] WHERE Stock > 1 AND Price > 1 ORDER BY Stock";
+            string query = "SELECT DrinkName, Price, Alcoholic, Stock, Voucher, DrinkID FROM [Drinks] WHERE Stock > 1 AND Price > 1 ORDER BY Stock";
 
 
 
@@ -31,11 +31,13 @@ namespace SomerenDAL
             {
                 Drinks drinks = new Drinks()
                 {
+                  
                     DrinkName = (string)(dr["DrinkName"].ToString()),
                     Price = (decimal)dr["Price"],
                     Alcoholic = (bool)dr["Alcoholic"],
                     Stock = (int)dr["Stock"],
-                    Voucher = (bool)dr["Voucher"]
+                    Voucher = (bool)dr["Voucher"],
+                    DrinkID = (int)dr["DrinkID"]
 
                 };
                 drink.Add(drinks);
@@ -56,9 +58,22 @@ namespace SomerenDAL
 
         public void UpdateDrink(Drinks drink)
         {
-            SqlCommand command = new SqlCommand ("UPDATE Drinks SET DrinkName = @DrinkName", OpenConnection());
+            SqlCommand command = new SqlCommand("UPDATE [Drinks] SET DrinkName = @DrinkName WHERE DrinkID = @DrinkID", OpenConnection());
             command.Parameters.AddWithValue("@DrinkName", drink.DrinkName);
+            command.Parameters.AddWithValue("@DrinkID",drink.DrinkID);
             command.ExecuteNonQuery();
+
+
+
+            /* string query = "UPDATE Drinks SET DrinkName = @DrinkName WHERE DrinkID = @DrinkID";
+
+             SqlParameter[] sqlParameter = new SqlParameter[] { 
+             new SqlParameter("@DrinkName",drink.DrinkName),
+             new SqlParameter("@DrinkID", drink.DrinkID)
+             };
+
+             ExecuteEditQuery(query,sqlParameter);*/
+
 
         }
     }

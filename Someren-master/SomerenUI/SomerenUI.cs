@@ -10,7 +10,6 @@ namespace SomerenUI
     {
         Drinks deleteDrink;
         Drinks updateDrink;
-        int rowIndex;
 
         public SomerenUI()
         {
@@ -58,7 +57,7 @@ namespace SomerenUI
                         arr[2] = s.DateOfBirth.ToString("dd/MM/yyyy");
                         ListViewItem li = new ListViewItem(arr);
                         listViewStudents.Items.Add(li);
-                        
+
                     }
                 }
                 catch (Exception e)
@@ -145,24 +144,25 @@ namespace SomerenUI
                 try
                 {
                     // fill the students listview within the students panel with a list of students
-                    DrinksService drinkService = new DrinksService(); 
+                    DrinksService drinkService = new DrinksService();
                     List<Drinks> drinkList = drinkService.GetDrinks();
 
                     foreach (Drinks d in drinkList)
                     {
-                        
 
-                        string[] arr = new string[5];
+
+                        string[] arr = new string[6];
                         arr[0] = d.DrinkName;
                         arr[1] = d.Price.ToString("0.00");
                         arr[2] = d.Voucher.ToString();
                         arr[3] = d.Alcoholic.ToString();
                         arr[4] = d.Stock.ToString();
+                        arr[5] = d.DrinkID.ToString();
                         ListViewItem li = new ListViewItem(arr);
                         listViewDrinks.Items.Add(li);
-                      
-                        
-                        
+
+
+
 
 
 
@@ -213,7 +213,7 @@ namespace SomerenUI
             showPanel("Rooms");
         }
 
-       
+
 
         private void drinksToolStripMenuItem_Click_1(object sender, EventArgs e)
         {
@@ -222,47 +222,51 @@ namespace SomerenUI
 
         private void buttonDeleteDrink_Click(object sender, EventArgs e)
         {
-            
+
 
             DrinksService drinksService = new DrinksService();
             drinksService.DeleteDrink(deleteDrink);
             showPanel("Drinks");
 
-          
+
         }
 
         private void buttonUpdateDrink_Click(object sender, EventArgs e)
         {
+            Drinks drinksUpdate = new Drinks();
+
             DrinksService drinksService = new DrinksService();
-            drinksService.UpdateDrink(updateDrink);
+            drinksUpdate.DrinkName = listViewDrinks.FocusedItem.SubItems[0].Text;
+            drinksUpdate.DrinkID = Convert.ToInt32(listViewDrinks.FocusedItem.SubItems[5].Text);
+            
+            this.updateDrink = drinksUpdate;
             showPanel("Drinks");
+            drinksService.UpdateDrink(updateDrink);
+
+
+
         }
 
-     
+
 
         private void listViewDrinks_SelectedIndexChanged(object sender, EventArgs e)
         {
-            this.deleteDrink = new Drinks();
-            deleteDrink.DrinkName = listViewDrinks.FocusedItem.SubItems[0].Text;
+            Drinks drinksDelete = new Drinks();
+           
 
-            this.updateDrink = new Drinks();
 
-            if (listViewDrinks.SelectedIndices.Count > 0)
-            {
-                ListViewItem item = listViewDrinks.SelectedItems[0];
+            drinksDelete.DrinkName = listViewDrinks.FocusedItem.SubItems[0].Text;
 
-                rowIndex = item.Index; 
-                txtUpdateDrink.Text = item.SubItems[0].Text;
 
-                foreach (ListViewItem lvi in listViewDrinks.Items)
-                {
-                    if (lvi.Index == rowIndex)
-                    {
-                        updateDrink.DrinkName = listViewDrinks.Items[lvi.Index].SubItems[0].Text = txtUpdateDrink.Text;
-                    }
 
-                }
-            }
+
+
+
+            listViewDrinks.FocusedItem.SubItems[0].Text = txtUpdateDrink.Text;
+
+            this.deleteDrink = drinksDelete;
+
+
 
         }
     }

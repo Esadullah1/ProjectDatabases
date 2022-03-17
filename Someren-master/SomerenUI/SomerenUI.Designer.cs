@@ -73,6 +73,7 @@
             this.Capacity = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.Type = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.panelDrink = new System.Windows.Forms.Panel();
+            this.txtUpdateDrink = new System.Windows.Forms.TextBox();
             this.buttonUpdateDrink = new System.Windows.Forms.Button();
             this.buttonDeleteDrink = new System.Windows.Forms.Button();
             this.label3 = new System.Windows.Forms.Label();
@@ -82,7 +83,7 @@
             this.columnHeader3 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.columnHeader5 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.columnHeader4 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
-            this.txtUpdateDrink = new System.Windows.Forms.TextBox();
+            this.columnHeader6 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             ((System.ComponentModel.ISupportInitialize)(this.imgDashboard)).BeginInit();
             this.menuStrip1.SuspendLayout();
             this.pnlDashboard.SuspendLayout();
@@ -460,6 +461,13 @@
             this.panelDrink.Size = new System.Drawing.Size(1202, 576);
             this.panelDrink.TabIndex = 7;
             // 
+            // txtUpdateDrink
+            // 
+            this.txtUpdateDrink.Location = new System.Drawing.Point(819, 271);
+            this.txtUpdateDrink.Name = "txtUpdateDrink";
+            this.txtUpdateDrink.Size = new System.Drawing.Size(165, 22);
+            this.txtUpdateDrink.TabIndex = 5;
+            // 
             // buttonUpdateDrink
             // 
             this.buttonUpdateDrink.Font = new System.Drawing.Font("Microsoft Sans Serif", 16.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -499,7 +507,8 @@
             this.columnHeader2,
             this.columnHeader3,
             this.columnHeader5,
-            this.columnHeader4});
+            this.columnHeader4,
+            this.columnHeader6});
             this.listViewDrinks.FullRowSelect = true;
             this.listViewDrinks.GridLines = true;
             this.listViewDrinks.HideSelection = false;
@@ -513,32 +522,35 @@
             // 
             // columnHeader1
             // 
+            this.columnHeader1.DisplayIndex = 0;
             this.columnHeader1.Text = "Drink";
             // 
             // columnHeader2
             // 
+            this.columnHeader2.DisplayIndex = 1;
             this.columnHeader2.Text = "Price";
             // 
             // columnHeader3
             // 
+            this.columnHeader3.DisplayIndex = 2;
             this.columnHeader3.Text = "Alcoholic";
+            this.columnHeader3.Width = 99;
             // 
             // columnHeader5
             // 
-            this.columnHeader5.DisplayIndex = 4;
             this.columnHeader5.Text = "Voucher";
+            this.columnHeader5.Width = 82;
             // 
             // columnHeader4
             // 
             this.columnHeader4.DisplayIndex = 3;
             this.columnHeader4.Text = "Stock";
             // 
-            // txtUpdateDrink
+            // columnHeader6
             // 
-            this.txtUpdateDrink.Location = new System.Drawing.Point(819, 271);
-            this.txtUpdateDrink.Name = "txtUpdateDrink";
-            this.txtUpdateDrink.Size = new System.Drawing.Size(165, 22);
-            this.txtUpdateDrink.TabIndex = 5;
+            this.columnHeader6.DisplayIndex = 5;
+            this.columnHeader6.Text = "DrinkID";
+            this.columnHeader6.Width = 71;
             // 
             // SomerenUI
             // 
@@ -640,6 +652,7 @@
         private System.Windows.Forms.Button buttonDeleteDrink;
         private System.Windows.Forms.Button buttonUpdateDrink;
         private System.Windows.Forms.TextBox txtUpdateDrink;
+        private System.Windows.Forms.ColumnHeader columnHeader6;
     }
 }
 

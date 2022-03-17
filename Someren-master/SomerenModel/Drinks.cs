@@ -10,7 +10,7 @@ namespace SomerenModel
     {
 
     
-   
+        public int DrinkID { get; set; }
         public string DrinkName { get; set; } // RoomNumber, e.g. 206
         public decimal Price { get; set; } // number of beds, either 4,6,8,12 or 16
         public bool Alcoholic { get; set; } // student = false, teacher = true
