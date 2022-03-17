@@ -467,7 +467,7 @@
             this.studentrevlist.HideSelection = false;
             this.studentrevlist.Location = new System.Drawing.Point(464, 65);
             this.studentrevlist.Name = "studentrevlist";
-            this.studentrevlist.Size = new System.Drawing.Size(230, 352);
+            this.studentrevlist.Size = new System.Drawing.Size(173, 352);
             this.studentrevlist.TabIndex = 5;
             this.studentrevlist.UseCompatibleStateImageBehavior = false;
             this.studentrevlist.View = System.Windows.Forms.View.Details;
