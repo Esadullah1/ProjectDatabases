@@ -65,6 +65,7 @@ namespace SomerenDAL
 
 
 
+
             /* string query = "UPDATE Drinks SET DrinkName = @DrinkName WHERE DrinkID = @DrinkID";
 
              SqlParameter[] sqlParameter = new SqlParameter[] { 
