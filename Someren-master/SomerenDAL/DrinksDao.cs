@@ -15,7 +15,7 @@ namespace SomerenDAL
         public List<Drinks> GetAllDrinks()
         {
 
-            string query = "SELECT DrinkName, Price, Alcoholic, Stock, Voucher, DrinkID FROM [Drinks] WHERE Stock > 1 AND Price > 1 ORDER BY Stock";
+            string query = "SELECT DrinkName, Price, Alcoholic, Stock, Voucher, DrinkID FROM  [Drinks] WHERE DrinkID NOT IN (SELECT DrinkID FROM Drinks WHERE DrinkID IN (4, 5, 6)) AND Stock > 1 AND Price > 1 ORDER BY Stock ";
 
 
 
@@ -66,15 +66,18 @@ namespace SomerenDAL
 
 
 
-            /* string query = "UPDATE Drinks SET DrinkName = @DrinkName WHERE DrinkID = @DrinkID";
+
+        }
+
+        public void UpdateDrinkStock(Drinks drink)
+        {
+            SqlCommand command = new SqlCommand("UPDATE [Drinks] SET Stock = @Stock WHERE DrinkID = @DrinkID", OpenConnection());
+            command.Parameters.AddWithValue("@Stock", drink.Stock);
+            command.Parameters.AddWithValue("@DrinkID", drink.DrinkID);
+            command.ExecuteNonQuery();
 
 
-             SqlParameter[] sqlParameter = new SqlParameter[] { 
-             new SqlParameter("@DrinkName",drink.DrinkName),
-             new SqlParameter("@DrinkID", drink.DrinkID)
-             };
 
-             ExecuteEditQuery(query,sqlParameter);*/
 
 
         }

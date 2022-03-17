@@ -10,6 +10,7 @@ namespace SomerenUI
     {
         Drinks deleteDrink;
         Drinks updateDrink;
+        Drinks updateStock;
 
         public SomerenUI()
         {
@@ -234,14 +235,28 @@ namespace SomerenUI
         private void buttonUpdateDrink_Click(object sender, EventArgs e)
         {
             Drinks drinksUpdate = new Drinks();
+            Drinks drinksStockUpdate = new Drinks();
 
+
+            listViewDrinks.FocusedItem.SubItems[0].Text = txtUpdateDrink.Text;
             DrinksService drinksService = new DrinksService();
             drinksUpdate.DrinkName = listViewDrinks.FocusedItem.SubItems[0].Text;
             drinksUpdate.DrinkID = Convert.ToInt32(listViewDrinks.FocusedItem.SubItems[5].Text);
+
+            listViewDrinks.FocusedItem.SubItems[4].Text = txtUpdateStockOfDrink.Text;
             
+            drinksStockUpdate.Stock = Convert.ToInt32(listViewDrinks.FocusedItem.SubItems[4].Text);
+            drinksStockUpdate.DrinkID = Convert.ToInt32(listViewDrinks.FocusedItem.SubItems[5].Text);
+
+
             this.updateDrink = drinksUpdate;
-            showPanel("Drinks");
+            this.updateStock = drinksStockUpdate;
             drinksService.UpdateDrink(updateDrink);
+            drinksService.UpdateDrinkStock(drinksStockUpdate);
+            txtUpdateDrink.Clear();
+            txtUpdateStockOfDrink.Clear();
+            showPanel("Drinks");
+            
 
 
 
@@ -252,18 +267,9 @@ namespace SomerenUI
         private void listViewDrinks_SelectedIndexChanged(object sender, EventArgs e)
         {
             Drinks drinksDelete = new Drinks();
-           
-
-
             drinksDelete.DrinkName = listViewDrinks.FocusedItem.SubItems[0].Text;
-
-
-
-
-
-
-            listViewDrinks.FocusedItem.SubItems[0].Text = txtUpdateDrink.Text;
-
+            txtUpdateDrink.Text = listViewDrinks.FocusedItem.SubItems[0].Text;
+            txtUpdateStockOfDrink.Text = listViewDrinks.FocusedItem.SubItems[4].Text;
             this.deleteDrink = drinksDelete;
 
 
