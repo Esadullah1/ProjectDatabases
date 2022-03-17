@@ -80,7 +80,6 @@
             this.monthCalendar2 = new System.Windows.Forms.MonthCalendar();
             this.monthCalendar1 = new System.Windows.Forms.MonthCalendar();
             this.label3 = new System.Windows.Forms.Label();
-            this.drinklist = new System.Windows.Forms.ListView();
             this.drink = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             ((System.ComponentModel.ISupportInitialize)(this.imgDashboard)).BeginInit();
             this.menuStrip1.SuspendLayout();
@@ -116,7 +115,7 @@
             this.revenueToolStripMenuItem});
             this.menuStrip1.Location = new System.Drawing.Point(0, 0);
             this.menuStrip1.Name = "menuStrip1";
-            this.menuStrip1.Size = new System.Drawing.Size(1283, 28);
+            this.menuStrip1.Size = new System.Drawing.Size(1283, 30);
             this.menuStrip1.TabIndex = 1;
             this.menuStrip1.Text = "menuStrip1";
             // 
@@ -448,7 +447,6 @@
             // 
             // Revenuepnl
             // 
-            this.Revenuepnl.Controls.Add(this.drinklist);
             this.Revenuepnl.Controls.Add(this.studentrevlist);
             this.Revenuepnl.Controls.Add(this.button1);
             this.Revenuepnl.Controls.Add(this.label4);
@@ -463,19 +461,20 @@
             // studentrevlist
             // 
             this.studentrevlist.Columns.AddRange(new System.Windows.Forms.ColumnHeader[] {
-            this.student});
+            this.student,
+            this.drink});
             this.studentrevlist.GridLines = true;
             this.studentrevlist.HideSelection = false;
             this.studentrevlist.Location = new System.Drawing.Point(464, 65);
             this.studentrevlist.Name = "studentrevlist";
-            this.studentrevlist.Size = new System.Drawing.Size(78, 352);
+            this.studentrevlist.Size = new System.Drawing.Size(230, 352);
             this.studentrevlist.TabIndex = 5;
             this.studentrevlist.UseCompatibleStateImageBehavior = false;
             this.studentrevlist.View = System.Windows.Forms.View.Details;
             // 
             // student
             // 
-            this.student.Text = "student";
+            this.student.Text = "drinks";
             // 
             // button1
             // 
@@ -523,22 +522,9 @@
             this.label3.TabIndex = 0;
             this.label3.Text = "Revenue";
             // 
-            // drinklist
-            // 
-            this.drinklist.Columns.AddRange(new System.Windows.Forms.ColumnHeader[] {
-            this.drink});
-            this.drinklist.GridLines = true;
-            this.drinklist.HideSelection = false;
-            this.drinklist.Location = new System.Drawing.Point(549, 65);
-            this.drinklist.Name = "drinklist";
-            this.drinklist.Size = new System.Drawing.Size(77, 352);
-            this.drinklist.TabIndex = 6;
-            this.drinklist.UseCompatibleStateImageBehavior = false;
-            this.drinklist.View = System.Windows.Forms.View.Details;
-            // 
             // drink
             // 
-            this.drink.Text = "drink";
+            this.drink.Text = "drinks bought";
             // 
             // SomerenUI
             // 
@@ -637,7 +623,6 @@
         private System.Windows.Forms.Button button1;
         private System.Windows.Forms.ListView studentrevlist;
         private System.Windows.Forms.ColumnHeader student;
-        private System.Windows.Forms.ListView drinklist;
         private System.Windows.Forms.ColumnHeader drink;
     }
 }
