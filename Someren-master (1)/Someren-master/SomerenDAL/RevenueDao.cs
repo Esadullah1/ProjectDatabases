@@ -22,7 +22,27 @@ namespace SomerenDAL
             SqlParameter[] sqlParameters = new SqlParameter[0];
             return ReadTables(ExecuteSelectQuery(query, sqlParameters));
         }
-       
+        public List<studentrev> GetAllStudentNames()
+        {
+
+            string query = "SELECT DISTINCT student FROM CashRegister";
+
+
+
+            SqlParameter[] sqlParameters = new SqlParameter[0];
+            return ReadTables1(ExecuteSelectQuery(query, sqlParameters));
+        }
+        public List<sumrev> GetAllSum()
+        {
+
+            string query = "SELECT SUM(price) AS TotalSum FROM CashRegister";
+
+
+
+            SqlParameter[] sqlParameters = new SqlParameter[0];
+            return ReadTables2(ExecuteSelectQuery(query, sqlParameters));
+        }
+
 
 
 
@@ -46,6 +66,46 @@ namespace SomerenDAL
 
 
         }
-        
+
+        private List<studentrev> ReadTables1(DataTable dataTable)
+        {
+            List<studentrev> revenues = new List<studentrev>();
+
+            foreach (DataRow dr in dataTable.Rows)
+            {
+                studentrev revenue = new studentrev()
+                {
+
+                    student1 = (string)dr["student"],
+                    
+
+
+                };
+                revenues.Add(revenue);
+            }
+            return revenues;
+
+        }
+
+        private List<sumrev> ReadTables2(DataTable dataTable)
+        {
+            List<sumrev> revenues = new List<sumrev>();
+
+            foreach (DataRow dr in dataTable.Rows)
+            {
+                sumrev revenue = new sumrev()
+                {
+
+                    price1 = (decimal)dr["TotalSum"],
+
+
+
+                };
+                revenues.Add(revenue);
+            }
+            return revenues;
+
+        }
+
     }
 }

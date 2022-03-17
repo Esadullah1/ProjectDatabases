@@ -132,7 +132,51 @@ namespace SomerenUI
                 {
                     MessageBox.Show("Something went wrong while loading the Revenue: " + e.Message);
                 }
-               
+                
+                try
+                {
+                    // fill the students listview within the students panel with a list of students
+                    RevenueService revenueService = new RevenueService(); ;
+                    List<studentrev> revenueList = revenueService.GetStudentNames();
+
+
+                    foreach (studentrev r in revenueList)
+                    {
+                        string[] arr = new string[1];
+                        arr[0] = r.student1.ToString();                        
+                        ListViewItem li = new ListViewItem(arr);
+                        studentnameslist.Items.Add(li);
+                    }
+
+
+                }
+                catch (Exception e)
+                {
+                    MessageBox.Show("Something went wrong while loading the Revenue: " + e.Message);
+                }
+
+                try
+                {
+                    // fill the students listview within the students panel with a list of students
+                    RevenueService revenueService = new RevenueService(); ;
+                    List<sumrev> revenueList = revenueService.GetSum();
+
+
+                    foreach (sumrev r in revenueList)
+                    {
+                        string[] arr = new string[1];
+                        arr[0] = r.price1.ToString();
+                        ListViewItem li = new ListViewItem(arr);
+                        sumlist.Items.Add(li);
+                    }
+
+
+                }
+                catch (Exception e)
+                {
+                    MessageBox.Show("Something went wrong while loading the Revenue: " + e.Message);
+                }
+
 
 
 
@@ -233,6 +277,8 @@ namespace SomerenUI
         {
             String startdate = monthCalendar1.SelectionRange.Start.ToString("dd-MM-yyyy");
             String enddate = monthCalendar2.SelectionRange.Start.ToString("dd-MM-yyyy");
+
+            calanderlabel.Text = $"{startdate} -- {enddate}";
 
             
 

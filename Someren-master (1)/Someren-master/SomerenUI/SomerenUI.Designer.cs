@@ -76,11 +76,15 @@
             this.studentrevlist = new System.Windows.Forms.ListView();
             this.student = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.button1 = new System.Windows.Forms.Button();
-            this.label4 = new System.Windows.Forms.Label();
+            this.calanderlabel = new System.Windows.Forms.Label();
             this.monthCalendar2 = new System.Windows.Forms.MonthCalendar();
             this.monthCalendar1 = new System.Windows.Forms.MonthCalendar();
             this.label3 = new System.Windows.Forms.Label();
             this.drink = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.studentnameslist = new System.Windows.Forms.ListView();
+            this.student1 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.sumlist = new System.Windows.Forms.ListView();
+            this.price = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             ((System.ComponentModel.ISupportInitialize)(this.imgDashboard)).BeginInit();
             this.menuStrip1.SuspendLayout();
             this.pnlDashboard.SuspendLayout();
@@ -126,7 +130,7 @@
             this.toolStripSeparator1,
             this.exitToolStripMenuItem});
             this.dashboardToolStripMenuItem.Name = "dashboardToolStripMenuItem";
-            this.dashboardToolStripMenuItem.Size = new System.Drawing.Size(100, 24);
+            this.dashboardToolStripMenuItem.Size = new System.Drawing.Size(100, 26);
             this.dashboardToolStripMenuItem.Text = "Application";
             // 
             // dashboardToolStripMenuItem1
@@ -151,34 +155,34 @@
             // studentsToolStripMenuItem
             // 
             this.studentsToolStripMenuItem.Name = "studentsToolStripMenuItem";
-            this.studentsToolStripMenuItem.Size = new System.Drawing.Size(80, 24);
+            this.studentsToolStripMenuItem.Size = new System.Drawing.Size(80, 26);
             this.studentsToolStripMenuItem.Text = "Students";
             this.studentsToolStripMenuItem.Click += new System.EventHandler(this.studentsToolStripMenuItem_Click);
             // 
             // lecturersToolStripMenuItem
             // 
             this.lecturersToolStripMenuItem.Name = "lecturersToolStripMenuItem";
-            this.lecturersToolStripMenuItem.Size = new System.Drawing.Size(82, 24);
+            this.lecturersToolStripMenuItem.Size = new System.Drawing.Size(82, 26);
             this.lecturersToolStripMenuItem.Text = "Lecturers";
             this.lecturersToolStripMenuItem.Click += new System.EventHandler(this.lecturersToolStripMenuItem_Click_1);
             // 
             // activitiesToolStripMenuItem
             // 
             this.activitiesToolStripMenuItem.Name = "activitiesToolStripMenuItem";
-            this.activitiesToolStripMenuItem.Size = new System.Drawing.Size(83, 24);
+            this.activitiesToolStripMenuItem.Size = new System.Drawing.Size(83, 26);
             this.activitiesToolStripMenuItem.Text = "Activities";
             // 
             // roomsToolStripMenuItem
             // 
             this.roomsToolStripMenuItem.Name = "roomsToolStripMenuItem";
-            this.roomsToolStripMenuItem.Size = new System.Drawing.Size(69, 24);
+            this.roomsToolStripMenuItem.Size = new System.Drawing.Size(69, 26);
             this.roomsToolStripMenuItem.Text = "Rooms";
             this.roomsToolStripMenuItem.Click += new System.EventHandler(this.roomsToolStripMenuItem_Click);
             // 
             // revenueToolStripMenuItem
             // 
             this.revenueToolStripMenuItem.Name = "revenueToolStripMenuItem";
-            this.revenueToolStripMenuItem.Size = new System.Drawing.Size(79, 24);
+            this.revenueToolStripMenuItem.Size = new System.Drawing.Size(79, 26);
             this.revenueToolStripMenuItem.Text = "Revenue";
             this.revenueToolStripMenuItem.Click += new System.EventHandler(this.revenueToolStripMenuItem_Click);
             // 
@@ -447,9 +451,11 @@
             // 
             // Revenuepnl
             // 
+            this.Revenuepnl.Controls.Add(this.sumlist);
+            this.Revenuepnl.Controls.Add(this.studentnameslist);
             this.Revenuepnl.Controls.Add(this.studentrevlist);
             this.Revenuepnl.Controls.Add(this.button1);
-            this.Revenuepnl.Controls.Add(this.label4);
+            this.Revenuepnl.Controls.Add(this.calanderlabel);
             this.Revenuepnl.Controls.Add(this.monthCalendar2);
             this.Revenuepnl.Controls.Add(this.monthCalendar1);
             this.Revenuepnl.Controls.Add(this.label3);
@@ -467,7 +473,7 @@
             this.studentrevlist.HideSelection = false;
             this.studentrevlist.Location = new System.Drawing.Point(464, 65);
             this.studentrevlist.Name = "studentrevlist";
-            this.studentrevlist.Size = new System.Drawing.Size(173, 352);
+            this.studentrevlist.Size = new System.Drawing.Size(149, 352);
             this.studentrevlist.TabIndex = 5;
             this.studentrevlist.UseCompatibleStateImageBehavior = false;
             this.studentrevlist.View = System.Windows.Forms.View.Details;
@@ -478,23 +484,22 @@
             // 
             // button1
             // 
-            this.button1.Location = new System.Drawing.Point(96, 338);
+            this.button1.Location = new System.Drawing.Point(20, 312);
             this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(75, 23);
+            this.button1.Size = new System.Drawing.Size(134, 69);
             this.button1.TabIndex = 4;
-            this.button1.Text = "button1";
+            this.button1.Text = "calander button";
             this.button1.UseVisualStyleBackColor = true;
             this.button1.Click += new System.EventHandler(this.button1_Click);
             // 
-            // label4
+            // calanderlabel
             // 
-            this.label4.AutoSize = true;
-            this.label4.Location = new System.Drawing.Point(214, 344);
-            this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(46, 17);
-            this.label4.TabIndex = 3;
-            this.label4.Text = "label4";
-            this.label4.Click += new System.EventHandler(this.label4_Click);
+            this.calanderlabel.AutoSize = true;
+            this.calanderlabel.Location = new System.Drawing.Point(259, 338);
+            this.calanderlabel.Name = "calanderlabel";
+            this.calanderlabel.Size = new System.Drawing.Size(0, 17);
+            this.calanderlabel.TabIndex = 3;
+            this.calanderlabel.Click += new System.EventHandler(this.label4_Click);
             // 
             // monthCalendar2
             // 
@@ -525,6 +530,40 @@
             // drink
             // 
             this.drink.Text = "drinks bought";
+            // 
+            // studentnameslist
+            // 
+            this.studentnameslist.Columns.AddRange(new System.Windows.Forms.ColumnHeader[] {
+            this.student1});
+            this.studentnameslist.GridLines = true;
+            this.studentnameslist.HideSelection = false;
+            this.studentnameslist.Location = new System.Drawing.Point(647, 65);
+            this.studentnameslist.Name = "studentnameslist";
+            this.studentnameslist.Size = new System.Drawing.Size(121, 352);
+            this.studentnameslist.TabIndex = 6;
+            this.studentnameslist.UseCompatibleStateImageBehavior = false;
+            this.studentnameslist.View = System.Windows.Forms.View.Details;
+            // 
+            // student1
+            // 
+            this.student1.Text = "student";
+            // 
+            // sumlist
+            // 
+            this.sumlist.Columns.AddRange(new System.Windows.Forms.ColumnHeader[] {
+            this.price});
+            this.sumlist.GridLines = true;
+            this.sumlist.HideSelection = false;
+            this.sumlist.Location = new System.Drawing.Point(806, 65);
+            this.sumlist.Name = "sumlist";
+            this.sumlist.Size = new System.Drawing.Size(121, 352);
+            this.sumlist.TabIndex = 7;
+            this.sumlist.UseCompatibleStateImageBehavior = false;
+            this.sumlist.View = System.Windows.Forms.View.Details;
+            // 
+            // price
+            // 
+            this.price.Text = "Total sum";
             // 
             // SomerenUI
             // 
@@ -619,11 +658,15 @@
         private System.Windows.Forms.MonthCalendar monthCalendar1;
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.MonthCalendar monthCalendar2;
-        private System.Windows.Forms.Label label4;
+        private System.Windows.Forms.Label calanderlabel;
         private System.Windows.Forms.Button button1;
         private System.Windows.Forms.ListView studentrevlist;
         private System.Windows.Forms.ColumnHeader student;
         private System.Windows.Forms.ColumnHeader drink;
+        private System.Windows.Forms.ListView studentnameslist;
+        private System.Windows.Forms.ColumnHeader student1;
+        private System.Windows.Forms.ListView sumlist;
+        private System.Windows.Forms.ColumnHeader price;
     }
 }
 

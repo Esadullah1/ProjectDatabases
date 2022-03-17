@@ -24,7 +24,19 @@ namespace SomerenLogic
             return revenues;
         }
 
-       
+        public List<studentrev> GetStudentNames()
+        {
+            List<studentrev> revenues = revenuedb.GetAllStudentNames();
+            return revenues;
+        }
+
+        public List<sumrev> GetSum()
+        {
+            List<sumrev> revenues = revenuedb.GetAllSum();
+            return revenues;
+        }
+
+
 
     }
 }
