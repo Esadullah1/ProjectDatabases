@@ -24,6 +24,11 @@ namespace SomerenLogic
             return revenues;
         }
 
-       
+        public List<Revenue> GetTotal()
+        {
+            List<Revenue> revenues = revenuedb.GetAllTotal();
+            return revenues;
+        }
+
     }
 }

@@ -15,7 +15,17 @@ namespace SomerenDAL
         public List<Revenue> GetAllPrice()
         {
 
-            string query = "SELECT student, drink FROM CashRegister";
+            string query = "SELECT DISTINCT student FROM CashRegister";
+
+
+
+            SqlParameter[] sqlParameters = new SqlParameter[0];
+            return ReadTables(ExecuteSelectQuery(query, sqlParameters));
+        }
+        public List<Revenue> GetAllTotal()
+        {
+
+            string query = "SELECT drink COUNT(student) FROM CashRegister GROUP BY drink";
 
 
 
@@ -23,7 +33,7 @@ namespace SomerenDAL
             return ReadTables(ExecuteSelectQuery(query, sqlParameters));
         }
 
-        
+
 
         private List<Revenue> ReadTables(DataTable dataTable)
         {
@@ -37,13 +47,19 @@ namespace SomerenDAL
                     student = (string)dr["student"],
                     drink = (string)dr["drink"]
                     
-                    
+
+
+
+
 
 
                 };
                 revenues.Add(revenue);
             }
             return revenues;
+
+
         }
+        
     }
 }

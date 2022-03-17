@@ -119,14 +119,34 @@ namespace SomerenUI
 
                     foreach (Revenue r in revenueList)
                     {
-                        string[] arr = new string[2];
-                        arr[0] = r.student.ToString();
-                        arr[1] = r.drink.ToString();
+                        string[] arr = new string[1];
+                        arr[0] = r.student.ToString();                        
                         ListViewItem li = new ListViewItem(arr);
                         studentrevlist.Items.Add(li);
                     }
 
                     
+                }
+                catch (Exception e)
+                {
+                    MessageBox.Show("Something went wrong while loading the Revenue: " + e.Message);
+                }
+                try
+                {
+                    // fill the students listview within the students panel with a list of students
+                    RevenueService revenueService = new RevenueService(); ;
+                    List<Revenue> revenueList = revenueService.GetTotal();
+
+
+                    foreach (Revenue r in revenueList)
+                    {
+                        string[] arr = new string[1];
+                        arr[0] = r.drink.ToString();
+                        ListViewItem li = new ListViewItem(arr);
+                        drinklist.Items.Add(li);
+                    }
+
+
                 }
                 catch (Exception e)
                 {
