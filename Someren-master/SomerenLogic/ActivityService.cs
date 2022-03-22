@@ -24,6 +24,11 @@ namespace SomerenLogic
                 List<Activity> activities = activityDb.GetAllActivites();
                 return activities;
             }
-        
+
+        public void AddSupervisor(Activity activity)
+        {
+            activityDb.AddSupervisor(activity);
+        }
+
     }
 }

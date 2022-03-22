@@ -10,10 +10,9 @@ namespace SomerenModel
     {
 
 
-        public string ActivityID { get; set; }
-        public string Description { get; set; } // RoomNumber, e.g. 206
-        public string StartDate { get; set; } // number of beds, either 4,6,8,12 or 16
-        public string EndDate { get; set; } // student = false, teacher = true
+        public int ActivityID { get; set; }
+        public string SupervisorName { get; set; } // RoomNumber, e.g. 206
+
 
     }
 }

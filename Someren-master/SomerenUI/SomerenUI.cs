@@ -12,6 +12,8 @@ namespace SomerenUI
         Drinks updateDrink;
         Drinks updateStock;
 
+        Activity updateActivity;
+
         public SomerenUI()
         {
             InitializeComponent();
@@ -329,7 +331,8 @@ namespace SomerenUI
 
             else if (panelName == "Activity Supervisors")
             {
-                listViewDrinks.Items.Clear();
+                comboBoxTeacherNames.Items.Clear();
+                listViewActivites.Items.Clear();
                 pnlDashboard.Hide();
                 imgDashboard.Hide();
                 pnlStudents.Hide();
@@ -340,6 +343,7 @@ namespace SomerenUI
                 panelDrink.Hide();
                 pnlSupervisors.Show();
 
+
                 try
                 {
                     // fill the students listview within the students panel with a list of students
@@ -348,20 +352,32 @@ namespace SomerenUI
 
                     foreach (Activity a in activitiesList)
                     {
-                        string[] arr = new string[4];
-                        arr[0] = a.ActivityID;
-                        arr[1] = a.Description;
-                        arr[2] = a.StartDate.ToString();
-                        arr[3] = a.EndDate.ToString();
-
+                        string[] arr = new string[2];
+                        arr[0] = a.ActivityID.ToString();
+                        arr[1] = a.SupervisorName;
                         ListViewItem li = new ListViewItem(arr);
                         listViewActivites.Items.Add(li);
+
+                        
+                        
+                    }
+
+                    TeacherService teachService = new TeacherService(); ;
+                    List<Teacher> teacherList = teachService.GetTeachers(); ;
+
+                    foreach (Teacher t in teacherList)
+                    {
+                       
+
+
+                        
+                        comboBoxTeacherNames.Items.Add(t.TeacherFirstName);
                     }
 
                 }
                 catch (Exception e)
                 {
-                    MessageBox.Show("Something went wrong while loading the Teachers: " + e.Message);
+                    MessageBox.Show("Something went wrong while loading the Activities: " + e.Message);
                 }
 
             }
@@ -509,6 +525,41 @@ namespace SomerenUI
         private void activitySupervisorsToolStripMenuItem_Click(object sender, EventArgs e)
         {
            showPanel("Activity Supervisors");
+        }
+
+        private void txtSupervisorAdd_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void btnAddSupervisor_Click(object sender, EventArgs e)
+        {
+            Activity activityUpdate = new Activity();
+
+
+            listViewActivites.FocusedItem.SubItems[1].Text = txtActivityID.Text;
+
+            ActivityService activityService = new ActivityService();
+
+            activityUpdate.SupervisorName = comboBoxTeacherNames.SelectedItem.ToString();
+            activityUpdate.ActivityID = Convert.ToInt32(listViewActivites.FocusedItem.SubItems[1].Text);
+
+
+
+            this.updateActivity = activityUpdate;
+
+            activityService.AddSupervisor(updateActivity);
+            txtActivityID.Clear();
+            MessageBox.Show("Succesfully updated Drink Name and/or stock of drink");
+            showPanel("Activity Supervisors");
+
+
+
+        }
+
+        private void listViewActivites_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            txtActivityID.Text = listViewActivites.FocusedItem.SubItems[0].Text;
         }
     }
 }

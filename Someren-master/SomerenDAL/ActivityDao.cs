@@ -16,7 +16,7 @@ namespace SomerenDAL
         public List<Activity> GetAllActivites()
         {
 
-            string query = "SELECT ActivityID, Description, StartDateTime, EndDateTime FROM [Activity]";
+            string query = "SELECT ActivityID, SupervisorName FROM [ActivitySupervisors]";
 
             SqlParameter[] sqlParameters = new SqlParameter[0];
             return ReadTables(ExecuteSelectQuery(query, sqlParameters));
@@ -30,14 +30,20 @@ namespace SomerenDAL
             {
                 Activity activity = new Activity()
                 {
-                    ActivityID = (string)dr["ActivityID"],
-                    Description = (string)(dr["Description"].ToString()),
-                    StartDate = (string)dr["StartDateTime"],
-                    EndDate = (string)dr["EndDateTime"]
+                    ActivityID = (int)dr["ActivityID"],
+                    SupervisorName = (string)(dr["SupervisorName"])
                 };
                 activities.Add(activity);
             }
             return activities;
+        }
+
+        public void AddSupervisor(Activity activity)
+        {
+            SqlCommand command = new SqlCommand("UPDATE [ActivitySupervisors] SET SupervisorName = @SupervisorName WHERE ActivityID = @ActivityID", OpenConnection());
+            command.Parameters.AddWithValue("@SupervisorName", activity.SupervisorName);
+            command.Parameters.AddWithValue("@ActivityID", activity.ActivityID);
+            command.ExecuteNonQuery();
         }
 
     }
