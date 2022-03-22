@@ -33,6 +33,7 @@ namespace SomerenUI
                 Revenuepnl.Hide();
                 panelCashRegister.Hide();
                 pnlDashboard.Show();
+                pnlSupervisors.Hide();
                 imgDashboard.Show();
             }
             else if (panelName == "Students")
@@ -45,6 +46,7 @@ namespace SomerenUI
                 panelDrink.Hide();
                 Revenuepnl.Hide();
                 panelCashRegister.Hide();
+                pnlSupervisors.Hide();
                 pnlStudents.Show();
 
 
@@ -80,6 +82,7 @@ namespace SomerenUI
                 panelCashRegister.Hide();
                 panelDrink.Hide();
                 Revenuepnl.Hide();
+                pnlSupervisors.Hide();
                 panelTeachers.Show();
 
                 try
@@ -116,6 +119,7 @@ namespace SomerenUI
                 panelCashRegister.Hide();
                 panelDrink.Hide();
                 Revenuepnl.Hide();
+                pnlSupervisors.Hide();
                 panelRooms.Show();
 
 
@@ -150,6 +154,7 @@ namespace SomerenUI
                 Revenuepnl.Hide();
                 panelRooms.Hide();
                 panelCashRegister.Hide();
+                pnlSupervisors.Hide();
                 panelDrink.Show();
 
                 try
@@ -198,6 +203,7 @@ namespace SomerenUI
                 panelRooms.Hide();
                 panelDrink.Hide();
                 Revenuepnl.Hide();
+                pnlSupervisors.Hide();
                 panelCashRegister.Show();
 
 
@@ -245,6 +251,7 @@ namespace SomerenUI
                 panelRooms.Hide();
                 panelCashRegister.Hide();
                 panelDrink.Hide();
+                pnlSupervisors.Hide();
                 Revenuepnl.Show();
 
                 try
@@ -317,6 +324,45 @@ namespace SomerenUI
 
 
 
+
+            }
+
+            else if (panelName == "Activity Supervisors")
+            {
+                listViewDrinks.Items.Clear();
+                pnlDashboard.Hide();
+                imgDashboard.Hide();
+                pnlStudents.Hide();
+                panelTeachers.Hide();
+                Revenuepnl.Hide();
+                panelRooms.Hide();
+                panelCashRegister.Hide();
+                panelDrink.Hide();
+                pnlSupervisors.Show();
+
+                try
+                {
+                    // fill the students listview within the students panel with a list of students
+                    ActivityService activityService = new ActivityService(); ;
+                    List<Activity> activitiesList = activityService.GetActivities(); 
+
+                    foreach (Activity a in activitiesList)
+                    {
+                        string[] arr = new string[4];
+                        arr[0] = a.ActivityID;
+                        arr[1] = a.Description;
+                        arr[2] = a.StartDate.ToString();
+                        arr[3] = a.EndDate.ToString();
+
+                        ListViewItem li = new ListViewItem(arr);
+                        listViewActivites.Items.Add(li);
+                    }
+
+                }
+                catch (Exception e)
+                {
+                    MessageBox.Show("Something went wrong while loading the Teachers: " + e.Message);
+                }
 
             }
         }
@@ -458,6 +504,11 @@ namespace SomerenUI
             calanderlabel.Text = $"{startdate} -- {enddate}";
 
 
+        }
+
+        private void activitySupervisorsToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+           showPanel("Activity Supervisors");
         }
     }
 }
