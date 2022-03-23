@@ -533,6 +533,12 @@ namespace SomerenUI
 
             MessageBox.Show($"ActivityID: {ActivityIDbox}\nDescription {DescriptionBox.Text}\nStartdate: {startdatecal.SelectionStart}\nEnddate: {enddatecal.SelectionEnd}\nActivityNumber: {ActivityNumberBox.Text.ToString()}");
             activityservice.AddActivities(ActivityIDbox.Text.ToString(), DescriptionBox.Text.ToString(), startdatecal.SelectionStart.ToString("dd/MM/yyyy"), enddatecal.SelectionEnd.ToString("dd/MM/yyyy"), ActivityNumberBox.Text.ToString());
+            UpdateActivitybox.Clear();
+            updateDescriptionBox.Clear();
+            ActivityIDbox.Clear();
+            DescriptionBox.Clear();
+            ActivityNumberBox.Clear();
+
             showPanel("Activity");
         }
 
@@ -555,20 +561,30 @@ namespace SomerenUI
             ActivityService activityService = new ActivityService();
             activityService.DeleteActivity(activityDelete);
 
-            DialogResult dialogResult = MessageBox.Show("Weet u zeker dat u deze supervisor wilt verwijderen?", "Weet u zeker dat u deze supervisor wilt verwijderen?", MessageBoxButtons.YesNo);
+            DialogResult dialogResult = MessageBox.Show("Weet u zeker dat u deze activiteit wilt verwijderen?", "Weet u zeker dat u activiteit wilt verwijderen?", MessageBoxButtons.YesNo);
 
             if (dialogResult == DialogResult.Yes)
             {
-                MessageBox.Show("Supervisor verwijderd");
+                MessageBox.Show("Activiteit verwijderd");
                 ActivityService activityService1 = new ActivityService();
                 activityService1.DeleteActivity(activityDelete);
-                showPanel("Activity Supervisors");
+                ActivityIDbox.Clear();
+                DescriptionBox.Clear();
+                ActivityNumberBox.Clear();
+                UpdateActivitybox.Clear();
+                updateDescriptionBox.Clear();
+                showPanel("Activity");
             }
             else
             {
-                MessageBox.Show("Supervisor niet verwijderd");
-                showPanel("Activity Supervisors");
+                MessageBox.Show("Activiteit niet verwijderd");
+                showPanel("Activititeit Supervisors");
             }
+            ActivityIDbox.Clear();
+            DescriptionBox.Clear();
+            ActivityNumberBox.Clear();        
+            UpdateActivitybox.Clear();
+            updateDescriptionBox.Clear();
             showPanel("Activity");
         }
 
@@ -595,6 +611,9 @@ namespace SomerenUI
             activityService.UpdateDescription(descriptionUpdate);
             UpdateActivitybox.Clear();
             updateDescriptionBox.Clear();
+            ActivityIDbox.Clear();
+            DescriptionBox.Clear();
+            ActivityNumberBox.Clear();
             MessageBox.Show("Succesfully updated ActivityID and/or Description");
             showPanel("Activity");
         }
