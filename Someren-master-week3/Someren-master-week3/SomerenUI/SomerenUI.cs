@@ -554,6 +554,21 @@ namespace SomerenUI
         {
             ActivityService activityService = new ActivityService();
             activityService.DeleteActivity(activityDelete);
+
+            DialogResult dialogResult = MessageBox.Show("Weet u zeker dat u deze supervisor wilt verwijderen?", "Weet u zeker dat u deze supervisor wilt verwijderen?", MessageBoxButtons.YesNo);
+
+            if (dialogResult == DialogResult.Yes)
+            {
+                MessageBox.Show("Supervisor verwijderd");
+                ActivityService activityService1 = new ActivityService();
+                activityService1.DeleteActivity(activityDelete);
+                showPanel("Activity Supervisors");
+            }
+            else
+            {
+                MessageBox.Show("Supervisor niet verwijderd");
+                showPanel("Activity Supervisors");
+            }
             showPanel("Activity");
         }
 
@@ -563,25 +578,30 @@ namespace SomerenUI
             Activity descriptionUpdate = new Activity();
 
 
-            listViewDrinks.FocusedItem.SubItems[0].Text = txtUpdateDrink.Text;
-            DrinksService drinksService = new DrinksService();
-            activityidUpdate.DrinkName = listViewDrinks.FocusedItem.SubItems[0].Text;
-            activityidUpdate.DrinkID = Convert.ToInt32(listViewDrinks.FocusedItem.SubItems[5].Text);
+            activitylist.FocusedItem.SubItems[0].Text = UpdateActivitybox.Text;
+            ActivityService activityService = new ActivityService();
+            activityidUpdate.ActivityID = activitylist.FocusedItem.SubItems[0].Text;
+            activityidUpdate.ActivityNumber = Convert.ToInt32(activitylist.FocusedItem.SubItems[4].Text);
 
-            listViewDrinks.FocusedItem.SubItems[4].Text = txtUpdateStockOfDrink.Text;
+            activitylist.FocusedItem.SubItems[1].Text = updateDescriptionBox.Text;
 
-            descriptionUpdate.Stock = Convert.ToInt32(listViewDrinks.FocusedItem.SubItems[4].Text);
-            descriptionUpdate.DrinkID = Convert.ToInt32(listViewDrinks.FocusedItem.SubItems[5].Text);
+            descriptionUpdate.Description = (activitylist.FocusedItem.SubItems[1].Text);
+            descriptionUpdate.ActivityNumber = Convert.ToInt32(activitylist.FocusedItem.SubItems[4].Text);
 
 
             this.activityidUpdate = activityidUpdate;
-            this.updateStock = descriptionUpdate;
-            drinksService.UpdateDrink(updateDrink);
-            drinksService.UpdateDrinkStock(descriptionUpdate);
+            this.descriptionUpdate = descriptionUpdate;
+            activityService.UpdateActivityID(activityidUpdate);
+            activityService.UpdateDescription(descriptionUpdate);
             UpdateActivitybox.Clear();
             updateDescriptionBox.Clear();
             MessageBox.Show("Succesfully updated ActivityID and/or Description");
             showPanel("Activity");
+        }
+
+        private void label20_Click(object sender, EventArgs e)
+        {
+
         }
     }
 }

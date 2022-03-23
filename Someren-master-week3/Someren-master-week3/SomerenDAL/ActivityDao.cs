@@ -95,7 +95,7 @@ namespace SomerenDAL
         {
             SqlCommand command = new SqlCommand("UPDATE [Activity] SET Description = @Description WHERE ActivityNumber = @ActivityNumber", OpenConnection());
             command.Parameters.AddWithValue("@Description", activity.Description);
-            command.Parameters.AddWithValue("@DrinkID", activity.ActivityNumber);
+            command.Parameters.AddWithValue("@ActivityNumber", activity.ActivityNumber);
             command.ExecuteNonQuery();
         }
     }

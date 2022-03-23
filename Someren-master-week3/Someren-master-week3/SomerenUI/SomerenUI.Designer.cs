@@ -135,6 +135,13 @@
             this.UpdateActivity = new System.Windows.Forms.Button();
             this.UpdateActivitybox = new System.Windows.Forms.TextBox();
             this.updateDescriptionBox = new System.Windows.Forms.TextBox();
+            this.label15 = new System.Windows.Forms.Label();
+            this.label16 = new System.Windows.Forms.Label();
+            this.label17 = new System.Windows.Forms.Label();
+            this.label18 = new System.Windows.Forms.Label();
+            this.label19 = new System.Windows.Forms.Label();
+            this.label20 = new System.Windows.Forms.Label();
+            this.label21 = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.imgDashboard)).BeginInit();
             this.menuStrip1.SuspendLayout();
             this.pnlDashboard.SuspendLayout();
@@ -176,7 +183,7 @@
             this.menuStrip1.Location = new System.Drawing.Point(0, 0);
             this.menuStrip1.Name = "menuStrip1";
             this.menuStrip1.Padding = new System.Windows.Forms.Padding(5, 2, 0, 2);
-            this.menuStrip1.Size = new System.Drawing.Size(1283, 30);
+            this.menuStrip1.Size = new System.Drawing.Size(1283, 28);
             this.menuStrip1.TabIndex = 1;
             this.menuStrip1.Text = "menuStrip1";
             // 
@@ -926,6 +933,13 @@
             // 
             // pnlactivity
             // 
+            this.pnlactivity.Controls.Add(this.label21);
+            this.pnlactivity.Controls.Add(this.label20);
+            this.pnlactivity.Controls.Add(this.label19);
+            this.pnlactivity.Controls.Add(this.label18);
+            this.pnlactivity.Controls.Add(this.label17);
+            this.pnlactivity.Controls.Add(this.label16);
+            this.pnlactivity.Controls.Add(this.label15);
             this.pnlactivity.Controls.Add(this.updateDescriptionBox);
             this.pnlactivity.Controls.Add(this.UpdateActivitybox);
             this.pnlactivity.Controls.Add(this.UpdateActivity);
@@ -940,7 +954,7 @@
             this.pnlactivity.Controls.Add(this.activitylabel);
             this.pnlactivity.Location = new System.Drawing.Point(12, 32);
             this.pnlactivity.Name = "pnlactivity";
-            this.pnlactivity.Size = new System.Drawing.Size(1108, 482);
+            this.pnlactivity.Size = new System.Drawing.Size(1108, 587);
             this.pnlactivity.TabIndex = 12;
             // 
             // activitylist
@@ -1021,13 +1035,13 @@
             // 
             // startdatecal
             // 
-            this.startdatecal.Location = new System.Drawing.Point(313, 277);
+            this.startdatecal.Location = new System.Drawing.Point(313, 360);
             this.startdatecal.Name = "startdatecal";
             this.startdatecal.TabIndex = 8;
             // 
             // enddatecal
             // 
-            this.enddatecal.Location = new System.Drawing.Point(543, 277);
+            this.enddatecal.Location = new System.Drawing.Point(540, 360);
             this.enddatecal.Name = "enddatecal";
             this.enddatecal.TabIndex = 9;
             this.enddatecal.DateChanged += new System.Windows.Forms.DateRangeEventHandler(this.enddatecal_DateChanged);
@@ -1069,6 +1083,70 @@
             this.updateDescriptionBox.Name = "updateDescriptionBox";
             this.updateDescriptionBox.Size = new System.Drawing.Size(100, 22);
             this.updateDescriptionBox.TabIndex = 13;
+            // 
+            // label15
+            // 
+            this.label15.AutoSize = true;
+            this.label15.Location = new System.Drawing.Point(39, 388);
+            this.label15.Name = "label15";
+            this.label15.Size = new System.Drawing.Size(91, 17);
+            this.label15.TabIndex = 14;
+            this.label15.Text = "Activity name";
+            // 
+            // label16
+            // 
+            this.label16.AutoSize = true;
+            this.label16.Location = new System.Drawing.Point(175, 388);
+            this.label16.Name = "label16";
+            this.label16.Size = new System.Drawing.Size(77, 17);
+            this.label16.TabIndex = 15;
+            this.label16.Text = "description";
+            // 
+            // label17
+            // 
+            this.label17.AutoSize = true;
+            this.label17.Location = new System.Drawing.Point(313, 337);
+            this.label17.Name = "label17";
+            this.label17.Size = new System.Drawing.Size(68, 17);
+            this.label17.TabIndex = 16;
+            this.label17.Text = "start date";
+            // 
+            // label18
+            // 
+            this.label18.AutoSize = true;
+            this.label18.Location = new System.Drawing.Point(540, 334);
+            this.label18.Name = "label18";
+            this.label18.Size = new System.Drawing.Size(64, 17);
+            this.label18.TabIndex = 17;
+            this.label18.Text = "end date";
+            // 
+            // label19
+            // 
+            this.label19.AutoSize = true;
+            this.label19.Location = new System.Drawing.Point(818, 405);
+            this.label19.Name = "label19";
+            this.label19.Size = new System.Drawing.Size(19, 17);
+            this.label19.TabIndex = 18;
+            this.label19.Text = "id";
+            // 
+            // label20
+            // 
+            this.label20.AutoSize = true;
+            this.label20.Location = new System.Drawing.Point(755, 145);
+            this.label20.Name = "label20";
+            this.label20.Size = new System.Drawing.Size(91, 17);
+            this.label20.TabIndex = 19;
+            this.label20.Text = "Activity name";
+            this.label20.Click += new System.EventHandler(this.label20_Click);
+            // 
+            // label21
+            // 
+            this.label21.AutoSize = true;
+            this.label21.Location = new System.Drawing.Point(935, 148);
+            this.label21.Name = "label21";
+            this.label21.Size = new System.Drawing.Size(79, 17);
+            this.label21.TabIndex = 20;
+            this.label21.Text = "Description";
             // 
             // SomerenUI
             // 
@@ -1231,6 +1309,13 @@
         private System.Windows.Forms.Button UpdateActivity;
         private System.Windows.Forms.TextBox updateDescriptionBox;
         private System.Windows.Forms.TextBox UpdateActivitybox;
+        private System.Windows.Forms.Label label21;
+        private System.Windows.Forms.Label label20;
+        private System.Windows.Forms.Label label19;
+        private System.Windows.Forms.Label label18;
+        private System.Windows.Forms.Label label17;
+        private System.Windows.Forms.Label label16;
+        private System.Windows.Forms.Label label15;
     }
 }
 
