@@ -8,6 +8,12 @@ namespace SomerenUI
 {
     public partial class SomerenUI : Form
     {
+        Drinks deleteDrink;
+        Drinks updateDrink;
+        Drinks updateStock;
+
+        Activity selectActivityName;
+
         public SomerenUI()
         {
             InitializeComponent();
@@ -25,8 +31,10 @@ namespace SomerenUI
                 pnlStudents.Hide();
                 panelTeachers.Hide();
                 panelRooms.Hide();
+                panelDrink.Hide();
+                Revenuepnl.Hide();
                 panelCashRegister.Hide();
-
+                panelParticipants.Hide();
                 pnlDashboard.Show();
                 imgDashboard.Show();
             }
@@ -37,8 +45,10 @@ namespace SomerenUI
                 imgDashboard.Hide();
                 panelTeachers.Hide();
                 panelRooms.Hide();
+                panelDrink.Hide();
+                Revenuepnl.Hide();
                 panelCashRegister.Hide();
-
+                panelParticipants.Hide();
                 pnlStudents.Show();
 
 
@@ -56,7 +66,7 @@ namespace SomerenUI
                         arr[2] = s.DateOfBirth.ToString("dd/MM/yyyy");
                         ListViewItem li = new ListViewItem(arr);
                         listViewStudents.Items.Add(li);
-                        
+
                     }
                 }
                 catch (Exception e)
@@ -72,7 +82,9 @@ namespace SomerenUI
                 pnlStudents.Hide();
                 panelRooms.Hide();
                 panelCashRegister.Hide();
-
+                panelDrink.Hide();
+                Revenuepnl.Hide();
+                panelParticipants.Hide();
                 panelTeachers.Show();
 
                 try
@@ -107,7 +119,9 @@ namespace SomerenUI
                 pnlStudents.Hide();
                 panelTeachers.Hide();
                 panelCashRegister.Hide();
-
+                panelDrink.Hide();
+                Revenuepnl.Hide();
+                panelParticipants.Hide();
                 panelRooms.Show();
 
 
@@ -129,17 +143,69 @@ namespace SomerenUI
                 }
                 catch (Exception e)
                 {
-                    MessageBox.Show("Something went wrong while loading the students: " + e.Message);
+                    MessageBox.Show("Something went wrong while loading the Rooms: " + e.Message);
                 }
             }
-            else if (panelName == "Cash register")
+            else if (panelName == "Drinks")
+            {
+                listViewDrinks.Items.Clear();
+                pnlDashboard.Hide();
+                imgDashboard.Hide();
+                pnlStudents.Hide();
+                panelTeachers.Hide();
+                Revenuepnl.Hide();
+                panelRooms.Hide();
+                panelCashRegister.Hide();
+                panelParticipants.Hide();
+                panelDrink.Show();
+
+                try
+                {
+                    // fill the students listview within the students panel with a list of students
+                    DrinksService drinkService = new DrinksService();
+                    List<Drinks> drinkList = drinkService.GetDrinks();
+
+                    foreach (Drinks d in drinkList)
+                    {
+
+
+                        string[] arr = new string[6];
+                        arr[0] = d.DrinkName;
+                        arr[1] = d.Price.ToString("0.00");
+                        arr[2] = d.Voucher.ToString();
+                        arr[3] = d.Alcoholic.ToString();
+                        arr[4] = d.Stock.ToString();
+                        arr[5] = d.DrinkID.ToString();
+                        ListViewItem li = new ListViewItem(arr);
+                        listViewDrinks.Items.Add(li);
+
+
+
+
+
+
+                    }
+                }
+                catch (Exception e)
+                {
+                    MessageBox.Show("Something went wrong while loading the Drinks: " + e.Message);
+                }
+
+
+
+
+
+            }
+            else if (panelName == "Cash Register")
             {
                 pnlDashboard.Hide();
                 imgDashboard.Hide();
                 pnlStudents.Hide();
                 panelTeachers.Hide();
                 panelRooms.Hide();
-
+                panelDrink.Hide();
+                Revenuepnl.Hide();
+                panelParticipants.Hide();
                 panelCashRegister.Show();
 
 
@@ -154,17 +220,17 @@ namespace SomerenUI
                         comboBox1.Items.Add(studentName);
                     }
 
-                    DrinkService drinkService = new DrinkService(); ;
-                    List<Drink> drinkList = drinkService.GetDrink(); ;
+                    DrinksService drinkService = new DrinksService(); ;
+                    List<Drinks> drinkList = drinkService.GetDrinks();
 
-                    foreach (Drink d in drinkList)
+                    foreach (Drinks d in drinkList)
                     {
                         //string[] arr = new string[1];
                         //string[] arr2 = new string[1];
 
                         //arr[0] = d.Price.ToString();
                         //arr2[0] = d.drinkName.ToString();
-                        string drinkName = d.drinkName;
+                        string drinkName = d.DrinkName;
                         decimal price = d.Price;
                         comboBox2.Items.Add(drinkName);
                         comboBox3.Items.Add($"{price:0.00}");
@@ -175,18 +241,140 @@ namespace SomerenUI
                 {
                     MessageBox.Show("Something went wrong while loading the cash register: " + e.Message);
                 }
-                
-            }
 
+            }
+            else if (panelName == "Revenue")
+            {
+                listViewRooms.Items.Clear();
+                pnlDashboard.Hide();
+                imgDashboard.Hide();
+                pnlStudents.Hide();
+                panelTeachers.Hide();
+                panelRooms.Hide();
+                panelCashRegister.Hide();
+                panelDrink.Hide();
+                panelParticipants.Hide();
+                Revenuepnl.Show();
+
+                try
+                {
+                    // fill the students listview within the students panel with a list of students
+                    RevenueService revenueService = new RevenueService(); ;
+                    List<Revenue> revenueList = revenueService.GetPrice();
+
+
+                    foreach (Revenue r in revenueList)
+                    {
+                        string[] arr = new string[2];
+                        arr[1] = r.student.ToString();
+                        arr[0] = r.drink.ToString();
+                        ListViewItem li = new ListViewItem(arr);
+                        studentrevlist.Items.Add(li);
+                    }
+
+
+                }
+                catch (Exception e)
+                {
+                    MessageBox.Show("Something went wrong while loading the Revenue: " + e.Message);
+                }
+
+                try
+                {
+                    // fill the students listview within the students panel with a list of students
+                    RevenueService revenueService = new RevenueService(); ;
+                    List<studentrev> revenueList = revenueService.GetStudentNames();
+
+
+                    foreach (studentrev r in revenueList)
+                    {
+                        string[] arr = new string[1];
+                        arr[0] = r.student1.ToString();
+                        ListViewItem li = new ListViewItem(arr);
+                        studentnameslist.Items.Add(li);
+                    }
+
+
+                }
+                catch (Exception e)
+                {
+                    MessageBox.Show("Something went wrong while loading the Revenue: " + e.Message);
+                }
+
+                try
+                {
+                    // fill the students listview within the students panel with a list of students
+                    RevenueService revenueService = new RevenueService(); ;
+                    List<sumrev> revenueList = revenueService.GetSum();
+
+
+                    foreach (sumrev r in revenueList)
+                    {
+                        string[] arr = new string[1];
+                        arr[0] = r.price1.ToString();
+                        ListViewItem li = new ListViewItem(arr);
+                        sumlist.Items.Add(li);
+                    }
+
+
+                }
+                catch (Exception e)
+                {
+                    MessageBox.Show("Something went wrong while loading the Revenue: " + e.Message);
+                }
+
+
+
+
+
+            }
+            else if (panelName == "Participants")
+            {
+                listViewParticipants.Items.Clear();
+                listView1.Items.Clear();
+                listView2.Items.Clear();
+                pnlDashboard.Hide();
+                imgDashboard.Hide();
+                pnlStudents.Hide();
+                panelTeachers.Hide();
+                panelRooms.Hide();
+                panelDrink.Hide();
+                Revenuepnl.Hide();
+                panelCashRegister.Hide();
+
+                panelParticipants.Show();
+
+
+                try
+                {
+                    string[] arr = new string[3];
+                    ActivityService activity = new ActivityService();
+                    List<Activity> activityList = activity.GetActivity();
+                    
+                    foreach (Activity d in activityList)
+                    {
+                        arr[0] = d.ActiviyID;
+                        ListViewItem li = new ListViewItem(arr[0]);
+                        listViewParticipants.Items.Add(li);
+
+                    }
+                    
+                    
+                }
+                catch (Exception e)
+                {
+                    MessageBox.Show("Something went wrong while loading the Participants: " + e.Message);
+                }
+
+            }
         }
+
         void RemoveComboBox()
         {
             comboBox1.Items.RemoveAt(0);
             comboBox2.Items.RemoveAt(0);
             comboBox3.Items.RemoveAt(0);
         }
-
-
         private void exitToolStripMenuItem_Click(object sender, EventArgs e)
         {
             Application.Exit();
@@ -218,13 +406,73 @@ namespace SomerenUI
             showPanel("Rooms");
         }
 
-        private void cashRegisterToolStripMenuItem_Click(object sender, EventArgs e)
+
+
+        private void drinksToolStripMenuItem_Click_1(object sender, EventArgs e)
+        {
+            showPanel("Drinks");
+        }
+
+     
+
+        private void buttonDeleteDrink_Click(object sender, EventArgs e)
         {
 
+
+            DrinksService drinksService = new DrinksService();
+            drinksService.DeleteDrink(deleteDrink);
+            showPanel("Drinks");
+
+
+        }
+
+        private void buttonUpdateDrink_Click(object sender, EventArgs e)
+        {
+            Drinks drinksUpdate = new Drinks();
+            Drinks drinksStockUpdate = new Drinks();
+
+
+            listViewDrinks.FocusedItem.SubItems[0].Text = txtUpdateDrink.Text;
+            DrinksService drinksService = new DrinksService();
+            drinksUpdate.DrinkName = listViewDrinks.FocusedItem.SubItems[0].Text;
+            drinksUpdate.DrinkID = Convert.ToInt32(listViewDrinks.FocusedItem.SubItems[5].Text);
+
+            listViewDrinks.FocusedItem.SubItems[4].Text = txtUpdateStockOfDrink.Text;
+            
+            drinksStockUpdate.Stock = Convert.ToInt32(listViewDrinks.FocusedItem.SubItems[4].Text);
+            drinksStockUpdate.DrinkID = Convert.ToInt32(listViewDrinks.FocusedItem.SubItems[5].Text);
+
+
+            this.updateDrink = drinksUpdate;
+            this.updateStock = drinksStockUpdate;
+            drinksService.UpdateDrink(updateDrink);
+            drinksService.UpdateDrinkStock(drinksStockUpdate);
+            txtUpdateDrink.Clear();
+            txtUpdateStockOfDrink.Clear();
+            MessageBox.Show("Succesfully updated Drink Name and/or stock of drink");
+            showPanel("Drinks");
+        }
+
+
+
+        private void listViewDrinks_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            Drinks drinksDelete = new Drinks();
+            drinksDelete.DrinkName = listViewDrinks.FocusedItem.SubItems[0].Text;
+            txtUpdateDrink.Text = listViewDrinks.FocusedItem.SubItems[0].Text;
+            txtUpdateStockOfDrink.Text = listViewDrinks.FocusedItem.SubItems[4].Text;
+            this.deleteDrink = drinksDelete;
+
+
+
+        }
+
+        private void cashRegisterToolStripMenuItem_Click(object sender, EventArgs e)
+        {
             comboBox1.Items.Clear();
             comboBox2.Items.Clear();
             comboBox3.Items.Clear();
-            showPanel("Cash register");
+            showPanel("Cash Register");
         }
 
         private void comboBox1_SelectedIndexChanged(object sender, EventArgs e)
@@ -232,11 +480,93 @@ namespace SomerenUI
             RemoveComboBox();
         }
 
-        private void button1_Click(object sender, EventArgs e)
+        private void btnCheckout_Click(object sender, EventArgs e)
         {
             CashRegisterService cashService = new CashRegisterService();
+
+
             MessageBox.Show($"Name of student: {comboBox1.SelectedItem}\nName of drink: {comboBox2.SelectedItem}\nPrice: {comboBox3.SelectedItem}\nDate of purchase: {monthCalendar1.SelectionStart.ToString("dd/MM/yyyy")}");
             cashService.AddCashRegister(comboBox2.SelectedItem.ToString(), comboBox1.SelectedItem.ToString(), comboBox3.SelectedItem.ToString(), monthCalendar1.SelectionStart.ToString("dd/MM/yyyy"));
+        }
+
+        private void revenueToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            showPanel("Revenue");
+        }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            String startdate = monthCalendar1.SelectionRange.Start.ToString("dd-MM-yyyy");
+            String enddate = monthCalendar2.SelectionRange.Start.ToString("dd-MM-yyyy");
+
+            calanderlabel.Text = $"{startdate} -- {enddate}";
+
+
+        }
+
+        private void participantsToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            showPanel("Participants");
+        }
+
+
+        private void button2_Click(object sender, EventArgs e)
+        {
+            Activity selectActivityName = new Activity();
+            selectActivityName.ActiviyID = listViewParticipants.FocusedItem.SubItems[0].Text;
+
+            this.selectActivityName = selectActivityName;
+
+            ActivityStudentService st = new ActivityStudentService();
+            st.SelectActivities(selectActivityName);
+
+
+
+
+
+
+
+
+
+
+            ActivityService activity = new ActivityService();
+            List<Activity> activityList = activity.GetActivity();
+            
+            
+            for (int i = 0; i < activityList.Count; i++)
+            {
+                if (listViewParticipants.FocusedItem.SubItems[0].Text == activityList[i].ActiviyID.ToString())
+                {
+                    ActivityStudentService actStudService = new ActivityStudentService();
+                    List<ActivityStudents> acitvityStudentList = actStudService.SelectActivities(selectActivityName);
+
+
+                    foreach (ActivityStudents a in acitvityStudentList)
+                    {
+                        ListViewItem li2 = new ListViewItem(a.StudentFirstName);                            
+                        listView1.Items.Add(li2);
+                    }
+
+                    //ParticipatingService partService = new ParticipatingService(); ;
+                    //List<Participating> partList = partService.GetAllParticipaters();
+
+                    //foreach (Participating p in partList)
+                    //{
+                    //    arr[2] = p.NotParticipatingStudents
+
+                    //    ListViewItem li3 = new ListViewItem(arr[2]);
+                    //    listView2.Items.Add(li3);
+
+                    //}
+                    break;
+                }
+            }
+            
+        }
+
+        private void listViewParticipants_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            
             
         }
     }

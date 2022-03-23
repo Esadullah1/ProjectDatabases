@@ -43,9 +43,13 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="ActivityDAO.cs" />
+    <Compile Include="ActivityStudentsDAO.cs" />
     <Compile Include="BaseDao.cs" />
     <Compile Include="CashRegisterDAO.cs" />
-    <Compile Include="DrinkDAO.cs" />
+    <Compile Include="DrinksDao.cs" />
+    <Compile Include="ParticipatingDAO.cs" />
+    <Compile Include="RevenueDao.cs" />
     <Compile Include="RoomDao.cs" />
     <Compile Include="TeacherDao.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />

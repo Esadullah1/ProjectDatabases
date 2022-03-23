@@ -14,8 +14,8 @@ namespace SomerenDAL
         public List<Teacher> GetAllTeachers()
         {
             string query = "SELECT TeacherID, FirstName, LastName, Supervisor FROM [Teacher]";
-            SqlParameter[] sqlParameters = new SqlParameter[0];
-            return ReadTables(ExecuteSelectQuery(query, sqlParameters));
+            var sqlCommand = new SqlCommand(query);
+            return ReadTables(ExecuteSelectQuery(sqlCommand));
         }
 
         private List<Teacher> ReadTables(DataTable datatable)

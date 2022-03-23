@@ -5,7 +5,7 @@ using SomerenModel;
 
 namespace SomerenDAL
 {
-    public class CashRegisterDAO
+    public class CashRegisterDAO : BaseDao
     {
         private SqlConnection dbConnection;
 
@@ -24,7 +24,7 @@ namespace SomerenDAL
                 dbConnection);
             command.Parameters.AddWithValue("@StudentName", students);
             command.Parameters.AddWithValue("@DrinkName", drinks);
-            command.Parameters.AddWithValue("@price", price);
+            command.Parameters.AddWithValue("@price", Convert.ToDecimal(price));
             command.Parameters.AddWithValue("@date", date);
             command.ExecuteNonQuery();
             dbConnection.Close();
