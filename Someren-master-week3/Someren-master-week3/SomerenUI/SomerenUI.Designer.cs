@@ -42,6 +42,7 @@
             this.drinksToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.cashRegisterToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.revenueToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.activityToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.pnlDashboard = new System.Windows.Forms.Panel();
             this.lbl_Dashboard = new System.Windows.Forms.Label();
             this.pnlStudents = new System.Windows.Forms.Panel();
@@ -116,14 +117,24 @@
             this.monthCalendar2 = new System.Windows.Forms.MonthCalendar();
             this.monthCalendar3 = new System.Windows.Forms.MonthCalendar();
             this.label14 = new System.Windows.Forms.Label();
-            this.activityToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.pnlactivity = new System.Windows.Forms.Panel();
-            this.activitylabel = new System.Windows.Forms.Label();
             this.activitylist = new System.Windows.Forms.ListView();
             this.ActivityID = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.Description = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.StartDateTime = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.EndDateTime = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.activitylabel = new System.Windows.Forms.Label();
+            this.CreateActivity = new System.Windows.Forms.Button();
+            this.ActivityIDbox = new System.Windows.Forms.TextBox();
+            this.DescriptionBox = new System.Windows.Forms.TextBox();
+            this.ActivityNumberBox = new System.Windows.Forms.TextBox();
+            this.startdatecal = new System.Windows.Forms.MonthCalendar();
+            this.enddatecal = new System.Windows.Forms.MonthCalendar();
+            this.ActivityNumber = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.DeleteButton = new System.Windows.Forms.Button();
+            this.UpdateActivity = new System.Windows.Forms.Button();
+            this.UpdateActivitybox = new System.Windows.Forms.TextBox();
+            this.updateDescriptionBox = new System.Windows.Forms.TextBox();
             ((System.ComponentModel.ISupportInitialize)(this.imgDashboard)).BeginInit();
             this.menuStrip1.SuspendLayout();
             this.pnlDashboard.SuspendLayout();
@@ -142,7 +153,7 @@
             // imgDashboard
             // 
             this.imgDashboard.Location = new System.Drawing.Point(836, 0);
-            this.imgDashboard.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.imgDashboard.Margin = new System.Windows.Forms.Padding(4);
             this.imgDashboard.Name = "imgDashboard";
             this.imgDashboard.Size = new System.Drawing.Size(415, 332);
             this.imgDashboard.TabIndex = 0;
@@ -246,12 +257,19 @@
             this.revenueToolStripMenuItem.Text = "Revenue";
             this.revenueToolStripMenuItem.Click += new System.EventHandler(this.revenueToolStripMenuItem_Click);
             // 
+            // activityToolStripMenuItem
+            // 
+            this.activityToolStripMenuItem.Name = "activityToolStripMenuItem";
+            this.activityToolStripMenuItem.Size = new System.Drawing.Size(72, 26);
+            this.activityToolStripMenuItem.Text = "Activity";
+            this.activityToolStripMenuItem.Click += new System.EventHandler(this.activityToolStripMenuItem_Click);
+            // 
             // pnlDashboard
             // 
             this.pnlDashboard.Controls.Add(this.lbl_Dashboard);
             this.pnlDashboard.Controls.Add(this.imgDashboard);
             this.pnlDashboard.Location = new System.Drawing.Point(17, 32);
-            this.pnlDashboard.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.pnlDashboard.Margin = new System.Windows.Forms.Padding(4);
             this.pnlDashboard.Name = "pnlDashboard";
             this.pnlDashboard.Size = new System.Drawing.Size(1200, 576);
             this.pnlDashboard.TabIndex = 2;
@@ -906,15 +924,18 @@
             this.label14.TabIndex = 0;
             this.label14.Text = "Revenue";
             // 
-            // activityToolStripMenuItem
-            // 
-            this.activityToolStripMenuItem.Name = "activityToolStripMenuItem";
-            this.activityToolStripMenuItem.Size = new System.Drawing.Size(72, 26);
-            this.activityToolStripMenuItem.Text = "Activity";
-            this.activityToolStripMenuItem.Click += new System.EventHandler(this.activityToolStripMenuItem_Click);
-            // 
             // pnlactivity
             // 
+            this.pnlactivity.Controls.Add(this.updateDescriptionBox);
+            this.pnlactivity.Controls.Add(this.UpdateActivitybox);
+            this.pnlactivity.Controls.Add(this.UpdateActivity);
+            this.pnlactivity.Controls.Add(this.DeleteButton);
+            this.pnlactivity.Controls.Add(this.enddatecal);
+            this.pnlactivity.Controls.Add(this.startdatecal);
+            this.pnlactivity.Controls.Add(this.ActivityNumberBox);
+            this.pnlactivity.Controls.Add(this.DescriptionBox);
+            this.pnlactivity.Controls.Add(this.ActivityIDbox);
+            this.pnlactivity.Controls.Add(this.CreateActivity);
             this.pnlactivity.Controls.Add(this.activitylist);
             this.pnlactivity.Controls.Add(this.activitylabel);
             this.pnlactivity.Location = new System.Drawing.Point(12, 32);
@@ -922,32 +943,24 @@
             this.pnlactivity.Size = new System.Drawing.Size(1108, 482);
             this.pnlactivity.TabIndex = 12;
             // 
-            // activitylabel
-            // 
-            this.activitylabel.AutoSize = true;
-            this.activitylabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 19F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.activitylabel.Location = new System.Drawing.Point(35, 25);
-            this.activitylabel.Name = "activitylabel";
-            this.activitylabel.Size = new System.Drawing.Size(113, 37);
-            this.activitylabel.TabIndex = 0;
-            this.activitylabel.Text = "activity";
-            // 
             // activitylist
             // 
             this.activitylist.Columns.AddRange(new System.Windows.Forms.ColumnHeader[] {
             this.ActivityID,
             this.Description,
             this.StartDateTime,
-            this.EndDateTime});
+            this.EndDateTime,
+            this.ActivityNumber});
             this.activitylist.FullRowSelect = true;
             this.activitylist.GridLines = true;
             this.activitylist.HideSelection = false;
-            this.activitylist.Location = new System.Drawing.Point(42, 66);
+            this.activitylist.Location = new System.Drawing.Point(42, 45);
             this.activitylist.Name = "activitylist";
             this.activitylist.Size = new System.Drawing.Size(470, 242);
             this.activitylist.TabIndex = 1;
             this.activitylist.UseCompatibleStateImageBehavior = false;
             this.activitylist.View = System.Windows.Forms.View.Details;
+            this.activitylist.SelectedIndexChanged += new System.EventHandler(this.activitylist_SelectedIndexChanged);
             // 
             // ActivityID
             // 
@@ -965,6 +978,98 @@
             // 
             this.EndDateTime.Text = "enddate";
             // 
+            // activitylabel
+            // 
+            this.activitylabel.AutoSize = true;
+            this.activitylabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 19F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.activitylabel.Location = new System.Drawing.Point(35, 5);
+            this.activitylabel.Name = "activitylabel";
+            this.activitylabel.Size = new System.Drawing.Size(113, 37);
+            this.activitylabel.TabIndex = 0;
+            this.activitylabel.Text = "activity";
+            // 
+            // CreateActivity
+            // 
+            this.CreateActivity.Location = new System.Drawing.Point(940, 395);
+            this.CreateActivity.Name = "CreateActivity";
+            this.CreateActivity.Size = new System.Drawing.Size(125, 59);
+            this.CreateActivity.TabIndex = 2;
+            this.CreateActivity.Text = "create";
+            this.CreateActivity.UseVisualStyleBackColor = true;
+            this.CreateActivity.Click += new System.EventHandler(this.CreateActivity_Click);
+            // 
+            // ActivityIDbox
+            // 
+            this.ActivityIDbox.Location = new System.Drawing.Point(35, 428);
+            this.ActivityIDbox.Name = "ActivityIDbox";
+            this.ActivityIDbox.Size = new System.Drawing.Size(100, 22);
+            this.ActivityIDbox.TabIndex = 3;
+            // 
+            // DescriptionBox
+            // 
+            this.DescriptionBox.Location = new System.Drawing.Point(175, 428);
+            this.DescriptionBox.Name = "DescriptionBox";
+            this.DescriptionBox.Size = new System.Drawing.Size(100, 22);
+            this.DescriptionBox.TabIndex = 4;
+            // 
+            // ActivityNumberBox
+            // 
+            this.ActivityNumberBox.Location = new System.Drawing.Point(818, 428);
+            this.ActivityNumberBox.Name = "ActivityNumberBox";
+            this.ActivityNumberBox.Size = new System.Drawing.Size(100, 22);
+            this.ActivityNumberBox.TabIndex = 7;
+            // 
+            // startdatecal
+            // 
+            this.startdatecal.Location = new System.Drawing.Point(313, 277);
+            this.startdatecal.Name = "startdatecal";
+            this.startdatecal.TabIndex = 8;
+            // 
+            // enddatecal
+            // 
+            this.enddatecal.Location = new System.Drawing.Point(543, 277);
+            this.enddatecal.Name = "enddatecal";
+            this.enddatecal.TabIndex = 9;
+            this.enddatecal.DateChanged += new System.Windows.Forms.DateRangeEventHandler(this.enddatecal_DateChanged);
+            // 
+            // ActivityNumber
+            // 
+            this.ActivityNumber.Text = "activitynumber";
+            // 
+            // DeleteButton
+            // 
+            this.DeleteButton.Location = new System.Drawing.Point(569, 45);
+            this.DeleteButton.Name = "DeleteButton";
+            this.DeleteButton.Size = new System.Drawing.Size(136, 67);
+            this.DeleteButton.TabIndex = 10;
+            this.DeleteButton.Text = "Delete";
+            this.DeleteButton.UseVisualStyleBackColor = true;
+            this.DeleteButton.Click += new System.EventHandler(this.DeleteButton_Click);
+            // 
+            // UpdateActivity
+            // 
+            this.UpdateActivity.Location = new System.Drawing.Point(569, 145);
+            this.UpdateActivity.Name = "UpdateActivity";
+            this.UpdateActivity.Size = new System.Drawing.Size(136, 62);
+            this.UpdateActivity.TabIndex = 11;
+            this.UpdateActivity.Text = "Update";
+            this.UpdateActivity.UseVisualStyleBackColor = true;
+            this.UpdateActivity.Click += new System.EventHandler(this.UpdateActivity_Click);
+            // 
+            // UpdateActivitybox
+            // 
+            this.UpdateActivitybox.Location = new System.Drawing.Point(758, 172);
+            this.UpdateActivitybox.Name = "UpdateActivitybox";
+            this.UpdateActivitybox.Size = new System.Drawing.Size(100, 22);
+            this.UpdateActivitybox.TabIndex = 12;
+            // 
+            // updateDescriptionBox
+            // 
+            this.updateDescriptionBox.Location = new System.Drawing.Point(935, 172);
+            this.updateDescriptionBox.Name = "updateDescriptionBox";
+            this.updateDescriptionBox.Size = new System.Drawing.Size(100, 22);
+            this.updateDescriptionBox.TabIndex = 13;
+            // 
             // SomerenUI
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
@@ -981,7 +1086,7 @@
             this.Controls.Add(this.menuStrip1);
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.MainMenuStrip = this.menuStrip1;
-            this.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.Margin = new System.Windows.Forms.Padding(4);
             this.Name = "SomerenUI";
             this.RightToLeft = System.Windows.Forms.RightToLeft.No;
             this.Text = "SomerenApp";
@@ -1115,6 +1220,17 @@
         private System.Windows.Forms.ColumnHeader Description;
         private System.Windows.Forms.ColumnHeader StartDateTime;
         private System.Windows.Forms.ColumnHeader EndDateTime;
+        private System.Windows.Forms.Button CreateActivity;
+        private System.Windows.Forms.TextBox ActivityNumberBox;
+        private System.Windows.Forms.TextBox DescriptionBox;
+        private System.Windows.Forms.TextBox ActivityIDbox;
+        private System.Windows.Forms.MonthCalendar enddatecal;
+        private System.Windows.Forms.MonthCalendar startdatecal;
+        private System.Windows.Forms.ColumnHeader ActivityNumber;
+        private System.Windows.Forms.Button DeleteButton;
+        private System.Windows.Forms.Button UpdateActivity;
+        private System.Windows.Forms.TextBox updateDescriptionBox;
+        private System.Windows.Forms.TextBox UpdateActivitybox;
     }
 }
 

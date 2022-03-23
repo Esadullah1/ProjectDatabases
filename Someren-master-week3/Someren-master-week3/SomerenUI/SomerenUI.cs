@@ -12,6 +12,12 @@ namespace SomerenUI
         Drinks updateDrink;
         Drinks updateStock;
 
+        Activity activityDelete;
+        Activity activityidUpdate;
+        Activity descriptionUpdate;
+
+
+
         public SomerenUI()
         {
             InitializeComponent();
@@ -243,7 +249,7 @@ namespace SomerenUI
             }
             else if (panelName == "Revenue")
             {
-                listViewRooms.Items.Clear();
+                studentrevlist.Items.Clear();
                 pnlDashboard.Hide();
                 imgDashboard.Hide();
                 pnlStudents.Hide();
@@ -328,6 +334,7 @@ namespace SomerenUI
             }
             else if (panelName == "Activity")
             {
+                activitylist.Items.Clear();
                 pnlDashboard.Hide();
                 imgDashboard.Hide();
                 pnlStudents.Hide();
@@ -348,11 +355,12 @@ namespace SomerenUI
 
                     foreach (Activity r in ActivityList)
                     {
-                        string[] arr = new string[4];
+                        string[] arr = new string[5];
                         arr[0] = r.ActivityID.ToString();
                         arr[1] = r.Description.ToString();
                         arr[2] = r.StartDateTime.ToString();
                         arr[3] = r.EndDateTime.ToString();
+                        arr[4] = r.ActivityNumber.ToString();
                         ListViewItem li = new ListViewItem(arr);
                         activitylist.Items.Add(li);
                     }
@@ -515,6 +523,64 @@ namespace SomerenUI
 
         private void activityToolStripMenuItem_Click(object sender, EventArgs e)
         {
+            showPanel("Activity");
+        }
+
+        private void CreateActivity_Click(object sender, EventArgs e)
+        {
+            ActivityService activityservice = new ActivityService();
+
+
+            MessageBox.Show($"ActivityID: {ActivityIDbox}\nDescription {DescriptionBox.Text}\nStartdate: {startdatecal.SelectionStart}\nEnddate: {enddatecal.SelectionEnd}\nActivityNumber: {ActivityNumberBox.Text.ToString()}");
+            activityservice.AddActivities(ActivityIDbox.Text.ToString(), DescriptionBox.Text.ToString(), startdatecal.SelectionStart.ToString("dd/MM/yyyy"), enddatecal.SelectionEnd.ToString("dd/MM/yyyy"), ActivityNumberBox.Text.ToString());
+            showPanel("Activity");
+        }
+
+        private void enddatecal_DateChanged(object sender, DateRangeEventArgs e)
+        {
+
+        }
+
+        private void activitylist_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            Activity deleteactivity = new Activity();
+            deleteactivity.ActivityID = activitylist.FocusedItem.SubItems[0].Text;
+            UpdateActivitybox.Text = activitylist.FocusedItem.SubItems[0].Text;
+            updateDescriptionBox.Text = activitylist.FocusedItem.SubItems[1].Text;
+            this.activityDelete = deleteactivity;
+        }
+
+        private void DeleteButton_Click(object sender, EventArgs e)
+        {
+            ActivityService activityService = new ActivityService();
+            activityService.DeleteActivity(activityDelete);
+            showPanel("Activity");
+        }
+
+        private void UpdateActivity_Click(object sender, EventArgs e)
+        {
+            Activity activityidUpdate = new Activity();
+            Activity descriptionUpdate = new Activity();
+
+
+            listViewDrinks.FocusedItem.SubItems[0].Text = txtUpdateDrink.Text;
+            DrinksService drinksService = new DrinksService();
+            activityidUpdate.DrinkName = listViewDrinks.FocusedItem.SubItems[0].Text;
+            activityidUpdate.DrinkID = Convert.ToInt32(listViewDrinks.FocusedItem.SubItems[5].Text);
+
+            listViewDrinks.FocusedItem.SubItems[4].Text = txtUpdateStockOfDrink.Text;
+
+            descriptionUpdate.Stock = Convert.ToInt32(listViewDrinks.FocusedItem.SubItems[4].Text);
+            descriptionUpdate.DrinkID = Convert.ToInt32(listViewDrinks.FocusedItem.SubItems[5].Text);
+
+
+            this.activityidUpdate = activityidUpdate;
+            this.updateStock = descriptionUpdate;
+            drinksService.UpdateDrink(updateDrink);
+            drinksService.UpdateDrinkStock(descriptionUpdate);
+            UpdateActivitybox.Clear();
+            updateDescriptionBox.Clear();
+            MessageBox.Show("Succesfully updated ActivityID and/or Description");
             showPanel("Activity");
         }
     }

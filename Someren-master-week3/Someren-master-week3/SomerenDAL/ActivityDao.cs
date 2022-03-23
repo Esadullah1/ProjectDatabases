@@ -22,7 +22,7 @@ namespace SomerenDAL
             string conn = ConfigurationManager.ConnectionStrings["2122_INF1b_db5"].ConnectionString;
             dbConnection = new SqlConnection(conn);
         }
-        public void AddActivities(string ActivityID, string Description, string StartDateTime, string EndDateTime, int ActivityNumber)
+        public void AddActivities(string ActivityID, string Description, string StartDateTime, string EndDateTime, string ActivityNumber)
         {
             dbConnection.Open();
             SqlCommand command = new SqlCommand(
@@ -44,7 +44,7 @@ namespace SomerenDAL
         public List<Activity> GetAllActivities()
         {
 
-            string query = "SELECT ActivityID, Description, StartDateTime, EndDateTime FROM  [Activity]";
+            string query = "SELECT ActivityID, Description, StartDateTime, EndDateTime, ActivityNumber FROM  [Activity]";
 
 
 
@@ -64,13 +64,39 @@ namespace SomerenDAL
                     ActivityID = (string)(dr["ActivityID"]),
                     Description = (string)dr["Description"],
                     StartDateTime = (string)dr["StartDateTime"],
-                    EndDateTime = (string)dr["EndDateTime"]
+                    EndDateTime = (string)dr["EndDateTime"],
+                    ActivityNumber = (int)dr["ActivityNumber"]
                     
 
                 };
                 activity.Add(activities);
             }
             return activity;
+        }
+
+        public void DeleteActivity(Activity activity)
+        {
+            SqlCommand command = new SqlCommand("DELETE FROM [Activity] WHERE ActivityID = @ActivityID", OpenConnection());
+            command.Parameters.AddWithValue("@ActivityID", activity.ActivityID);
+            command.ExecuteNonQuery();
+
+
+
+        }
+        public void UpdateActivityID(Activity activity)
+        {
+            SqlCommand command = new SqlCommand("UPDATE [Activity] SET ActivityID = @ActivityID WHERE ActivityNumber = @ActivityNumber", OpenConnection());
+            command.Parameters.AddWithValue("@ActivityID", activity.ActivityID);
+            command.Parameters.AddWithValue("@ActivityNumber", activity.ActivityNumber);
+            command.ExecuteNonQuery();
+        }
+
+        public void UpdateDescription(Activity activity)
+        {
+            SqlCommand command = new SqlCommand("UPDATE [Activity] SET Description = @Description WHERE ActivityNumber = @ActivityNumber", OpenConnection());
+            command.Parameters.AddWithValue("@Description", activity.Description);
+            command.Parameters.AddWithValue("@DrinkID", activity.ActivityNumber);
+            command.ExecuteNonQuery();
         }
     }
 }

@@ -13,5 +13,7 @@ namespace SomerenModel
         public string StartDateTime { get; set; }
         public string EndDateTime { get; set; }
 
+        public int ActivityNumber { get; set; }
+
     }
 }
