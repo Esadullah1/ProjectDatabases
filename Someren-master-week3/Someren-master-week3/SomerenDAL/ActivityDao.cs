@@ -7,11 +7,40 @@ using System.Data.SqlClient;
 using System.Data;
 using System.Collections.ObjectModel;
 using SomerenModel;
+using System.Configuration;
+
 
 namespace SomerenDAL
 {
     public class ActivityDao : BaseDao
     {
+
+        private SqlConnection dbConnection;
+
+        public ActivityDao()
+        {
+            string conn = ConfigurationManager.ConnectionStrings["2122_INF1b_db5"].ConnectionString;
+            dbConnection = new SqlConnection(conn);
+        }
+        public void AddActivities(string ActivityID, string Description, string StartDateTime, string EndDateTime, int ActivityNumber)
+        {
+            dbConnection.Open();
+            SqlCommand command = new SqlCommand(
+                "INSERT INTO Activity (ActivityID, Description, StartDateTime, EndDateTime, ActivityNumber)" +
+                "VALUES (@ActivityID, @Description, @StartDateTime, @EndDateTime, @ActivityNumber);" +
+                "SELECT SCOPE_IDENTITY();",
+                dbConnection);
+            command.Parameters.AddWithValue("@ActivityID", ActivityID);
+            command.Parameters.AddWithValue("@Description", Description);
+            command.Parameters.AddWithValue("@StartDateTime", StartDateTime);
+            command.Parameters.AddWithValue("@EndDateTime", EndDateTime);
+            command.Parameters.AddWithValue("@ActivityNumber", ActivityNumber.ToString());
+            command.ExecuteNonQuery();
+            dbConnection.Close();
+        }
+
+
+
         public List<Activity> GetAllActivities()
         {
 

@@ -165,7 +165,7 @@
             this.menuStrip1.Location = new System.Drawing.Point(0, 0);
             this.menuStrip1.Name = "menuStrip1";
             this.menuStrip1.Padding = new System.Windows.Forms.Padding(5, 2, 0, 2);
-            this.menuStrip1.Size = new System.Drawing.Size(1283, 28);
+            this.menuStrip1.Size = new System.Drawing.Size(1283, 30);
             this.menuStrip1.TabIndex = 1;
             this.menuStrip1.Text = "menuStrip1";
             // 
@@ -944,7 +944,7 @@
             this.activitylist.HideSelection = false;
             this.activitylist.Location = new System.Drawing.Point(42, 66);
             this.activitylist.Name = "activitylist";
-            this.activitylist.Size = new System.Drawing.Size(537, 242);
+            this.activitylist.Size = new System.Drawing.Size(470, 242);
             this.activitylist.TabIndex = 1;
             this.activitylist.UseCompatibleStateImageBehavior = false;
             this.activitylist.View = System.Windows.Forms.View.Details;
