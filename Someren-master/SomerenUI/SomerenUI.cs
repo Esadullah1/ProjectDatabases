@@ -13,6 +13,7 @@ namespace SomerenUI
         Drinks updateStock;
 
         Activity updateActivity;
+        Activity deleteSupervisor;
 
         public SomerenUI()
         {
@@ -245,7 +246,8 @@ namespace SomerenUI
             }
             else if (panelName == "Revenue")
             {
-                listViewRooms.Items.Clear();
+                
+                
                 pnlDashboard.Hide();
                 imgDashboard.Hide();
                 pnlStudents.Hide();
@@ -367,11 +369,9 @@ namespace SomerenUI
 
                     foreach (Teacher t in teacherList)
                     {
-                       
-
-
-                        
-                        comboBoxTeacherNames.Items.Add(t.TeacherFirstName);
+                        string[] arr = new string[1];
+                        arr[0] = t.TeacherFirstName;
+                        comboBoxTeacherNames.Items.Add(arr[0]);
                     }
 
                 }
@@ -388,6 +388,7 @@ namespace SomerenUI
             comboBox1.Items.RemoveAt(0);
             comboBox2.Items.RemoveAt(0);
             comboBox3.Items.RemoveAt(0);
+            
         }
         private void exitToolStripMenuItem_Click(object sender, EventArgs e)
         {
@@ -527,39 +528,75 @@ namespace SomerenUI
            showPanel("Activity Supervisors");
         }
 
-        private void txtSupervisorAdd_TextChanged(object sender, EventArgs e)
-        {
-
-        }
+  
 
         private void btnAddSupervisor_Click(object sender, EventArgs e)
         {
             Activity activityUpdate = new Activity();
 
 
-            listViewActivites.FocusedItem.SubItems[1].Text = txtActivityID.Text;
+            try
+            {
+                ActivityService activityService = new ActivityService();
+                listViewActivites.FocusedItem.SubItems[1].Text = comboBoxTeacherNames.SelectedItem.ToString();
+                activityUpdate.SupervisorName = listViewActivites.FocusedItem.SubItems[1].Text;
+                activityUpdate.ActivityID = Convert.ToInt32(listViewActivites.FocusedItem.SubItems[0].Text);
 
-            ActivityService activityService = new ActivityService();
+          
 
-            activityUpdate.SupervisorName = comboBoxTeacherNames.SelectedItem.ToString();
-            activityUpdate.ActivityID = Convert.ToInt32(listViewActivites.FocusedItem.SubItems[1].Text);
+                 
+                this.updateActivity = activityUpdate;
 
+                activityService.AddSupervisor(activityUpdate);
+                txtActivityID.Clear();
+                MessageBox.Show("Supervisor succesvol toegevoegd!");
+                showPanel("Activity Supervisors");
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Something went wrong while trying to add an supervisor" + ex.Message);    
+            }
 
-
-            this.updateActivity = activityUpdate;
-
-            activityService.AddSupervisor(updateActivity);
-            txtActivityID.Clear();
-            MessageBox.Show("Succesfully updated Drink Name and/or stock of drink");
-            showPanel("Activity Supervisors");
+            
 
 
 
         }
+
+        private void btnDeleteSupervisor_Click(object sender, EventArgs e)
+        {
+           DialogResult dialogResult = MessageBox.Show("Weet u zeker dat u deze supervisor wilt verwijderen?", "Weet u zeker dat u deze supervisor wilt verwijderen?", MessageBoxButtons.YesNo);
+
+            if(dialogResult == DialogResult.Yes)
+            {
+                MessageBox.Show("Supervisor verwijderd");
+                ActivityService activityService = new ActivityService();
+                activityService.DeleteSupervisor(deleteSupervisor);
+                showPanel("Activity Supervisors");
+            }
+            else
+            {
+                MessageBox.Show("Supervisor niet verwijderd");
+                showPanel("Activity Supervisors");
+            }
+
+
+            
+        }
+
+
 
         private void listViewActivites_SelectedIndexChanged(object sender, EventArgs e)
         {
             txtActivityID.Text = listViewActivites.FocusedItem.SubItems[0].Text;
+
+            Activity activityDelete = new Activity();
+            activityDelete.SupervisorName = listViewActivites.FocusedItem.SubItems[1].Text;
+            activityDelete.ActivityID = Convert.ToInt32(listViewActivites.FocusedItem.SubItems[0].Text);
+            txtNaamSupervisor.Text = listViewActivites.FocusedItem.SubItems[1].Text;
+            this.deleteSupervisor = activityDelete;
         }
+
+
     }
 }

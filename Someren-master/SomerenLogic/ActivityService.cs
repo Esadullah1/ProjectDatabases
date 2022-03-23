@@ -30,5 +30,10 @@ namespace SomerenLogic
             activityDb.AddSupervisor(activity);
         }
 
+        public void DeleteSupervisor(Activity activity)
+        {
+            activityDb.DeleteSupervisor(activity);
+        }
+
     }
 }

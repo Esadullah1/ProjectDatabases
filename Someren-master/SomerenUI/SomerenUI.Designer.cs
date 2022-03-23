@@ -118,16 +118,19 @@
             this.monthCalendar3 = new System.Windows.Forms.MonthCalendar();
             this.label14 = new System.Windows.Forms.Label();
             this.pnlSupervisors = new System.Windows.Forms.Panel();
+            this.btnDeleteSupervisor = new System.Windows.Forms.Button();
+            this.txtActivityID = new System.Windows.Forms.TextBox();
+            this.comboBoxTeacherNames = new System.Windows.Forms.ComboBox();
+            this.btnAddSupervisor = new System.Windows.Forms.Button();
+            this.label17 = new System.Windows.Forms.Label();
             this.label16 = new System.Windows.Forms.Label();
             this.label15 = new System.Windows.Forms.Label();
             this.listViewActivites = new System.Windows.Forms.ListView();
             this.columnHeader7 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.columnHeader8 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.colorDialog1 = new System.Windows.Forms.ColorDialog();
-            this.label17 = new System.Windows.Forms.Label();
-            this.btnAddSupervisor = new System.Windows.Forms.Button();
-            this.comboBoxTeacherNames = new System.Windows.Forms.ComboBox();
-            this.txtActivityID = new System.Windows.Forms.TextBox();
+            this.label18 = new System.Windows.Forms.Label();
+            this.txtNaamSupervisor = new System.Windows.Forms.TextBox();
             ((System.ComponentModel.ISupportInitialize)(this.imgDashboard)).BeginInit();
             this.menuStrip1.SuspendLayout();
             this.pnlDashboard.SuspendLayout();
@@ -145,9 +148,10 @@
             // 
             // imgDashboard
             // 
-            this.imgDashboard.Location = new System.Drawing.Point(627, 0);
+            this.imgDashboard.Location = new System.Drawing.Point(836, 0);
+            this.imgDashboard.Margin = new System.Windows.Forms.Padding(4);
             this.imgDashboard.Name = "imgDashboard";
-            this.imgDashboard.Size = new System.Drawing.Size(311, 270);
+            this.imgDashboard.Size = new System.Drawing.Size(415, 332);
             this.imgDashboard.TabIndex = 0;
             this.imgDashboard.TabStop = false;
             this.imgDashboard.Click += new System.EventHandler(this.imgDashboard_Click);
@@ -167,8 +171,8 @@
             this.activitySupervisorsToolStripMenuItem});
             this.menuStrip1.Location = new System.Drawing.Point(0, 0);
             this.menuStrip1.Name = "menuStrip1";
-            this.menuStrip1.Padding = new System.Windows.Forms.Padding(4, 2, 0, 2);
-            this.menuStrip1.Size = new System.Drawing.Size(962, 24);
+            this.menuStrip1.Padding = new System.Windows.Forms.Padding(5, 2, 0, 2);
+            this.menuStrip1.Size = new System.Drawing.Size(1283, 28);
             this.menuStrip1.TabIndex = 1;
             this.menuStrip1.Text = "menuStrip1";
             // 
@@ -179,80 +183,80 @@
             this.toolStripSeparator1,
             this.exitToolStripMenuItem});
             this.dashboardToolStripMenuItem.Name = "dashboardToolStripMenuItem";
-            this.dashboardToolStripMenuItem.Size = new System.Drawing.Size(80, 20);
+            this.dashboardToolStripMenuItem.Size = new System.Drawing.Size(100, 24);
             this.dashboardToolStripMenuItem.Text = "Application";
             // 
             // dashboardToolStripMenuItem1
             // 
             this.dashboardToolStripMenuItem1.Name = "dashboardToolStripMenuItem1";
-            this.dashboardToolStripMenuItem1.Size = new System.Drawing.Size(131, 22);
+            this.dashboardToolStripMenuItem1.Size = new System.Drawing.Size(165, 26);
             this.dashboardToolStripMenuItem1.Text = "Dashboard";
             this.dashboardToolStripMenuItem1.Click += new System.EventHandler(this.dashboardToolStripMenuItem1_Click);
             // 
             // toolStripSeparator1
             // 
             this.toolStripSeparator1.Name = "toolStripSeparator1";
-            this.toolStripSeparator1.Size = new System.Drawing.Size(128, 6);
+            this.toolStripSeparator1.Size = new System.Drawing.Size(162, 6);
             // 
             // exitToolStripMenuItem
             // 
             this.exitToolStripMenuItem.Name = "exitToolStripMenuItem";
-            this.exitToolStripMenuItem.Size = new System.Drawing.Size(131, 22);
+            this.exitToolStripMenuItem.Size = new System.Drawing.Size(165, 26);
             this.exitToolStripMenuItem.Text = "Exit";
             this.exitToolStripMenuItem.Click += new System.EventHandler(this.exitToolStripMenuItem_Click);
             // 
             // studentsToolStripMenuItem
             // 
             this.studentsToolStripMenuItem.Name = "studentsToolStripMenuItem";
-            this.studentsToolStripMenuItem.Size = new System.Drawing.Size(65, 20);
+            this.studentsToolStripMenuItem.Size = new System.Drawing.Size(80, 24);
             this.studentsToolStripMenuItem.Text = "Students";
             this.studentsToolStripMenuItem.Click += new System.EventHandler(this.studentsToolStripMenuItem_Click);
             // 
             // lecturersToolStripMenuItem
             // 
             this.lecturersToolStripMenuItem.Name = "lecturersToolStripMenuItem";
-            this.lecturersToolStripMenuItem.Size = new System.Drawing.Size(67, 20);
+            this.lecturersToolStripMenuItem.Size = new System.Drawing.Size(82, 24);
             this.lecturersToolStripMenuItem.Text = "Lecturers";
             this.lecturersToolStripMenuItem.Click += new System.EventHandler(this.lecturersToolStripMenuItem_Click_1);
             // 
             // activitiesToolStripMenuItem
             // 
             this.activitiesToolStripMenuItem.Name = "activitiesToolStripMenuItem";
-            this.activitiesToolStripMenuItem.Size = new System.Drawing.Size(67, 20);
+            this.activitiesToolStripMenuItem.Size = new System.Drawing.Size(83, 24);
             this.activitiesToolStripMenuItem.Text = "Activities";
             // 
             // roomsToolStripMenuItem
             // 
             this.roomsToolStripMenuItem.Name = "roomsToolStripMenuItem";
-            this.roomsToolStripMenuItem.Size = new System.Drawing.Size(56, 20);
+            this.roomsToolStripMenuItem.Size = new System.Drawing.Size(69, 24);
             this.roomsToolStripMenuItem.Text = "Rooms";
             this.roomsToolStripMenuItem.Click += new System.EventHandler(this.roomsToolStripMenuItem_Click);
             // 
             // drinksToolStripMenuItem
             // 
             this.drinksToolStripMenuItem.Name = "drinksToolStripMenuItem";
-            this.drinksToolStripMenuItem.Size = new System.Drawing.Size(52, 20);
+            this.drinksToolStripMenuItem.Size = new System.Drawing.Size(64, 24);
             this.drinksToolStripMenuItem.Text = "Drinks";
             this.drinksToolStripMenuItem.Click += new System.EventHandler(this.drinksToolStripMenuItem_Click_1);
             // 
             // cashRegisterToolStripMenuItem
             // 
             this.cashRegisterToolStripMenuItem.Name = "cashRegisterToolStripMenuItem";
-            this.cashRegisterToolStripMenuItem.Size = new System.Drawing.Size(90, 20);
+            this.cashRegisterToolStripMenuItem.Size = new System.Drawing.Size(112, 24);
             this.cashRegisterToolStripMenuItem.Text = "Cash Register";
             this.cashRegisterToolStripMenuItem.Click += new System.EventHandler(this.cashRegisterToolStripMenuItem_Click);
             // 
             // revenueToolStripMenuItem
             // 
             this.revenueToolStripMenuItem.Name = "revenueToolStripMenuItem";
-            this.revenueToolStripMenuItem.Size = new System.Drawing.Size(64, 20);
+            this.revenueToolStripMenuItem.Size = new System.Drawing.Size(79, 24);
             this.revenueToolStripMenuItem.Text = "Revenue";
             this.revenueToolStripMenuItem.Click += new System.EventHandler(this.revenueToolStripMenuItem_Click);
             // 
             // activitySupervisorsToolStripMenuItem
             // 
             this.activitySupervisorsToolStripMenuItem.Name = "activitySupervisorsToolStripMenuItem";
-            this.activitySupervisorsToolStripMenuItem.Size = new System.Drawing.Size(122, 20);
+            this.activitySupervisorsToolStripMenuItem.Size = new System.Drawing.Size(151, 24);
             this.activitySupervisorsToolStripMenuItem.Text = "Activity Supervisors";
             this.activitySupervisorsToolStripMenuItem.Click += new System.EventHandler(this.activitySupervisorsToolStripMenuItem_Click);
             // 
@@ -260,18 +264,19 @@
             // 
             this.pnlDashboard.Controls.Add(this.lbl_Dashboard);
             this.pnlDashboard.Controls.Add(this.imgDashboard);
-            this.pnlDashboard.Location = new System.Drawing.Point(13, 26);
+            this.pnlDashboard.Location = new System.Drawing.Point(17, 32);
+            this.pnlDashboard.Margin = new System.Windows.Forms.Padding(4);
             this.pnlDashboard.Name = "pnlDashboard";
-            this.pnlDashboard.Size = new System.Drawing.Size(900, 468);
+            this.pnlDashboard.Size = new System.Drawing.Size(1200, 576);
             this.pnlDashboard.TabIndex = 2;
             // 
             // lbl_Dashboard
             // 
             this.lbl_Dashboard.AutoSize = true;
-            this.lbl_Dashboard.Location = new System.Drawing.Point(20, 20);
-            this.lbl_Dashboard.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.lbl_Dashboard.Location = new System.Drawing.Point(27, 25);
+            this.lbl_Dashboard.Margin = new System.Windows.Forms.Padding(5, 0, 5, 0);
             this.lbl_Dashboard.Name = "lbl_Dashboard";
-            this.lbl_Dashboard.Size = new System.Drawing.Size(185, 13);
+            this.lbl_Dashboard.Size = new System.Drawing.Size(231, 16);
             this.lbl_Dashboard.TabIndex = 1;
             this.lbl_Dashboard.Text = "Welcome to the Someren Application!";
             // 
@@ -279,20 +284,19 @@
             // 
             this.pnlStudents.Controls.Add(this.Students);
             this.pnlStudents.Controls.Add(this.listViewStudents);
-            this.pnlStudents.Location = new System.Drawing.Point(13, 26);
-            this.pnlStudents.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.pnlStudents.Location = new System.Drawing.Point(17, 32);
+            this.pnlStudents.Margin = new System.Windows.Forms.Padding(5, 6, 5, 6);
             this.pnlStudents.Name = "pnlStudents";
-            this.pnlStudents.Size = new System.Drawing.Size(900, 468);
+            this.pnlStudents.Size = new System.Drawing.Size(1200, 576);
             this.pnlStudents.TabIndex = 4;
             // 
             // Students
             // 
             this.Students.AutoSize = true;
             this.Students.Font = new System.Drawing.Font("Microsoft Sans Serif", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.Students.Location = new System.Drawing.Point(10, 11);
-            this.Students.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.Students.Location = new System.Drawing.Point(13, 14);
             this.Students.Name = "Students";
-            this.Students.Size = new System.Drawing.Size(115, 29);
+            this.Students.Size = new System.Drawing.Size(141, 36);
             this.Students.TabIndex = 6;
             this.Students.Text = "Students";
             // 
@@ -304,10 +308,10 @@
             this.DateOfBirth});
             this.listViewStudents.GridLines = true;
             this.listViewStudents.HideSelection = false;
-            this.listViewStudents.Location = new System.Drawing.Point(15, 52);
-            this.listViewStudents.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.listViewStudents.Location = new System.Drawing.Point(20, 64);
+            this.listViewStudents.Margin = new System.Windows.Forms.Padding(5, 6, 5, 6);
             this.listViewStudents.Name = "listViewStudents";
-            this.listViewStudents.Size = new System.Drawing.Size(627, 314);
+            this.listViewStudents.Size = new System.Drawing.Size(835, 386);
             this.listViewStudents.TabIndex = 5;
             this.listViewStudents.TileSize = new System.Drawing.Size(1, 1);
             this.listViewStudents.UseCompatibleStateImageBehavior = false;
@@ -332,20 +336,19 @@
             // 
             this.panelTeachers.Controls.Add(this.label1);
             this.panelTeachers.Controls.Add(this.listViewTeach);
-            this.panelTeachers.Location = new System.Drawing.Point(13, 26);
-            this.panelTeachers.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.panelTeachers.Location = new System.Drawing.Point(17, 32);
+            this.panelTeachers.Margin = new System.Windows.Forms.Padding(5, 6, 5, 6);
             this.panelTeachers.Name = "panelTeachers";
-            this.panelTeachers.Size = new System.Drawing.Size(900, 468);
+            this.panelTeachers.Size = new System.Drawing.Size(1200, 576);
             this.panelTeachers.TabIndex = 7;
             // 
             // label1
             // 
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.Location = new System.Drawing.Point(10, 11);
-            this.label1.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.label1.Location = new System.Drawing.Point(13, 14);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(123, 29);
+            this.label1.Size = new System.Drawing.Size(146, 36);
             this.label1.TabIndex = 6;
             this.label1.Text = "Teachers";
             // 
@@ -358,10 +361,10 @@
             this.superv});
             this.listViewTeach.GridLines = true;
             this.listViewTeach.HideSelection = false;
-            this.listViewTeach.Location = new System.Drawing.Point(15, 52);
-            this.listViewTeach.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.listViewTeach.Location = new System.Drawing.Point(20, 64);
+            this.listViewTeach.Margin = new System.Windows.Forms.Padding(5, 6, 5, 6);
             this.listViewTeach.Name = "listViewTeach";
-            this.listViewTeach.Size = new System.Drawing.Size(627, 314);
+            this.listViewTeach.Size = new System.Drawing.Size(835, 386);
             this.listViewTeach.TabIndex = 5;
             this.listViewTeach.TileSize = new System.Drawing.Size(1, 1);
             this.listViewTeach.UseCompatibleStateImageBehavior = false;
@@ -428,7 +431,7 @@
             this.labteacher.Font = new System.Drawing.Font("Microsoft Sans Serif", 17F);
             this.labteacher.Location = new System.Drawing.Point(19, 13);
             this.labteacher.Name = "labteacher";
-            this.labteacher.Size = new System.Drawing.Size(115, 29);
+            this.labteacher.Size = new System.Drawing.Size(137, 33);
             this.labteacher.TabIndex = 1;
             this.labteacher.Text = "Teachers";
             // 
@@ -472,20 +475,19 @@
             // 
             this.panelRooms.Controls.Add(this.label2);
             this.panelRooms.Controls.Add(this.listViewRooms);
-            this.panelRooms.Location = new System.Drawing.Point(11, 26);
-            this.panelRooms.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.panelRooms.Location = new System.Drawing.Point(15, 32);
+            this.panelRooms.Margin = new System.Windows.Forms.Padding(5, 6, 5, 6);
             this.panelRooms.Name = "panelRooms";
-            this.panelRooms.Size = new System.Drawing.Size(900, 468);
+            this.panelRooms.Size = new System.Drawing.Size(1200, 576);
             this.panelRooms.TabIndex = 8;
             // 
             // label2
             // 
             this.label2.AutoSize = true;
             this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label2.Location = new System.Drawing.Point(10, 11);
-            this.label2.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.label2.Location = new System.Drawing.Point(13, 14);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(95, 29);
+            this.label2.Size = new System.Drawing.Size(114, 36);
             this.label2.TabIndex = 6;
             this.label2.Text = "Rooms";
             // 
@@ -497,10 +499,10 @@
             this.Type});
             this.listViewRooms.GridLines = true;
             this.listViewRooms.HideSelection = false;
-            this.listViewRooms.Location = new System.Drawing.Point(15, 52);
-            this.listViewRooms.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.listViewRooms.Location = new System.Drawing.Point(20, 64);
+            this.listViewRooms.Margin = new System.Windows.Forms.Padding(5, 6, 5, 6);
             this.listViewRooms.Name = "listViewRooms";
-            this.listViewRooms.Size = new System.Drawing.Size(627, 314);
+            this.listViewRooms.Size = new System.Drawing.Size(835, 386);
             this.listViewRooms.TabIndex = 5;
             this.listViewRooms.TileSize = new System.Drawing.Size(1, 1);
             this.listViewRooms.UseCompatibleStateImageBehavior = false;
@@ -534,71 +536,75 @@
             this.panelDrink.Controls.Add(this.buttonDeleteDrink);
             this.panelDrink.Controls.Add(this.label3);
             this.panelDrink.Controls.Add(this.listViewDrinks);
-            this.panelDrink.Location = new System.Drawing.Point(11, 26);
-            this.panelDrink.Margin = new System.Windows.Forms.Padding(2);
+            this.panelDrink.Location = new System.Drawing.Point(15, 32);
+            this.panelDrink.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.panelDrink.Name = "panelDrink";
-            this.panelDrink.Size = new System.Drawing.Size(902, 468);
+            this.panelDrink.Size = new System.Drawing.Size(1203, 576);
             this.panelDrink.TabIndex = 7;
             // 
             // label7
             // 
             this.label7.AutoSize = true;
-            this.label7.Location = new System.Drawing.Point(760, 207);
+            this.label7.Location = new System.Drawing.Point(1013, 255);
+            this.label7.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label7.Name = "label7";
-            this.label7.Size = new System.Drawing.Size(35, 13);
+            this.label7.Size = new System.Drawing.Size(41, 16);
             this.label7.TabIndex = 10;
             this.label7.Text = "Stock";
             // 
             // label6
             // 
             this.label6.AutoSize = true;
-            this.label6.Location = new System.Drawing.Point(757, 140);
+            this.label6.Location = new System.Drawing.Point(1009, 172);
+            this.label6.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(73, 13);
+            this.label6.Size = new System.Drawing.Size(90, 16);
             this.label6.TabIndex = 9;
             this.label6.Text = "Name of drink";
             // 
             // txtUpdateStockOfDrink
             // 
-            this.txtUpdateStockOfDrink.Location = new System.Drawing.Point(757, 225);
-            this.txtUpdateStockOfDrink.Margin = new System.Windows.Forms.Padding(2);
+            this.txtUpdateStockOfDrink.Location = new System.Drawing.Point(1009, 277);
+            this.txtUpdateStockOfDrink.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.txtUpdateStockOfDrink.Name = "txtUpdateStockOfDrink";
-            this.txtUpdateStockOfDrink.Size = new System.Drawing.Size(125, 20);
+            this.txtUpdateStockOfDrink.Size = new System.Drawing.Size(165, 22);
             this.txtUpdateStockOfDrink.TabIndex = 8;
             // 
             // label5
             // 
             this.label5.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label5.Location = new System.Drawing.Point(162, 363);
+            this.label5.Location = new System.Drawing.Point(216, 447);
+            this.label5.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(188, 39);
+            this.label5.Size = new System.Drawing.Size(251, 48);
             this.label5.TabIndex = 7;
             this.label5.Text = "To delete a drink please click on the drink first";
             // 
             // label4
             // 
             this.label4.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label4.Location = new System.Drawing.Point(608, 86);
+            this.label4.Location = new System.Drawing.Point(811, 106);
+            this.label4.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(188, 56);
+            this.label4.Size = new System.Drawing.Size(251, 69);
             this.label4.TabIndex = 6;
             this.label4.Text = "To edit the name/stock  of an drink please click on the name first";
             // 
             // txtUpdateDrink
             // 
-            this.txtUpdateDrink.Location = new System.Drawing.Point(757, 158);
-            this.txtUpdateDrink.Margin = new System.Windows.Forms.Padding(2);
+            this.txtUpdateDrink.Location = new System.Drawing.Point(1009, 194);
+            this.txtUpdateDrink.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.txtUpdateDrink.Name = "txtUpdateDrink";
-            this.txtUpdateDrink.Size = new System.Drawing.Size(125, 20);
+            this.txtUpdateDrink.Size = new System.Drawing.Size(165, 22);
             this.txtUpdateDrink.TabIndex = 5;
             // 
             // buttonUpdateDrink
             // 
             this.buttonUpdateDrink.Font = new System.Drawing.Font("Microsoft Sans Serif", 16.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.buttonUpdateDrink.Location = new System.Drawing.Point(611, 158);
-            this.buttonUpdateDrink.Margin = new System.Windows.Forms.Padding(2);
+            this.buttonUpdateDrink.Location = new System.Drawing.Point(815, 194);
+            this.buttonUpdateDrink.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.buttonUpdateDrink.Name = "buttonUpdateDrink";
-            this.buttonUpdateDrink.Size = new System.Drawing.Size(142, 87);
+            this.buttonUpdateDrink.Size = new System.Drawing.Size(189, 107);
             this.buttonUpdateDrink.TabIndex = 4;
             this.buttonUpdateDrink.Text = "Update Name/Stock of Drink";
             this.buttonUpdateDrink.UseVisualStyleBackColor = true;
@@ -607,10 +613,10 @@
             // buttonDeleteDrink
             // 
             this.buttonDeleteDrink.Font = new System.Drawing.Font("Microsoft Sans Serif", 16.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.buttonDeleteDrink.Location = new System.Drawing.Point(33, 363);
-            this.buttonDeleteDrink.Margin = new System.Windows.Forms.Padding(2);
+            this.buttonDeleteDrink.Location = new System.Drawing.Point(44, 447);
+            this.buttonDeleteDrink.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.buttonDeleteDrink.Name = "buttonDeleteDrink";
-            this.buttonDeleteDrink.Size = new System.Drawing.Size(124, 85);
+            this.buttonDeleteDrink.Size = new System.Drawing.Size(165, 105);
             this.buttonDeleteDrink.TabIndex = 2;
             this.buttonDeleteDrink.Text = "Delete Drink";
             this.buttonDeleteDrink.UseVisualStyleBackColor = true;
@@ -620,10 +626,9 @@
             // 
             this.label3.AutoSize = true;
             this.label3.Font = new System.Drawing.Font("Microsoft Sans Serif", 16.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label3.Location = new System.Drawing.Point(28, 52);
-            this.label3.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.label3.Location = new System.Drawing.Point(37, 64);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(74, 26);
+            this.label3.Size = new System.Drawing.Size(94, 32);
             this.label3.TabIndex = 1;
             this.label3.Text = "Drinks";
             // 
@@ -639,10 +644,10 @@
             this.listViewDrinks.FullRowSelect = true;
             this.listViewDrinks.GridLines = true;
             this.listViewDrinks.HideSelection = false;
-            this.listViewDrinks.Location = new System.Drawing.Point(33, 95);
-            this.listViewDrinks.Margin = new System.Windows.Forms.Padding(2);
+            this.listViewDrinks.Location = new System.Drawing.Point(44, 117);
+            this.listViewDrinks.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.listViewDrinks.Name = "listViewDrinks";
-            this.listViewDrinks.Size = new System.Drawing.Size(564, 243);
+            this.listViewDrinks.Size = new System.Drawing.Size(751, 298);
             this.listViewDrinks.TabIndex = 0;
             this.listViewDrinks.UseCompatibleStateImageBehavior = false;
             this.listViewDrinks.View = System.Windows.Forms.View.Details;
@@ -688,47 +693,45 @@
             this.panelCashRegister.Controls.Add(this.comboBox2);
             this.panelCashRegister.Controls.Add(this.comboBox1);
             this.panelCashRegister.Controls.Add(this.label13);
-            this.panelCashRegister.Location = new System.Drawing.Point(11, 26);
-            this.panelCashRegister.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.panelCashRegister.Location = new System.Drawing.Point(15, 32);
+            this.panelCashRegister.Margin = new System.Windows.Forms.Padding(5, 6, 5, 6);
             this.panelCashRegister.Name = "panelCashRegister";
-            this.panelCashRegister.Size = new System.Drawing.Size(912, 477);
+            this.panelCashRegister.Size = new System.Drawing.Size(1216, 587);
             this.panelCashRegister.TabIndex = 10;
             // 
             // label8
             // 
             this.label8.AutoSize = true;
             this.label8.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label8.Location = new System.Drawing.Point(286, 82);
-            this.label8.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.label8.Location = new System.Drawing.Point(381, 101);
             this.label8.Name = "label8";
-            this.label8.Size = new System.Drawing.Size(35, 15);
+            this.label8.Size = new System.Drawing.Size(42, 18);
             this.label8.TabIndex = 16;
             this.label8.Text = "Price";
             // 
             // comboBox3
             // 
             this.comboBox3.FormattingEnabled = true;
-            this.comboBox3.Location = new System.Drawing.Point(288, 118);
-            this.comboBox3.Margin = new System.Windows.Forms.Padding(2);
+            this.comboBox3.Location = new System.Drawing.Point(384, 145);
+            this.comboBox3.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.comboBox3.Name = "comboBox3";
-            this.comboBox3.Size = new System.Drawing.Size(120, 21);
+            this.comboBox3.Size = new System.Drawing.Size(159, 24);
             this.comboBox3.TabIndex = 15;
             // 
             // label9
             // 
             this.label9.AutoSize = true;
-            this.label9.Location = new System.Drawing.Point(336, 338);
-            this.label9.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.label9.Location = new System.Drawing.Point(448, 416);
             this.label9.Name = "label9";
-            this.label9.Size = new System.Drawing.Size(0, 13);
+            this.label9.Size = new System.Drawing.Size(0, 16);
             this.label9.TabIndex = 14;
             // 
             // btnCheckout
             // 
-            this.btnCheckout.Location = new System.Drawing.Point(438, 296);
-            this.btnCheckout.Margin = new System.Windows.Forms.Padding(2);
+            this.btnCheckout.Location = new System.Drawing.Point(584, 364);
+            this.btnCheckout.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.btnCheckout.Name = "btnCheckout";
-            this.btnCheckout.Size = new System.Drawing.Size(202, 22);
+            this.btnCheckout.Size = new System.Drawing.Size(269, 27);
             this.btnCheckout.TabIndex = 13;
             this.btnCheckout.Text = "Checkout";
             this.btnCheckout.UseVisualStyleBackColor = true;
@@ -738,10 +741,9 @@
             // 
             this.label10.AutoSize = true;
             this.label10.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label10.Location = new System.Drawing.Point(436, 82);
-            this.label10.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.label10.Location = new System.Drawing.Point(581, 101);
             this.label10.Name = "label10";
-            this.label10.Size = new System.Drawing.Size(100, 15);
+            this.label10.Size = new System.Drawing.Size(121, 18);
             this.label10.TabIndex = 12;
             this.label10.Text = "Date of purchase";
             // 
@@ -749,10 +751,9 @@
             // 
             this.label11.AutoSize = true;
             this.label11.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label11.Location = new System.Drawing.Point(150, 82);
-            this.label11.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.label11.Location = new System.Drawing.Point(200, 101);
             this.label11.Name = "label11";
-            this.label11.Size = new System.Drawing.Size(84, 15);
+            this.label11.Size = new System.Drawing.Size(101, 18);
             this.label11.TabIndex = 11;
             this.label11.Text = "Name of drink";
             // 
@@ -760,46 +761,44 @@
             // 
             this.label12.AutoSize = true;
             this.label12.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label12.Location = new System.Drawing.Point(12, 82);
-            this.label12.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.label12.Location = new System.Drawing.Point(16, 101);
             this.label12.Name = "label12";
-            this.label12.Size = new System.Drawing.Size(97, 15);
+            this.label12.Size = new System.Drawing.Size(117, 18);
             this.label12.TabIndex = 10;
             this.label12.Text = "Name of student";
             // 
             // monthCalendar1
             // 
-            this.monthCalendar1.Location = new System.Drawing.Point(438, 118);
-            this.monthCalendar1.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.monthCalendar1.Location = new System.Drawing.Point(584, 145);
+            this.monthCalendar1.Margin = new System.Windows.Forms.Padding(5, 6, 5, 6);
             this.monthCalendar1.Name = "monthCalendar1";
             this.monthCalendar1.TabIndex = 9;
             // 
             // comboBox2
             // 
             this.comboBox2.FormattingEnabled = true;
-            this.comboBox2.Location = new System.Drawing.Point(153, 118);
-            this.comboBox2.Margin = new System.Windows.Forms.Padding(2);
+            this.comboBox2.Location = new System.Drawing.Point(204, 145);
+            this.comboBox2.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.comboBox2.Name = "comboBox2";
-            this.comboBox2.Size = new System.Drawing.Size(120, 21);
+            this.comboBox2.Size = new System.Drawing.Size(159, 24);
             this.comboBox2.TabIndex = 8;
             // 
             // comboBox1
             // 
             this.comboBox1.FormattingEnabled = true;
-            this.comboBox1.Location = new System.Drawing.Point(15, 118);
-            this.comboBox1.Margin = new System.Windows.Forms.Padding(2);
+            this.comboBox1.Location = new System.Drawing.Point(20, 145);
+            this.comboBox1.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.comboBox1.Name = "comboBox1";
-            this.comboBox1.Size = new System.Drawing.Size(120, 21);
+            this.comboBox1.Size = new System.Drawing.Size(159, 24);
             this.comboBox1.TabIndex = 7;
             // 
             // label13
             // 
             this.label13.AutoSize = true;
             this.label13.Font = new System.Drawing.Font("Microsoft Sans Serif", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label13.Location = new System.Drawing.Point(10, 10);
-            this.label13.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.label13.Location = new System.Drawing.Point(13, 12);
             this.label13.Name = "label13";
-            this.label13.Size = new System.Drawing.Size(169, 29);
+            this.label13.Size = new System.Drawing.Size(204, 36);
             this.label13.TabIndex = 6;
             this.label13.Text = "Cash register";
             // 
@@ -813,10 +812,10 @@
             this.Revenuepnl.Controls.Add(this.monthCalendar2);
             this.Revenuepnl.Controls.Add(this.monthCalendar3);
             this.Revenuepnl.Controls.Add(this.label14);
-            this.Revenuepnl.Location = new System.Drawing.Point(11, 26);
-            this.Revenuepnl.Margin = new System.Windows.Forms.Padding(2);
+            this.Revenuepnl.Location = new System.Drawing.Point(15, 32);
+            this.Revenuepnl.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.Revenuepnl.Name = "Revenuepnl";
-            this.Revenuepnl.Size = new System.Drawing.Size(921, 477);
+            this.Revenuepnl.Size = new System.Drawing.Size(1228, 587);
             this.Revenuepnl.TabIndex = 11;
             // 
             // sumlist
@@ -825,10 +824,10 @@
             this.price});
             this.sumlist.GridLines = true;
             this.sumlist.HideSelection = false;
-            this.sumlist.Location = new System.Drawing.Point(604, 53);
-            this.sumlist.Margin = new System.Windows.Forms.Padding(2);
+            this.sumlist.Location = new System.Drawing.Point(805, 65);
+            this.sumlist.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.sumlist.Name = "sumlist";
-            this.sumlist.Size = new System.Drawing.Size(92, 287);
+            this.sumlist.Size = new System.Drawing.Size(121, 352);
             this.sumlist.TabIndex = 7;
             this.sumlist.UseCompatibleStateImageBehavior = false;
             this.sumlist.View = System.Windows.Forms.View.Details;
@@ -843,10 +842,10 @@
             this.student1});
             this.studentnameslist.GridLines = true;
             this.studentnameslist.HideSelection = false;
-            this.studentnameslist.Location = new System.Drawing.Point(485, 53);
-            this.studentnameslist.Margin = new System.Windows.Forms.Padding(2);
+            this.studentnameslist.Location = new System.Drawing.Point(647, 65);
+            this.studentnameslist.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.studentnameslist.Name = "studentnameslist";
-            this.studentnameslist.Size = new System.Drawing.Size(92, 287);
+            this.studentnameslist.Size = new System.Drawing.Size(121, 352);
             this.studentnameslist.TabIndex = 6;
             this.studentnameslist.UseCompatibleStateImageBehavior = false;
             this.studentnameslist.View = System.Windows.Forms.View.Details;
@@ -862,10 +861,10 @@
             this.drink});
             this.studentrevlist.GridLines = true;
             this.studentrevlist.HideSelection = false;
-            this.studentrevlist.Location = new System.Drawing.Point(348, 53);
-            this.studentrevlist.Margin = new System.Windows.Forms.Padding(2);
+            this.studentrevlist.Location = new System.Drawing.Point(464, 65);
+            this.studentrevlist.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.studentrevlist.Name = "studentrevlist";
-            this.studentrevlist.Size = new System.Drawing.Size(113, 287);
+            this.studentrevlist.Size = new System.Drawing.Size(149, 352);
             this.studentrevlist.TabIndex = 5;
             this.studentrevlist.UseCompatibleStateImageBehavior = false;
             this.studentrevlist.View = System.Windows.Forms.View.Details;
@@ -880,10 +879,10 @@
             // 
             // button1
             // 
-            this.button1.Location = new System.Drawing.Point(15, 254);
-            this.button1.Margin = new System.Windows.Forms.Padding(2);
+            this.button1.Location = new System.Drawing.Point(20, 313);
+            this.button1.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(100, 56);
+            this.button1.Size = new System.Drawing.Size(133, 69);
             this.button1.TabIndex = 4;
             this.button1.Text = "Turnover date";
             this.button1.UseVisualStyleBackColor = true;
@@ -891,24 +890,21 @@
             // calanderlabel
             // 
             this.calanderlabel.AutoSize = true;
-            this.calanderlabel.Location = new System.Drawing.Point(194, 275);
-            this.calanderlabel.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.calanderlabel.Location = new System.Drawing.Point(259, 338);
             this.calanderlabel.Name = "calanderlabel";
-            this.calanderlabel.Size = new System.Drawing.Size(0, 13);
+            this.calanderlabel.Size = new System.Drawing.Size(0, 16);
             this.calanderlabel.TabIndex = 3;
             // 
             // monthCalendar2
             // 
-            this.monthCalendar2.Location = new System.Drawing.Point(178, 53);
-            this.monthCalendar2.Margin = new System.Windows.Forms.Padding(7);
+            this.monthCalendar2.Location = new System.Drawing.Point(237, 65);
             this.monthCalendar2.Name = "monthCalendar2";
             this.monthCalendar2.SelectionRange = new System.Windows.Forms.SelectionRange(new System.DateTime(2021, 3, 16, 0, 0, 0, 0), new System.DateTime(2021, 3, 22, 0, 0, 0, 0));
             this.monthCalendar2.TabIndex = 2;
             // 
             // monthCalendar3
             // 
-            this.monthCalendar3.Location = new System.Drawing.Point(15, 53);
-            this.monthCalendar3.Margin = new System.Windows.Forms.Padding(7);
+            this.monthCalendar3.Location = new System.Drawing.Point(20, 65);
             this.monthCalendar3.Name = "monthCalendar3";
             this.monthCalendar3.SelectionRange = new System.Windows.Forms.SelectionRange(new System.DateTime(2021, 3, 16, 0, 0, 0, 0), new System.DateTime(2021, 3, 22, 0, 0, 0, 0));
             this.monthCalendar3.TabIndex = 1;
@@ -917,15 +913,17 @@
             // 
             this.label14.AutoSize = true;
             this.label14.Font = new System.Drawing.Font("Microsoft Sans Serif", 16.16F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label14.Location = new System.Drawing.Point(10, 14);
-            this.label14.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.label14.Location = new System.Drawing.Point(13, 17);
             this.label14.Name = "label14";
-            this.label14.Size = new System.Drawing.Size(99, 26);
+            this.label14.Size = new System.Drawing.Size(123, 31);
             this.label14.TabIndex = 0;
             this.label14.Text = "Revenue";
             // 
             // pnlSupervisors
             // 
+            this.pnlSupervisors.Controls.Add(this.txtNaamSupervisor);
+            this.pnlSupervisors.Controls.Add(this.label18);
+            this.pnlSupervisors.Controls.Add(this.btnDeleteSupervisor);
             this.pnlSupervisors.Controls.Add(this.txtActivityID);
             this.pnlSupervisors.Controls.Add(this.comboBoxTeacherNames);
             this.pnlSupervisors.Controls.Add(this.btnAddSupervisor);
@@ -933,30 +931,79 @@
             this.pnlSupervisors.Controls.Add(this.label16);
             this.pnlSupervisors.Controls.Add(this.label15);
             this.pnlSupervisors.Controls.Add(this.listViewActivites);
-            this.pnlSupervisors.Location = new System.Drawing.Point(11, 25);
-            this.pnlSupervisors.Margin = new System.Windows.Forms.Padding(2);
+            this.pnlSupervisors.Location = new System.Drawing.Point(15, 31);
+            this.pnlSupervisors.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.pnlSupervisors.Name = "pnlSupervisors";
-            this.pnlSupervisors.Size = new System.Drawing.Size(919, 469);
+            this.pnlSupervisors.Size = new System.Drawing.Size(1225, 577);
             this.pnlSupervisors.TabIndex = 8;
+            // 
+            // btnDeleteSupervisor
+            // 
+            this.btnDeleteSupervisor.Location = new System.Drawing.Point(466, 397);
+            this.btnDeleteSupervisor.Name = "btnDeleteSupervisor";
+            this.btnDeleteSupervisor.Size = new System.Drawing.Size(236, 23);
+            this.btnDeleteSupervisor.TabIndex = 9;
+            this.btnDeleteSupervisor.Text = "Verwijder supervisor van activiteit";
+            this.btnDeleteSupervisor.UseVisualStyleBackColor = true;
+            this.btnDeleteSupervisor.Click += new System.EventHandler(this.btnDeleteSupervisor_Click);
+            // 
+            // txtActivityID
+            // 
+            this.txtActivityID.Location = new System.Drawing.Point(464, 107);
+            this.txtActivityID.Margin = new System.Windows.Forms.Padding(4);
+            this.txtActivityID.Name = "txtActivityID";
+            this.txtActivityID.Size = new System.Drawing.Size(132, 22);
+            this.txtActivityID.TabIndex = 8;
+            // 
+            // comboBoxTeacherNames
+            // 
+            this.comboBoxTeacherNames.FormattingEnabled = true;
+            this.comboBoxTeacherNames.Location = new System.Drawing.Point(464, 195);
+            this.comboBoxTeacherNames.Margin = new System.Windows.Forms.Padding(4);
+            this.comboBoxTeacherNames.Name = "comboBoxTeacherNames";
+            this.comboBoxTeacherNames.Size = new System.Drawing.Size(163, 24);
+            this.comboBoxTeacherNames.TabIndex = 7;
+            // 
+            // btnAddSupervisor
+            // 
+            this.btnAddSupervisor.Location = new System.Drawing.Point(466, 256);
+            this.btnAddSupervisor.Margin = new System.Windows.Forms.Padding(4);
+            this.btnAddSupervisor.Name = "btnAddSupervisor";
+            this.btnAddSupervisor.Size = new System.Drawing.Size(161, 28);
+            this.btnAddSupervisor.TabIndex = 6;
+            this.btnAddSupervisor.Text = "voeg supervisor toe";
+            this.btnAddSupervisor.UseVisualStyleBackColor = true;
+            this.btnAddSupervisor.Click += new System.EventHandler(this.btnAddSupervisor_Click);
+            // 
+            // label17
+            // 
+            this.label17.AutoSize = true;
+            this.label17.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label17.Location = new System.Drawing.Point(459, 151);
+            this.label17.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.label17.Name = "label17";
+            this.label17.Size = new System.Drawing.Size(314, 25);
+            this.label17.TabIndex = 5;
+            this.label17.Text = "Naam supervisor om toe te voegen";
             // 
             // label16
             // 
             this.label16.AutoSize = true;
             this.label16.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label16.Location = new System.Drawing.Point(544, 54);
+            this.label16.Location = new System.Drawing.Point(449, 65);
+            this.label16.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label16.Name = "label16";
-            this.label16.Size = new System.Drawing.Size(372, 20);
+            this.label16.Size = new System.Drawing.Size(603, 25);
             this.label16.TabIndex = 3;
-            this.label16.Text = "Selecteer activiteit om een supervisor toe te voegen";
+            this.label16.Text = "Selecteer activiteit om een supervisor toe te voegen of te verwijderen";
             // 
             // label15
             // 
             this.label15.AutoSize = true;
             this.label15.Font = new System.Drawing.Font("Microsoft Sans Serif", 16.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label15.Location = new System.Drawing.Point(12, 27);
-            this.label15.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.label15.Location = new System.Drawing.Point(16, 33);
             this.label15.Name = "label15";
-            this.label15.Size = new System.Drawing.Size(99, 26);
+            this.label15.Size = new System.Drawing.Size(128, 32);
             this.label15.TabIndex = 1;
             this.label15.Text = "Activities";
             // 
@@ -964,15 +1011,15 @@
             // 
             this.listViewActivites.BackColor = System.Drawing.SystemColors.Window;
             this.listViewActivites.Columns.AddRange(new System.Windows.Forms.ColumnHeader[] {
-            this.columnHeader8,
-            this.columnHeader7});
+            this.columnHeader7,
+            this.columnHeader8});
             this.listViewActivites.FullRowSelect = true;
             this.listViewActivites.GridLines = true;
             this.listViewActivites.HideSelection = false;
-            this.listViewActivites.Location = new System.Drawing.Point(15, 75);
-            this.listViewActivites.Margin = new System.Windows.Forms.Padding(2);
+            this.listViewActivites.Location = new System.Drawing.Point(20, 92);
+            this.listViewActivites.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.listViewActivites.Name = "listViewActivites";
-            this.listViewActivites.Size = new System.Drawing.Size(560, 266);
+            this.listViewActivites.Size = new System.Drawing.Size(428, 326);
             this.listViewActivites.TabIndex = 0;
             this.listViewActivites.UseCompatibleStateImageBehavior = false;
             this.listViewActivites.View = System.Windows.Forms.View.Details;
@@ -980,55 +1027,39 @@
             // 
             // columnHeader7
             // 
+            this.columnHeader7.DisplayIndex = 1;
             this.columnHeader7.Text = "ActivityID";
             this.columnHeader7.Width = 153;
             // 
             // columnHeader8
             // 
-            this.columnHeader8.DisplayIndex = 1;
+            this.columnHeader8.DisplayIndex = 0;
             this.columnHeader8.Text = "Supervisor";
             this.columnHeader8.Width = 204;
             // 
-            // label17
+            // label18
             // 
-            this.label17.AutoSize = true;
-            this.label17.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label17.Location = new System.Drawing.Point(576, 157);
-            this.label17.Name = "label17";
-            this.label17.Size = new System.Drawing.Size(254, 20);
-            this.label17.TabIndex = 5;
-            this.label17.Text = "Naam supervisor om toe te voegen";
+            this.label18.AutoSize = true;
+            this.label18.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label18.Location = new System.Drawing.Point(461, 314);
+            this.label18.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.label18.Name = "label18";
+            this.label18.Size = new System.Drawing.Size(316, 25);
+            this.label18.TabIndex = 10;
+            this.label18.Text = "Naam supervisor om te verwijderen";
             // 
-            // btnAddSupervisor
+            // txtNaamSupervisor
             // 
-            this.btnAddSupervisor.Location = new System.Drawing.Point(582, 226);
-            this.btnAddSupervisor.Name = "btnAddSupervisor";
-            this.btnAddSupervisor.Size = new System.Drawing.Size(121, 23);
-            this.btnAddSupervisor.TabIndex = 6;
-            this.btnAddSupervisor.Text = "voeg supervisor toe";
-            this.btnAddSupervisor.UseVisualStyleBackColor = true;
-            this.btnAddSupervisor.Click += new System.EventHandler(this.btnAddSupervisor_Click);
-            // 
-            // comboBoxTeacherNames
-            // 
-            this.comboBoxTeacherNames.FormattingEnabled = true;
-            this.comboBoxTeacherNames.Location = new System.Drawing.Point(580, 195);
-            this.comboBoxTeacherNames.Name = "comboBoxTeacherNames";
-            this.comboBoxTeacherNames.Size = new System.Drawing.Size(123, 21);
-            this.comboBoxTeacherNames.TabIndex = 7;
-            // 
-            // txtActivityID
-            // 
-            this.txtActivityID.Location = new System.Drawing.Point(582, 88);
-            this.txtActivityID.Name = "txtActivityID";
-            this.txtActivityID.Size = new System.Drawing.Size(100, 20);
-            this.txtActivityID.TabIndex = 8;
+            this.txtNaamSupervisor.Location = new System.Drawing.Point(466, 361);
+            this.txtNaamSupervisor.Name = "txtNaamSupervisor";
+            this.txtNaamSupervisor.Size = new System.Drawing.Size(210, 22);
+            this.txtNaamSupervisor.TabIndex = 11;
             // 
             // SomerenUI
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(962, 548);
+            this.ClientSize = new System.Drawing.Size(1283, 674);
             this.Controls.Add(this.pnlSupervisors);
             this.Controls.Add(this.Revenuepnl);
             this.Controls.Add(this.panelCashRegister);
@@ -1040,6 +1071,7 @@
             this.Controls.Add(this.menuStrip1);
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.MainMenuStrip = this.menuStrip1;
+            this.Margin = new System.Windows.Forms.Padding(4);
             this.Name = "SomerenUI";
             this.RightToLeft = System.Windows.Forms.RightToLeft.No;
             this.Text = "SomerenApp";
@@ -1177,6 +1209,9 @@
         private System.Windows.Forms.Button btnAddSupervisor;
         private System.Windows.Forms.ComboBox comboBoxTeacherNames;
         private System.Windows.Forms.TextBox txtActivityID;
+        private System.Windows.Forms.Button btnDeleteSupervisor;
+        private System.Windows.Forms.Label label18;
+        private System.Windows.Forms.TextBox txtNaamSupervisor;
     }
 }
 

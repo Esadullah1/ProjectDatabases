@@ -31,7 +31,7 @@ namespace SomerenDAL
                 Activity activity = new Activity()
                 {
                     ActivityID = (int)dr["ActivityID"],
-                    SupervisorName = (string)(dr["SupervisorName"])
+                    SupervisorName = dr["SupervisorName"].ToString()
                 };
                 activities.Add(activity);
             }
@@ -46,5 +46,16 @@ namespace SomerenDAL
             command.ExecuteNonQuery();
         }
 
+        public void DeleteSupervisor(Activity activity)
+        {
+            SqlCommand command = new SqlCommand("Update ActivitySupervisors SET SupervisorName = NULL WHERE SupervisorName = @SupervisorName AND ActivityID = @ActivityID;", OpenConnection());
+            command.Parameters.AddWithValue("@SupervisorName", activity.SupervisorName);
+            command.Parameters.AddWithValue("@ActivityID", activity.ActivityID);
+
+            command.ExecuteNonQuery();
+
+
+
+        }
     }
 }
