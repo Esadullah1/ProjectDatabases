@@ -10,7 +10,8 @@ namespace SomerenModel
     {
 
 
-        public int ActivityID { get; set; }
+        public string ActivityNumber { get; set; }
+        public string ActivityName { get; set; }
         public string SupervisorName { get; set; } // RoomNumber, e.g. 206
 
 

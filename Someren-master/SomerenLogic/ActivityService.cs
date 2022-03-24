@@ -1,29 +1,33 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+﻿using SomerenDAL;
 using SomerenModel;
-using SomerenDAL;
+using System.Collections.Generic;
 
 namespace SomerenLogic
 {
     public class ActivityService
     {
 
-      
-            ActivityDao activityDb;
 
-            public ActivityService()
-            {
-                activityDb = new ActivityDao();
-            }
+        ActivityDao activityDb;
 
-            public List<Activity> GetActivities()
-            {
-                List<Activity> activities = activityDb.GetAllActivites();
-                return activities;
-            }
+        public ActivityService()
+        {
+            activityDb = new ActivityDao();
+        }
+
+
+
+        public List<Activity> GetActivitiesSupervisors()
+        {
+            List<Activity> activities = activityDb.GetAllSupervisorActivities();
+            return activities;
+        }
+        
+        public List<Activity> GetAllActivities()
+        {
+            List<Activity> activities = activityDb.GetAllActivities();
+            return activities;
+        }
 
         public void AddSupervisor(Activity activity)
         {
@@ -33,6 +37,11 @@ namespace SomerenLogic
         public void DeleteSupervisor(Activity activity)
         {
             activityDb.DeleteSupervisor(activity);
+        }
+
+        public void InsertIntoActivity(Activity activity)
+        {
+            activityDb.InsertIntoActivity(activity);
         }
 
     }

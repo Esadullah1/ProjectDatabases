@@ -14,6 +14,8 @@ namespace SomerenUI
 
         Activity updateActivity;
         Activity deleteSupervisor;
+        Activity insertActivity;
+       
 
         public SomerenUI()
         {
@@ -333,6 +335,7 @@ namespace SomerenUI
 
             else if (panelName == "Activity Supervisors")
             {
+                comboBoxActivityList.Items.Clear();
                 listViewSupervisors.Items.Clear();
                 listViewActivites.Items.Clear();
                 txtNaamSupervisor.Clear();
@@ -349,15 +352,16 @@ namespace SomerenUI
 
                 try
                 {
-                    // fill the students listview within the students panel with a list of students
+                   
                     ActivityService activityService = new ActivityService(); ;
-                    List<Activity> activitiesList = activityService.GetActivities(); 
+                    List<Activity> activitiesList = activityService.GetActivitiesSupervisors(); 
 
                     foreach (Activity a in activitiesList)
                     {
-                        string[] arr = new string[2];
-                        arr[0] = a.ActivityID.ToString();
-                        arr[1] = a.SupervisorName;
+                        string[] arr = new string[3];
+                        arr[0] = a.SupervisorName;
+                        arr[1] = a.ActivityName;
+                        arr[2] = a.ActivityNumber;
                         ListViewItem li = new ListViewItem(arr);
                         listViewActivites.Items.Add(li);
 
@@ -373,6 +377,17 @@ namespace SomerenUI
                         string[] arr = new string[1];
                         arr[0] = t.TeacherFirstName;
                         listViewSupervisors.Items.Add(arr[0]);
+                    }
+
+                    
+                    List<Activity> activities = activityService.GetAllActivities();
+
+                    foreach (Activity a in activities)
+                    {
+                        string[] arr = new string[1];
+                        arr[0] = a.ActivityName.ToString();
+                        comboBoxActivityList.Items.Add(arr[0]);
+
                     }
 
                 }
@@ -539,9 +554,9 @@ namespace SomerenUI
             try
             {
                 ActivityService activityService = new ActivityService();
-                listViewActivites.FocusedItem.SubItems[1].Text = listViewSupervisors.FocusedItem.SubItems[0].Text;
-                activityUpdate.SupervisorName = listViewActivites.FocusedItem.SubItems[1].Text;
-                activityUpdate.ActivityID = Convert.ToInt32(listViewActivites.FocusedItem.SubItems[0].Text);
+                listViewActivites.FocusedItem.SubItems[0].Text = listViewSupervisors.FocusedItem.SubItems[0].Text;
+                activityUpdate.SupervisorName = listViewActivites.FocusedItem.SubItems[0].Text;
+                activityUpdate.ActivityNumber = (listViewActivites.FocusedItem.SubItems[2].Text);
 
           
 
@@ -590,12 +605,28 @@ namespace SomerenUI
         {
 
             Activity activityDelete = new Activity();
-            activityDelete.SupervisorName = listViewActivites.FocusedItem.SubItems[1].Text;
-            activityDelete.ActivityID = Convert.ToInt32(listViewActivites.FocusedItem.SubItems[0].Text);
-            txtNaamSupervisor.Text = listViewActivites.FocusedItem.SubItems[1].Text;
+            activityDelete.SupervisorName = listViewActivites.FocusedItem.SubItems[0].Text;
+            activityDelete.ActivityNumber = (listViewActivites.FocusedItem.SubItems[2].Text);
+            txtNaamSupervisor.Text = listViewActivites.FocusedItem.SubItems[0].Text;
             this.deleteSupervisor = activityDelete;
         }
 
+        private void comboBoxActivityList_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            Activity activityInsert = new Activity();
+            
+            activityInsert.ActivityName = comboBoxActivityList.SelectedItem.ToString();
 
+            this.insertActivity = activityInsert;
+        }
+
+        private void btnAddActivity_Click(object sender, EventArgs e)
+        {
+
+            ActivityService activityService = new ActivityService();
+            activityService.InsertIntoActivity(insertActivity);
+            showPanel("Activity Supervisors");
+
+        }
     }
 }
