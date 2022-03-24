@@ -118,9 +118,8 @@
             this.monthCalendar3 = new System.Windows.Forms.MonthCalendar();
             this.label14 = new System.Windows.Forms.Label();
             this.pnlSupervisors = new System.Windows.Forms.Panel();
+            this.txtNaamSupervisor = new System.Windows.Forms.TextBox();
             this.btnDeleteSupervisor = new System.Windows.Forms.Button();
-            this.txtActivityID = new System.Windows.Forms.TextBox();
-            this.comboBoxTeacherNames = new System.Windows.Forms.ComboBox();
             this.btnAddSupervisor = new System.Windows.Forms.Button();
             this.label17 = new System.Windows.Forms.Label();
             this.label16 = new System.Windows.Forms.Label();
@@ -129,8 +128,8 @@
             this.columnHeader7 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.columnHeader8 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.colorDialog1 = new System.Windows.Forms.ColorDialog();
-            this.label18 = new System.Windows.Forms.Label();
-            this.txtNaamSupervisor = new System.Windows.Forms.TextBox();
+            this.listViewSupervisors = new System.Windows.Forms.ListView();
+            this.columnHeader10 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             ((System.ComponentModel.ISupportInitialize)(this.imgDashboard)).BeginInit();
             this.menuStrip1.SuspendLayout();
             this.pnlDashboard.SuspendLayout();
@@ -172,7 +171,7 @@
             this.menuStrip1.Location = new System.Drawing.Point(0, 0);
             this.menuStrip1.Name = "menuStrip1";
             this.menuStrip1.Padding = new System.Windows.Forms.Padding(5, 2, 0, 2);
-            this.menuStrip1.Size = new System.Drawing.Size(1283, 28);
+            this.menuStrip1.Size = new System.Drawing.Size(1283, 30);
             this.menuStrip1.TabIndex = 1;
             this.menuStrip1.Text = "menuStrip1";
             // 
@@ -921,11 +920,9 @@
             // 
             // pnlSupervisors
             // 
+            this.pnlSupervisors.Controls.Add(this.listViewSupervisors);
             this.pnlSupervisors.Controls.Add(this.txtNaamSupervisor);
-            this.pnlSupervisors.Controls.Add(this.label18);
             this.pnlSupervisors.Controls.Add(this.btnDeleteSupervisor);
-            this.pnlSupervisors.Controls.Add(this.txtActivityID);
-            this.pnlSupervisors.Controls.Add(this.comboBoxTeacherNames);
             this.pnlSupervisors.Controls.Add(this.btnAddSupervisor);
             this.pnlSupervisors.Controls.Add(this.label17);
             this.pnlSupervisors.Controls.Add(this.label16);
@@ -937,39 +934,31 @@
             this.pnlSupervisors.Size = new System.Drawing.Size(1225, 577);
             this.pnlSupervisors.TabIndex = 8;
             // 
+            // txtNaamSupervisor
+            // 
+            this.txtNaamSupervisor.Location = new System.Drawing.Point(306, 379);
+            this.txtNaamSupervisor.Name = "txtNaamSupervisor";
+            this.txtNaamSupervisor.Size = new System.Drawing.Size(161, 22);
+            this.txtNaamSupervisor.TabIndex = 11;
+            // 
             // btnDeleteSupervisor
             // 
-            this.btnDeleteSupervisor.Location = new System.Drawing.Point(466, 397);
+            this.btnDeleteSupervisor.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnDeleteSupervisor.Location = new System.Drawing.Point(306, 243);
             this.btnDeleteSupervisor.Name = "btnDeleteSupervisor";
-            this.btnDeleteSupervisor.Size = new System.Drawing.Size(236, 23);
+            this.btnDeleteSupervisor.Size = new System.Drawing.Size(161, 110);
             this.btnDeleteSupervisor.TabIndex = 9;
             this.btnDeleteSupervisor.Text = "Verwijder supervisor van activiteit";
             this.btnDeleteSupervisor.UseVisualStyleBackColor = true;
             this.btnDeleteSupervisor.Click += new System.EventHandler(this.btnDeleteSupervisor_Click);
             // 
-            // txtActivityID
-            // 
-            this.txtActivityID.Location = new System.Drawing.Point(464, 107);
-            this.txtActivityID.Margin = new System.Windows.Forms.Padding(4);
-            this.txtActivityID.Name = "txtActivityID";
-            this.txtActivityID.Size = new System.Drawing.Size(132, 22);
-            this.txtActivityID.TabIndex = 8;
-            // 
-            // comboBoxTeacherNames
-            // 
-            this.comboBoxTeacherNames.FormattingEnabled = true;
-            this.comboBoxTeacherNames.Location = new System.Drawing.Point(464, 195);
-            this.comboBoxTeacherNames.Margin = new System.Windows.Forms.Padding(4);
-            this.comboBoxTeacherNames.Name = "comboBoxTeacherNames";
-            this.comboBoxTeacherNames.Size = new System.Drawing.Size(163, 24);
-            this.comboBoxTeacherNames.TabIndex = 7;
-            // 
             // btnAddSupervisor
             // 
-            this.btnAddSupervisor.Location = new System.Drawing.Point(466, 256);
+            this.btnAddSupervisor.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnAddSupervisor.Location = new System.Drawing.Point(306, 89);
             this.btnAddSupervisor.Margin = new System.Windows.Forms.Padding(4);
             this.btnAddSupervisor.Name = "btnAddSupervisor";
-            this.btnAddSupervisor.Size = new System.Drawing.Size(161, 28);
+            this.btnAddSupervisor.Size = new System.Drawing.Size(161, 105);
             this.btnAddSupervisor.TabIndex = 6;
             this.btnAddSupervisor.Text = "voeg supervisor toe";
             this.btnAddSupervisor.UseVisualStyleBackColor = true;
@@ -979,7 +968,7 @@
             // 
             this.label17.AutoSize = true;
             this.label17.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label17.Location = new System.Drawing.Point(459, 151);
+            this.label17.Location = new System.Drawing.Point(16, 51);
             this.label17.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label17.Name = "label17";
             this.label17.Size = new System.Drawing.Size(314, 25);
@@ -990,18 +979,19 @@
             // 
             this.label16.AutoSize = true;
             this.label16.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label16.Location = new System.Drawing.Point(449, 65);
+            this.label16.Location = new System.Drawing.Point(151, 13);
             this.label16.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label16.Name = "label16";
-            this.label16.Size = new System.Drawing.Size(603, 25);
+            this.label16.Size = new System.Drawing.Size(717, 25);
             this.label16.TabIndex = 3;
-            this.label16.Text = "Selecteer activiteit om een supervisor toe te voegen of te verwijderen";
+            this.label16.Text = "Selecteer eerst activiteit om daarna een supervisor toe te voegen of te verwijder" +
+    "en";
             // 
             // label15
             // 
             this.label15.AutoSize = true;
             this.label15.Font = new System.Drawing.Font("Microsoft Sans Serif", 16.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label15.Location = new System.Drawing.Point(16, 33);
+            this.label15.Location = new System.Drawing.Point(16, 15);
             this.label15.Name = "label15";
             this.label15.Size = new System.Drawing.Size(128, 32);
             this.label15.TabIndex = 1;
@@ -1016,10 +1006,10 @@
             this.listViewActivites.FullRowSelect = true;
             this.listViewActivites.GridLines = true;
             this.listViewActivites.HideSelection = false;
-            this.listViewActivites.Location = new System.Drawing.Point(20, 92);
+            this.listViewActivites.Location = new System.Drawing.Point(549, 75);
             this.listViewActivites.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.listViewActivites.Name = "listViewActivites";
-            this.listViewActivites.Size = new System.Drawing.Size(428, 326);
+            this.listViewActivites.Size = new System.Drawing.Size(455, 326);
             this.listViewActivites.TabIndex = 0;
             this.listViewActivites.UseCompatibleStateImageBehavior = false;
             this.listViewActivites.View = System.Windows.Forms.View.Details;
@@ -1037,23 +1027,26 @@
             this.columnHeader8.Text = "Supervisor";
             this.columnHeader8.Width = 204;
             // 
-            // label18
+            // listViewSupervisors
             // 
-            this.label18.AutoSize = true;
-            this.label18.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label18.Location = new System.Drawing.Point(461, 314);
-            this.label18.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
-            this.label18.Name = "label18";
-            this.label18.Size = new System.Drawing.Size(316, 25);
-            this.label18.TabIndex = 10;
-            this.label18.Text = "Naam supervisor om te verwijderen";
+            this.listViewSupervisors.BackColor = System.Drawing.SystemColors.Window;
+            this.listViewSupervisors.Columns.AddRange(new System.Windows.Forms.ColumnHeader[] {
+            this.columnHeader10});
+            this.listViewSupervisors.FullRowSelect = true;
+            this.listViewSupervisors.GridLines = true;
+            this.listViewSupervisors.HideSelection = false;
+            this.listViewSupervisors.Location = new System.Drawing.Point(22, 89);
+            this.listViewSupervisors.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.listViewSupervisors.Name = "listViewSupervisors";
+            this.listViewSupervisors.Size = new System.Drawing.Size(215, 312);
+            this.listViewSupervisors.TabIndex = 12;
+            this.listViewSupervisors.UseCompatibleStateImageBehavior = false;
+            this.listViewSupervisors.View = System.Windows.Forms.View.Details;
             // 
-            // txtNaamSupervisor
+            // columnHeader10
             // 
-            this.txtNaamSupervisor.Location = new System.Drawing.Point(466, 361);
-            this.txtNaamSupervisor.Name = "txtNaamSupervisor";
-            this.txtNaamSupervisor.Size = new System.Drawing.Size(210, 22);
-            this.txtNaamSupervisor.TabIndex = 11;
+            this.columnHeader10.Text = "Teachers";
+            this.columnHeader10.Width = 204;
             // 
             // SomerenUI
             // 
@@ -1207,11 +1200,10 @@
         private System.Windows.Forms.Label label17;
         private System.Windows.Forms.ColorDialog colorDialog1;
         private System.Windows.Forms.Button btnAddSupervisor;
-        private System.Windows.Forms.ComboBox comboBoxTeacherNames;
-        private System.Windows.Forms.TextBox txtActivityID;
         private System.Windows.Forms.Button btnDeleteSupervisor;
-        private System.Windows.Forms.Label label18;
         private System.Windows.Forms.TextBox txtNaamSupervisor;
+        private System.Windows.Forms.ListView listViewSupervisors;
+        private System.Windows.Forms.ColumnHeader columnHeader10;
     }
 }
 

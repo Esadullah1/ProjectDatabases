@@ -333,8 +333,9 @@ namespace SomerenUI
 
             else if (panelName == "Activity Supervisors")
             {
-                comboBoxTeacherNames.Items.Clear();
+                listViewSupervisors.Items.Clear();
                 listViewActivites.Items.Clear();
+                txtNaamSupervisor.Clear();
                 pnlDashboard.Hide();
                 imgDashboard.Hide();
                 pnlStudents.Hide();
@@ -371,7 +372,7 @@ namespace SomerenUI
                     {
                         string[] arr = new string[1];
                         arr[0] = t.TeacherFirstName;
-                        comboBoxTeacherNames.Items.Add(arr[0]);
+                        listViewSupervisors.Items.Add(arr[0]);
                     }
 
                 }
@@ -538,7 +539,7 @@ namespace SomerenUI
             try
             {
                 ActivityService activityService = new ActivityService();
-                listViewActivites.FocusedItem.SubItems[1].Text = comboBoxTeacherNames.SelectedItem.ToString();
+                listViewActivites.FocusedItem.SubItems[1].Text = listViewSupervisors.FocusedItem.SubItems[0].Text;
                 activityUpdate.SupervisorName = listViewActivites.FocusedItem.SubItems[1].Text;
                 activityUpdate.ActivityID = Convert.ToInt32(listViewActivites.FocusedItem.SubItems[0].Text);
 
@@ -548,7 +549,6 @@ namespace SomerenUI
                 this.updateActivity = activityUpdate;
 
                 activityService.AddSupervisor(activityUpdate);
-                txtActivityID.Clear();
                 MessageBox.Show("Supervisor succesvol toegevoegd!");
                 showPanel("Activity Supervisors");
             }
@@ -588,7 +588,6 @@ namespace SomerenUI
 
         private void listViewActivites_SelectedIndexChanged(object sender, EventArgs e)
         {
-            txtActivityID.Text = listViewActivites.FocusedItem.SubItems[0].Text;
 
             Activity activityDelete = new Activity();
             activityDelete.SupervisorName = listViewActivites.FocusedItem.SubItems[1].Text;
