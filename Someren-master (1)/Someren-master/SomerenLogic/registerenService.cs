@@ -17,7 +17,7 @@ namespace SomerenLogic
             registrerendb = new RegistrerenDao();
         }
                 
-        public void AddActivities(string username, string password)
+        public void Addregistreren(string username, string password)
         {
             registrerendb.Addregistreren(username, password);
         }

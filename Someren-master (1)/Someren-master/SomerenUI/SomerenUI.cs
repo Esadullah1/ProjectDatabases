@@ -917,5 +917,37 @@ namespace SomerenUI
             panelNames(registerpanel);
 
         }
+
+        private void registrerenknop_Click(object sender, EventArgs e)
+        {
+            string code = codebox.Text;
+            
+            if (guestAcces)
+            {
+                MessageBox.Show("Sorry... You dont have acces to add, change or delete data from this page.");
+                return;
+            }
+            switch (code)
+            {
+                case "XsZAb-tgz3PsD-qYh69un-WQCEx":                    
+                    registerenService registrerenservice = new registerenService();
+                        MessageBox.Show($"u succesfully made an account with this username: {usernamebox}");
+                        registrerenservice.Addregistreren(usernamebox.Text.ToString(), passwordbox.Text.ToString());
+                        panelNames(LoginPanel);                    
+                    break;
+
+                default:
+                    MessageBox.Show("Please verify the code and try again");
+                    break;
+                    
+
+                
+                    
+
+                    
+            }
+           
+
+        }
     }
 }
