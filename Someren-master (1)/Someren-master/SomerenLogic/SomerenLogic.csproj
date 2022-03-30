@@ -50,6 +50,7 @@
     <Compile Include="DrinksService.cs" />
     <Compile Include="LoginService.cs" />
     <Compile Include="ParticipatingService.cs" />
+    <Compile Include="registerenService.cs" />
     <Compile Include="RevenueService.cs" />
     <Compile Include="RoomService.cs" />
     <Compile Include="TeacherService.cs" />

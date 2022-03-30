@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace SomerenModel
 {
-    class registeren
+    public class registeren
     {
         public string userName { get; set; }
         public string passWord { get; set; }

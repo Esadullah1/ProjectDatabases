@@ -52,6 +52,7 @@
     <Compile Include="DrinksDao.cs" />
     <Compile Include="LoginDAO.cs" />
     <Compile Include="ParticipatingDAO.cs" />
+    <Compile Include="RegistrerenDao.cs" />
     <Compile Include="RevenueDao.cs" />
     <Compile Include="RoomDao.cs" />
     <Compile Include="TeacherDao.cs" />
