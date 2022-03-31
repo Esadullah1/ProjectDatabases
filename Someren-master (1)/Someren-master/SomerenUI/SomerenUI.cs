@@ -48,13 +48,13 @@ namespace SomerenUI
             List<Login> loginList = loginService.GetAllPasswords();
             PasswordWithSaltHasher pwHasher = new PasswordWithSaltHasher();
             textBoxPassword.Text = pwHasher.ToString();
-            if (textBoxUsername.Text == loginList[0].userName && pwHasher.ToString() == loginList[0].passWord)
+            if (textBoxUsername.Text == loginList[0].userName && textBoxPassword.Text.ToString() == loginList[0].passWord)
             {
                 showPanel("Dashboard");
                 guestAcces = true;
                 LoggedIn = true;
             }
-            else if (textBoxUsername.Text == loginList[4].userName && pwHasher.ToString() == loginList[4].passWord)
+            else if (textBoxUsername.Text == loginList[5].userName && pwHasher.ToString() == loginList[5].passWord)
             {
                 showPanel("Dashboard");
                 LoggedIn = true;
@@ -935,7 +935,7 @@ namespace SomerenUI
                     passwordbox.Text = pwHasher.ToString();
                     registerenService registrerenservice = new registerenService();
                         MessageBox.Show($"u succesfully made an account with this username: {usernamebox}");
-                        registrerenservice.Addregistreren(usernamebox.Text.ToString(), pwHasher.ToString());
+                        registrerenservice.Addregistreren(usernamebox.Text.ToString(), passwordbox.Text.ToString());
                         panelNames(LoginPanel);                    
                     break;
 
