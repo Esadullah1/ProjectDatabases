@@ -46,14 +46,15 @@ namespace SomerenUI
 
             LoginService loginService = new LoginService(); ;
             List<Login> loginList = loginService.GetAllPasswords();
-
-            if (textBoxUsername.Text == loginList[0].userName && textBoxPassword.Text == loginList[0].passWord)
+            PasswordWithSaltHasher pwHasher = new PasswordWithSaltHasher();
+            textBoxPassword.Text = pwHasher.ToString();
+            if (textBoxUsername.Text == loginList[0].userName && pwHasher.ToString() == loginList[0].passWord)
             {
                 showPanel("Dashboard");
                 guestAcces = true;
                 LoggedIn = true;
             }
-            else if (textBoxUsername.Text == loginList[1].userName && textBoxPassword.Text == loginList[1].passWord)
+            else if (textBoxUsername.Text == loginList[4].userName && pwHasher.ToString() == loginList[4].passWord)
             {
                 showPanel("Dashboard");
                 LoggedIn = true;
@@ -929,10 +930,12 @@ namespace SomerenUI
             }
             switch (code)
             {
-                case "XsZAb-tgz3PsD-qYh69un-WQCEx":                    
+                case "XsZAb-tgz3PsD-qYh69un-WQCEx":
+                    PasswordWithSaltHasher pwHasher = new PasswordWithSaltHasher();
+                    passwordbox.Text = pwHasher.ToString();
                     registerenService registrerenservice = new registerenService();
                         MessageBox.Show($"u succesfully made an account with this username: {usernamebox}");
-                        registrerenservice.Addregistreren(usernamebox.Text.ToString(), passwordbox.Text.ToString());
+                        registrerenservice.Addregistreren(usernamebox.Text.ToString(), pwHasher.ToString());
                         panelNames(LoginPanel);                    
                     break;
 

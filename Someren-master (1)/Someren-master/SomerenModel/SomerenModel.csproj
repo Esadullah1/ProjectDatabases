@@ -44,6 +44,9 @@
     <Compile Include="Activity.cs" />
     <Compile Include="ActivityAdd.cs" />
     <Compile Include="ActivityStudents.cs" />
+    <Compile Include="PasswordWithSaltHasher.cs" />
+    <Compile Include="RNG.cs" />
+    <Compile Include="HashWithSaltResult.cs" />
     <Compile Include="Drinks.cs" />
     <Compile Include="Login.cs" />
     <Compile Include="Participating.cs" />

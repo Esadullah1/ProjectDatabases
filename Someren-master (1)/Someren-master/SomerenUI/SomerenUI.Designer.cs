@@ -170,6 +170,16 @@
             this.columnHeader8 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.columnHeader9 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.LoginPanel = new System.Windows.Forms.Panel();
+            this.registerpanel = new System.Windows.Forms.Panel();
+            this.label35 = new System.Windows.Forms.Label();
+            this.label34 = new System.Windows.Forms.Label();
+            this.label33 = new System.Windows.Forms.Label();
+            this.codebox = new System.Windows.Forms.TextBox();
+            this.passwordbox = new System.Windows.Forms.TextBox();
+            this.usernamebox = new System.Windows.Forms.TextBox();
+            this.registrerenknop = new System.Windows.Forms.Button();
+            this.label32 = new System.Windows.Forms.Label();
+            this.registerbutton = new System.Windows.Forms.Button();
             this.label31 = new System.Windows.Forms.Label();
             this.label30 = new System.Windows.Forms.Label();
             this.buttonAsGuest = new System.Windows.Forms.Button();
@@ -181,16 +191,6 @@
             this.textBoxUsername = new System.Windows.Forms.TextBox();
             this.label10 = new System.Windows.Forms.Label();
             this.label11 = new System.Windows.Forms.Label();
-            this.registerbutton = new System.Windows.Forms.Button();
-            this.registerpanel = new System.Windows.Forms.Panel();
-            this.label32 = new System.Windows.Forms.Label();
-            this.registrerenknop = new System.Windows.Forms.Button();
-            this.usernamebox = new System.Windows.Forms.TextBox();
-            this.passwordbox = new System.Windows.Forms.TextBox();
-            this.codebox = new System.Windows.Forms.TextBox();
-            this.label33 = new System.Windows.Forms.Label();
-            this.label34 = new System.Windows.Forms.Label();
-            this.label35 = new System.Windows.Forms.Label();
             columnHeader7 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             ((System.ComponentModel.ISupportInitialize)(this.imgDashboard)).BeginInit();
             this.menuStrip1.SuspendLayout();
@@ -219,7 +219,7 @@
             // imgDashboard
             // 
             this.imgDashboard.Location = new System.Drawing.Point(836, 0);
-            this.imgDashboard.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.imgDashboard.Margin = new System.Windows.Forms.Padding(4);
             this.imgDashboard.Name = "imgDashboard";
             this.imgDashboard.Size = new System.Drawing.Size(415, 332);
             this.imgDashboard.TabIndex = 0;
@@ -344,7 +344,7 @@
             this.pnlDashboard.Controls.Add(this.lbl_Dashboard);
             this.pnlDashboard.Controls.Add(this.imgDashboard);
             this.pnlDashboard.Location = new System.Drawing.Point(17, 32);
-            this.pnlDashboard.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.pnlDashboard.Margin = new System.Windows.Forms.Padding(4);
             this.pnlDashboard.Name = "pnlDashboard";
             this.pnlDashboard.Size = new System.Drawing.Size(1200, 576);
             this.pnlDashboard.TabIndex = 2;
@@ -1347,7 +1347,7 @@
             // btnAddActivity
             // 
             this.btnAddActivity.Location = new System.Drawing.Point(935, 179);
-            this.btnAddActivity.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.btnAddActivity.Margin = new System.Windows.Forms.Padding(4);
             this.btnAddActivity.Name = "btnAddActivity";
             this.btnAddActivity.Size = new System.Drawing.Size(161, 28);
             this.btnAddActivity.TabIndex = 15;
@@ -1369,7 +1369,7 @@
             // 
             this.comboBoxActivityList.FormattingEnabled = true;
             this.comboBoxActivityList.Location = new System.Drawing.Point(937, 131);
-            this.comboBoxActivityList.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.comboBoxActivityList.Margin = new System.Windows.Forms.Padding(4);
             this.comboBoxActivityList.Name = "comboBoxActivityList";
             this.comboBoxActivityList.Size = new System.Drawing.Size(160, 24);
             this.comboBoxActivityList.TabIndex = 13;
@@ -1417,7 +1417,7 @@
             // 
             this.btnAddSupervisor.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnAddSupervisor.Location = new System.Drawing.Point(319, 88);
-            this.btnAddSupervisor.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.btnAddSupervisor.Margin = new System.Windows.Forms.Padding(4);
             this.btnAddSupervisor.Name = "btnAddSupervisor";
             this.btnAddSupervisor.Size = new System.Drawing.Size(161, 104);
             this.btnAddSupervisor.TabIndex = 6;
@@ -1495,6 +1495,100 @@
             this.LoginPanel.Size = new System.Drawing.Size(1251, 592);
             this.LoginPanel.TabIndex = 17;
             // 
+            // registerpanel
+            // 
+            this.registerpanel.Controls.Add(this.label35);
+            this.registerpanel.Controls.Add(this.label34);
+            this.registerpanel.Controls.Add(this.label33);
+            this.registerpanel.Controls.Add(this.codebox);
+            this.registerpanel.Controls.Add(this.passwordbox);
+            this.registerpanel.Controls.Add(this.usernamebox);
+            this.registerpanel.Controls.Add(this.registrerenknop);
+            this.registerpanel.Controls.Add(this.label32);
+            this.registerpanel.Location = new System.Drawing.Point(17, 32);
+            this.registerpanel.Name = "registerpanel";
+            this.registerpanel.Size = new System.Drawing.Size(1188, 463);
+            this.registerpanel.TabIndex = 27;
+            // 
+            // label35
+            // 
+            this.label35.AutoSize = true;
+            this.label35.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label35.Location = new System.Drawing.Point(32, 37);
+            this.label35.Name = "label35";
+            this.label35.Size = new System.Drawing.Size(76, 25);
+            this.label35.TabIndex = 7;
+            this.label35.Text = "register";
+            // 
+            // label34
+            // 
+            this.label34.AutoSize = true;
+            this.label34.Location = new System.Drawing.Point(232, 195);
+            this.label34.Name = "label34";
+            this.label34.Size = new System.Drawing.Size(71, 17);
+            this.label34.TabIndex = 6;
+            this.label34.Text = "username";
+            // 
+            // label33
+            // 
+            this.label33.AutoSize = true;
+            this.label33.Location = new System.Drawing.Point(394, 199);
+            this.label33.Name = "label33";
+            this.label33.Size = new System.Drawing.Size(68, 17);
+            this.label33.TabIndex = 5;
+            this.label33.Text = "password";
+            // 
+            // codebox
+            // 
+            this.codebox.Location = new System.Drawing.Point(317, 340);
+            this.codebox.Name = "codebox";
+            this.codebox.Size = new System.Drawing.Size(100, 22);
+            this.codebox.TabIndex = 4;
+            // 
+            // passwordbox
+            // 
+            this.passwordbox.Location = new System.Drawing.Point(394, 226);
+            this.passwordbox.Name = "passwordbox";
+            this.passwordbox.Size = new System.Drawing.Size(100, 22);
+            this.passwordbox.TabIndex = 3;
+            this.passwordbox.UseSystemPasswordChar = true;
+            // 
+            // usernamebox
+            // 
+            this.usernamebox.Location = new System.Drawing.Point(232, 226);
+            this.usernamebox.Name = "usernamebox";
+            this.usernamebox.Size = new System.Drawing.Size(100, 22);
+            this.usernamebox.TabIndex = 2;
+            // 
+            // registrerenknop
+            // 
+            this.registrerenknop.Location = new System.Drawing.Point(719, 362);
+            this.registrerenknop.Name = "registrerenknop";
+            this.registrerenknop.Size = new System.Drawing.Size(138, 47);
+            this.registrerenknop.TabIndex = 1;
+            this.registrerenknop.Text = "register";
+            this.registrerenknop.UseVisualStyleBackColor = true;
+            this.registrerenknop.Click += new System.EventHandler(this.registrerenknop_Click);
+            // 
+            // label32
+            // 
+            this.label32.AutoSize = true;
+            this.label32.Location = new System.Drawing.Point(316, 311);
+            this.label32.Name = "label32";
+            this.label32.Size = new System.Drawing.Size(294, 17);
+            this.label32.TabIndex = 0;
+            this.label32.Text = "code=  XsZAb - tgz3PsD - qYh69un - WQCEx";
+            // 
+            // registerbutton
+            // 
+            this.registerbutton.Location = new System.Drawing.Point(527, 306);
+            this.registerbutton.Name = "registerbutton";
+            this.registerbutton.Size = new System.Drawing.Size(114, 29);
+            this.registerbutton.TabIndex = 26;
+            this.registerbutton.Text = "register";
+            this.registerbutton.UseVisualStyleBackColor = true;
+            this.registerbutton.Click += new System.EventHandler(this.registerbutton_Click);
+            // 
             // label31
             // 
             this.label31.AutoSize = true;
@@ -1518,7 +1612,7 @@
             // buttonAsGuest
             // 
             this.buttonAsGuest.Location = new System.Drawing.Point(335, 304);
-            this.buttonAsGuest.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.buttonAsGuest.Margin = new System.Windows.Forms.Padding(2);
             this.buttonAsGuest.Name = "buttonAsGuest";
             this.buttonAsGuest.Size = new System.Drawing.Size(159, 31);
             this.buttonAsGuest.TabIndex = 23;
@@ -1529,7 +1623,7 @@
             // buttonLogin
             // 
             this.buttonLogin.Location = new System.Drawing.Point(120, 304);
-            this.buttonLogin.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.buttonLogin.Margin = new System.Windows.Forms.Padding(2);
             this.buttonLogin.Name = "buttonLogin";
             this.buttonLogin.Size = new System.Drawing.Size(159, 31);
             this.buttonLogin.TabIndex = 22;
@@ -1570,15 +1664,16 @@
             // textBoxPassword
             // 
             this.textBoxPassword.Location = new System.Drawing.Point(120, 264);
-            this.textBoxPassword.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.textBoxPassword.Margin = new System.Windows.Forms.Padding(2);
             this.textBoxPassword.Name = "textBoxPassword";
             this.textBoxPassword.Size = new System.Drawing.Size(160, 22);
             this.textBoxPassword.TabIndex = 18;
+            this.textBoxPassword.UseSystemPasswordChar = true;
             // 
             // textBoxUsername
             // 
             this.textBoxUsername.Location = new System.Drawing.Point(120, 174);
-            this.textBoxUsername.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.textBoxUsername.Margin = new System.Windows.Forms.Padding(2);
             this.textBoxUsername.Name = "textBoxUsername";
             this.textBoxUsername.Size = new System.Drawing.Size(160, 22);
             this.textBoxUsername.TabIndex = 17;
@@ -1602,99 +1697,6 @@
             this.label11.Size = new System.Drawing.Size(0, 37);
             this.label11.TabIndex = 14;
             // 
-            // registerbutton
-            // 
-            this.registerbutton.Location = new System.Drawing.Point(527, 306);
-            this.registerbutton.Name = "registerbutton";
-            this.registerbutton.Size = new System.Drawing.Size(114, 29);
-            this.registerbutton.TabIndex = 26;
-            this.registerbutton.Text = "register";
-            this.registerbutton.UseVisualStyleBackColor = true;
-            this.registerbutton.Click += new System.EventHandler(this.registerbutton_Click);
-            // 
-            // registerpanel
-            // 
-            this.registerpanel.Controls.Add(this.label35);
-            this.registerpanel.Controls.Add(this.label34);
-            this.registerpanel.Controls.Add(this.label33);
-            this.registerpanel.Controls.Add(this.codebox);
-            this.registerpanel.Controls.Add(this.passwordbox);
-            this.registerpanel.Controls.Add(this.usernamebox);
-            this.registerpanel.Controls.Add(this.registrerenknop);
-            this.registerpanel.Controls.Add(this.label32);
-            this.registerpanel.Location = new System.Drawing.Point(15, 32);
-            this.registerpanel.Name = "registerpanel";
-            this.registerpanel.Size = new System.Drawing.Size(1188, 463);
-            this.registerpanel.TabIndex = 27;
-            // 
-            // label32
-            // 
-            this.label32.AutoSize = true;
-            this.label32.Location = new System.Drawing.Point(316, 311);
-            this.label32.Name = "label32";
-            this.label32.Size = new System.Drawing.Size(294, 17);
-            this.label32.TabIndex = 0;
-            this.label32.Text = "code=  XsZAb - tgz3PsD - qYh69un - WQCEx";
-            // 
-            // registrerenknop
-            // 
-            this.registrerenknop.Location = new System.Drawing.Point(719, 362);
-            this.registrerenknop.Name = "registrerenknop";
-            this.registrerenknop.Size = new System.Drawing.Size(138, 47);
-            this.registrerenknop.TabIndex = 1;
-            this.registrerenknop.Text = "register";
-            this.registrerenknop.UseVisualStyleBackColor = true;
-            this.registrerenknop.Click += new System.EventHandler(this.registrerenknop_Click);
-            // 
-            // usernamebox
-            // 
-            this.usernamebox.Location = new System.Drawing.Point(232, 226);
-            this.usernamebox.Name = "usernamebox";
-            this.usernamebox.Size = new System.Drawing.Size(100, 22);
-            this.usernamebox.TabIndex = 2;
-            // 
-            // passwordbox
-            // 
-            this.passwordbox.Location = new System.Drawing.Point(394, 226);
-            this.passwordbox.Name = "passwordbox";
-            this.passwordbox.Size = new System.Drawing.Size(100, 22);
-            this.passwordbox.TabIndex = 3;
-            // 
-            // codebox
-            // 
-            this.codebox.Location = new System.Drawing.Point(317, 340);
-            this.codebox.Name = "codebox";
-            this.codebox.Size = new System.Drawing.Size(100, 22);
-            this.codebox.TabIndex = 4;
-            // 
-            // label33
-            // 
-            this.label33.AutoSize = true;
-            this.label33.Location = new System.Drawing.Point(394, 199);
-            this.label33.Name = "label33";
-            this.label33.Size = new System.Drawing.Size(68, 17);
-            this.label33.TabIndex = 5;
-            this.label33.Text = "password";
-            // 
-            // label34
-            // 
-            this.label34.AutoSize = true;
-            this.label34.Location = new System.Drawing.Point(232, 195);
-            this.label34.Name = "label34";
-            this.label34.Size = new System.Drawing.Size(71, 17);
-            this.label34.TabIndex = 6;
-            this.label34.Text = "username";
-            // 
-            // label35
-            // 
-            this.label35.AutoSize = true;
-            this.label35.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label35.Location = new System.Drawing.Point(32, 37);
-            this.label35.Name = "label35";
-            this.label35.Size = new System.Drawing.Size(76, 25);
-            this.label35.TabIndex = 7;
-            this.label35.Text = "register";
-            // 
             // SomerenUI
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
@@ -1715,7 +1717,7 @@
             this.Controls.Add(this.menuStrip1);
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.MainMenuStrip = this.menuStrip1;
-            this.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.Margin = new System.Windows.Forms.Padding(4);
             this.Name = "SomerenUI";
             this.RightToLeft = System.Windows.Forms.RightToLeft.No;
             this.Text = "SomerenApp";
