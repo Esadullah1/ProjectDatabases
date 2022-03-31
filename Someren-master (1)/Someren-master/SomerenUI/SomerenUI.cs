@@ -43,27 +43,28 @@ namespace SomerenUI
 
         private void button3_Click(object sender, EventArgs e)
         {
-
-            LoginService loginService = new LoginService(); ;
+            LoginService loginService = new LoginService();
             List<Login> loginList = loginService.GetAllPasswords();
-            PasswordWithSaltHasher pwHasher = new PasswordWithSaltHasher();
-            textBoxPassword.Text = pwHasher.ToString();
-            if (textBoxUsername.Text == loginList[0].userName && textBoxPassword.Text.ToString() == loginList[0].passWord)
+
+            for (int i = 0; i < loginList.Count; i++)
             {
-                showPanel("Dashboard");
-                guestAcces = true;
-                LoggedIn = true;
+                if (textBoxUsername.Text == loginList[0].userName && textBoxPassword.Text == loginList[0].passWord)
+                {
+                    showPanel("Dashboard");
+                    guestAcces = true;
+                    LoggedIn = true;
+                    return;
+                }
+                else if (textBoxUsername.Text == loginList[i].userName && textBoxPassword.Text == loginList[i].passWord)
+                {
+                    showPanel("Dashboard");
+                    LoggedIn = true;
+                    return;
+                }
             }
-            else if (textBoxUsername.Text == loginList[5].userName && pwHasher.ToString() == loginList[5].passWord)
-            {
-                showPanel("Dashboard");
-                LoggedIn = true;
-            }
-            else
-            {
-                MessageBox.Show("Username or password is incorrect. please try again.");
-                SomerenUI_Load(sender, e);
-            }
+
+            MessageBox.Show("Username or password is incorrect. please try again.");
+            SomerenUI_Load(sender, e);
 
         }
         private void panelNames(Panel panel)
@@ -931,8 +932,10 @@ namespace SomerenUI
             switch (code)
             {
                 case "XsZAb-tgz3PsD-qYh69un-WQCEx":
+
                     PasswordWithSaltHasher pwHasher = new PasswordWithSaltHasher();
-                    passwordbox.Text = pwHasher.ToString();
+                    HashWithSaltResult hashResultSha256 = pwHasher.HashWithSalt(passwordbox.Text, 64, SHA64.Create());
+                    
                     registerenService registrerenservice = new registerenService();
                         MessageBox.Show($"u succesfully made an account with this username: {usernamebox}");
                         registrerenservice.Addregistreren(usernamebox.Text.ToString(), passwordbox.Text.ToString());
@@ -949,7 +952,13 @@ namespace SomerenUI
 
                     
             }
-           
+            
+            
+               
+
+                
+            
+
 
         }
     }
