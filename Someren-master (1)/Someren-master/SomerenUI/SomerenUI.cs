@@ -3,6 +3,8 @@ using SomerenModel;
 using System;
 using System.Collections.Generic;
 using System.Windows.Forms;
+using System.Security.Cryptography;
+
 
 namespace SomerenUI
 {
@@ -43,27 +45,28 @@ namespace SomerenUI
 
         private void button3_Click(object sender, EventArgs e)
         {
+            
             LoginService loginService = new LoginService();
             List<Login> loginList = loginService.GetAllPasswords();
 
             for (int i = 0; i < loginList.Count; i++)
             {
-                if (textBoxUsername.Text == loginList[0].userName && textBoxPassword.Text == loginList[0].passWord)
+                if (textBoxUsername.Text == loginList[0].userName && textBoxPassword.Text.ToString() == loginList[0].passWord)
                 {
                     showPanel("Dashboard");
                     guestAcces = true;
                     LoggedIn = true;
                     return;
                 }
-                else if (textBoxUsername.Text == loginList[i].userName && textBoxPassword.Text == loginList[i].passWord)
+                else if (textBoxUsername.Text == loginList[i].userName && textBoxPassword.Text.ToString() == loginList[i].passWord)
                 {
                     showPanel("Dashboard");
                     LoggedIn = true;
                     return;
                 }
-            }
-
+            }            
             MessageBox.Show("Username or password is incorrect. please try again.");
+            
             SomerenUI_Load(sender, e);
 
         }
@@ -933,12 +936,14 @@ namespace SomerenUI
             {
                 case "XsZAb-tgz3PsD-qYh69un-WQCEx":
 
+
                     PasswordWithSaltHasher pwHasher = new PasswordWithSaltHasher();
-                    HashWithSaltResult hashResultSha256 = pwHasher.HashWithSalt(passwordbox.Text, 64, SHA64.Create());
-                    
+                    HashWithSaltResult hashResultSha256 = pwHasher.HashWithSalt(passwordbox.Text, 64, SHA256.Create());
                     registerenService registrerenservice = new registerenService();
                         MessageBox.Show($"u succesfully made an account with this username: {usernamebox}");
-                        registrerenservice.Addregistreren(usernamebox.Text.ToString(), passwordbox.Text.ToString());
+                    
+                        registrerenservice.Addregistreren(usernamebox.Text.ToString(),passwordbox.Text.ToString() ,hashResultSha256.Salt.ToString());
+                    
                         panelNames(LoginPanel);                    
                     break;
 

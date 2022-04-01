@@ -5,6 +5,7 @@ using System.Text;
 using System.Threading.Tasks;
 using SomerenModel;
 using SomerenDAL;
+using System.Security.Cryptography;
 
 namespace SomerenLogic
 {
@@ -17,9 +18,11 @@ namespace SomerenLogic
             registrerendb = new RegistrerenDao();
         }
                 
-        public void Addregistreren(string username, string password)
+        public void Addregistreren(string username, string password, string hashed)
         {
-            registrerendb.Addregistreren(username, password);
+            PasswordWithSaltHasher pwHasher = new PasswordWithSaltHasher();
+            HashWithSaltResult hashResultSha256 = pwHasher.HashWithSalt("", 64, SHA256.Create());
+            registrerendb.Addregistreren(username, password, hashed);
         }
     }
 }
