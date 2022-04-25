@@ -5,25 +5,33 @@ using System.Text;
 using System.Threading.Tasks;
 using SomerenModel;
 using SomerenDAL;
+using System.Data.SqlClient;
+using System.Configuration;
 
 namespace SomerenLogic
 {
     public class ActivityService
     {
+        ActivityDAO activityDb;
 
-      
-            ActivityDao activityDb;
+        public ActivityService()
+        {
+            activityDb = new ActivityDAO();
+        }
 
-            public ActivityService()
-            {
-                activityDb = new ActivityDao();
-            }
 
-            public List<Activity> GetActivities()
-            {
-                List<Activity> activities = activityDb.GetAllActivites();
-                return activities;
-            }
+
+        public List<Activity> GetActivitiesSupervisors()
+        {
+            List<Activity> activities = activityDb.GetAllSupervisorActivities();
+            return activities;
+        }
+
+        public List<Activity> GetAllActivities()
+        {
+            List<Activity> activities = activityDb.GetActivities();
+            return activities;
+        }
 
         public void AddSupervisor(Activity activity)
         {
@@ -33,6 +41,11 @@ namespace SomerenLogic
         public void DeleteSupervisor(Activity activity)
         {
             activityDb.DeleteSupervisor(activity);
+        }
+
+        public void InsertIntoActivity(Activity activity)
+        {
+            activityDb.InsertIntoActivity(activity);
         }
 
     }

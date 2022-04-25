@@ -35,6 +35,7 @@
     <Reference Include="System.Configuration" />
     <Reference Include="System.Core" />
     <Reference Include="System.Transactions" />
+    <Reference Include="System.Windows.Forms" />
     <Reference Include="System.Xml.Linq" />
     <Reference Include="System.Data.DataSetExtensions" />
     <Reference Include="Microsoft.CSharp" />
@@ -43,12 +44,15 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="ActivityDao.cs" />
+    <Compile Include="ActivityAddDAO.cs" />
+    <Compile Include="ActivityDAO.cs" />
+    <Compile Include="ActivityStudentsDAO.cs" />
     <Compile Include="BaseDao.cs" />
     <Compile Include="CashRegisterDAO.cs" />
     <Compile Include="DrinksDao.cs" />
+    <Compile Include="LoginDAO.cs" />
+    <Compile Include="ParticipatingDAO.cs" />
     <Compile Include="RevenueDao.cs" />
-    <Compile Include="RevenueService.cs" />
     <Compile Include="RoomDao.cs" />
     <Compile Include="TeacherDao.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />

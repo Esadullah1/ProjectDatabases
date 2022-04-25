@@ -5,7 +5,7 @@ using SomerenModel;
 
 namespace SomerenDAL
 {
-    public class CashRegisterDAO
+    public class CashRegisterDAO : BaseDao
     {
         private SqlConnection dbConnection;
 

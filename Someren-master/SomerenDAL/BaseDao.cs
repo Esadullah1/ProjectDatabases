@@ -82,17 +82,17 @@ namespace SomerenDAL
         }
 
         /* For Select Queries */
-        protected DataTable ExecuteSelectQuery(string query, params SqlParameter[] sqlParameters)
+        protected DataTable ExecuteSelectQuery(SqlCommand command)
         {
-            SqlCommand command = new SqlCommand();
+            //SqlCommand command = new SqlCommand();
             DataTable dataTable;
             DataSet dataSet = new DataSet();
 
             try
             {
                 command.Connection = OpenConnection();
-                command.CommandText = query;
-                command.Parameters.AddRange(sqlParameters);
+                //command.CommandText = query;
+                //command.Parameters.AddRange(sqlParameters);
                 command.ExecuteNonQuery();
                 adapter.SelectCommand = command;
                 adapter.Fill(dataSet);

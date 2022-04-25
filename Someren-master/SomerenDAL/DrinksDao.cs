@@ -16,11 +16,8 @@ namespace SomerenDAL
         {
 
             string query = "SELECT DrinkName, Price, Alcoholic, Stock, Voucher, DrinkID FROM  [Drinks] WHERE DrinkID NOT IN (SELECT DrinkID FROM Drinks WHERE DrinkID IN (4, 5, 6)) AND Stock > 1 AND Price > 1 ORDER BY Stock ";
-
-
-
-            SqlParameter[] sqlParameters = new SqlParameter[0];
-            return ReadTables(ExecuteSelectQuery(query, sqlParameters));
+            var sqlCommand = new SqlCommand(query);
+            return ReadTables(ExecuteSelectQuery(sqlCommand));
         }
 
         private List<Drinks> ReadTables(DataTable dataTable)

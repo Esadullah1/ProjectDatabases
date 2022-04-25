@@ -1,26 +1,31 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Data.SqlClient;
 using System.Data;
-using System.Collections.ObjectModel;
 using SomerenModel;
-
 
 namespace SomerenDAL
 {
-    public class ActivityDao : BaseDao
+    public class ActivityDAO : BaseDao
     {
-        public List<Activity> GetAllActivites()
+        public List<Activity> GetAllSupervisorActivities()
         {
 
-            string query = "SELECT ActivityID, SupervisorName FROM [ActivitySupervisors]";
+            string query = "SELECT ActivityNumber, SupervisorName, ActivityName FROM [ActivitySupervisors]";
 
-            SqlParameter[] sqlParameters = new SqlParameter[0];
-            return ReadTables(ExecuteSelectQuery(query, sqlParameters));
+            var sqlCommand = new SqlCommand(query);
+            return ReadTables(ExecuteSelectQuery(sqlCommand));
         }
+
+        public List<Activity> GetActivities()
+        {
+
+            string query = "SELECT ActivityID FROM [Activity]";
+
+            var sqlCommand = new SqlCommand(query);
+            return ReadTables1(ExecuteSelectQuery(sqlCommand));
+        }
+
 
         private List<Activity> ReadTables(DataTable dataTable)
         {
@@ -30,7 +35,8 @@ namespace SomerenDAL
             {
                 Activity activity = new Activity()
                 {
-                    ActivityID = (int)dr["ActivityID"],
+                    ActivityName = (dr["ActivityName"]).ToString(),
+                    ActivityNumber = dr["ActivityNumber"].ToString(),
                     SupervisorName = dr["SupervisorName"].ToString()
                 };
                 activities.Add(activity);
@@ -40,22 +46,48 @@ namespace SomerenDAL
 
         public void AddSupervisor(Activity activity)
         {
-            SqlCommand command = new SqlCommand("UPDATE [ActivitySupervisors] SET SupervisorName = @SupervisorName WHERE ActivityID = @ActivityID", OpenConnection());
+            SqlCommand command = new SqlCommand("UPDATE [ActivitySupervisors] SET SupervisorName = @SupervisorName WHERE ActivityNumber = @ActivityNumber", OpenConnection());
             command.Parameters.AddWithValue("@SupervisorName", activity.SupervisorName);
-            command.Parameters.AddWithValue("@ActivityID", activity.ActivityID);
+            command.Parameters.AddWithValue("@ActivityNumber", activity.ActivityNumber);
             command.ExecuteNonQuery();
         }
 
         public void DeleteSupervisor(Activity activity)
         {
-            SqlCommand command = new SqlCommand("Update ActivitySupervisors SET SupervisorName = NULL WHERE SupervisorName = @SupervisorName AND ActivityID = @ActivityID;", OpenConnection());
+            SqlCommand command = new SqlCommand("Update ActivitySupervisors SET SupervisorName = NULL WHERE SupervisorName = @SupervisorName AND ActivityNumber = @ActivityNumber;", OpenConnection());
             command.Parameters.AddWithValue("@SupervisorName", activity.SupervisorName);
-            command.Parameters.AddWithValue("@ActivityID", activity.ActivityID);
+            command.Parameters.AddWithValue("@ActivityNumber", activity.ActivityNumber);
 
             command.ExecuteNonQuery();
-
-
-
         }
+        
+
+        public void InsertIntoActivity(Activity activity)
+        {
+            SqlCommand command = new SqlCommand("INSERT INTO ActivitySupervisors(ActivityName) SELECT ActivityID FROM Activity WHERE ActivityID = @ActivityID;", OpenConnection());
+            command.Parameters.AddWithValue("@ActivityID", activity.ActivityName);
+            command.ExecuteNonQuery();
+        }
+
+        private List<Activity> ReadTables1(DataTable dataTable1)
+        {
+            List<Activity> activity1 = new List<Activity>();
+
+            foreach (DataRow dr in dataTable1.Rows)
+            {
+                Activity activities1 = new Activity()
+                {
+
+                    ActivityName = (string)(dr["ActivityID"]),
+                    ActiviyID = (string)(dr["ActivityID"])
+
+                };
+                activity1.Add(activities1);
+            }
+            return activity1;
+        }
+
+
     }
+
 }

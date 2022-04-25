@@ -16,11 +16,8 @@ namespace SomerenDAL
         {
 
             string query = "SELECT RoomID, Capacity, Type FROM [Rooms]";
-
-
-
-            SqlParameter[] sqlParameters = new SqlParameter[0];
-            return ReadTables(ExecuteSelectQuery(query, sqlParameters));
+            var sqlCommand = new SqlCommand(query);
+            return ReadTables(ExecuteSelectQuery(sqlCommand));
         }
 
         private List<Room> ReadTables(DataTable dataTable)
